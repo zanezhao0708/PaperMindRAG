@@ -88,7 +88,7 @@ def load_seen() -> set:
 
 # ================= 二、LLM 中文解读 =================
 def interpret(paper: dict) -> dict:
-    """DeepSeek 解读单篇论文；失败则降级为直接使用原题。"""
+    """DeepSeek 解读单篇论文；单篇瞬时失败则降级为原题（重跑时自动重试）。"""
     prompt = (
         "你是CV论文解读助手。根据标题和摘要输出JSON（不要多余文字）：\n"
         '{"title_zh":"中文标题(意译)","oneliner":"一句话说清做了什么(<=60字)",'
@@ -128,6 +128,49 @@ def stars(n: int) -> str:
     return "★" * n + "☆" * (5 - n)
 
 
+ENTRY_RE = re.compile(
+    r"^### \d+\. (?P<title_zh>.+?) (?P<stars>[★☆]{5})\n"
+    r"\n"
+    r"\*\*原题\*\*: (?P<title>.+?)  \n"
+    r"\*\*作者\*\*: (?P<authors>.+?)  \n"
+    r"\*\*提交\*\*: (?P<date>\d{4}-\d{2}-\d{2}) · \[论文链接\]\((?P<url>https://arxiv\.org/abs/(?P<id>[\d.]+))\)\n"
+    r"\n"
+    r"- \*\*做了什么\*\*: (?P<oneliner>.*)\n"
+    r"- \*\*亮点\*\*: (?P<highlights>.*)\n"
+    r"- \*\*原文摘要\*\*: (?P<abstract>.*)\n",
+    re.M,
+)
+
+
+def is_failed(paper: dict) -> bool:
+    """判断条目是否为 LLM 解读失败的降级内容。"""
+    return "LLM 解读失败" in paper["interp"]["highlights"]
+
+
+def parse_digest(path: str) -> list:
+    """读回当天已有日报的条目，用于重跑时保留成功解读、重试失败条目。"""
+    with open(path, encoding="utf-8") as f:
+        text = f.read()
+    papers = []
+    for m in ENTRY_RE.finditer(text):
+        papers.append({
+            "id": m.group("id"),
+            "url": m.group("url"),
+            "title": m.group("title"),
+            "authors": [],
+            "authors_display": m.group("authors"),
+            "abstract": m.group("abstract").rstrip("…"),
+            "date": m.group("date"),
+            "interp": {
+                "title_zh": m.group("title_zh"),
+                "oneliner": m.group("oneliner"),
+                "highlights": m.group("highlights"),
+                "rating": m.group("stars").count("★"),
+            },
+        })
+    return papers
+
+
 def render_md(papers: list, date_str: str) -> str:
     """按评分降序生成当日日报 Markdown。"""
     papers = sorted(papers, key=lambda p: -p["interp"]["rating"])
@@ -149,12 +192,16 @@ def render_md(papers: list, date_str: str) -> str:
     lines.append("\n## 论文详情\n")
     for i, p in enumerate(papers, 1):
         it = p["interp"]
+        if p.get("authors_display"):  # 重跑时从已有日报读回的作者行
+            authors_line = p["authors_display"]
+        else:
+            authors_line = ', '.join(p['authors'][:6]) \
+                + (f" 等 {len(p['authors'])} 人" if len(p['authors']) > 6 else "")
         lines += [
             f"### {i}. {it['title_zh']} {stars(it['rating'])}",
             "",
             f"**原题**: {p['title']}  ",
-            f"**作者**: {', '.join(p['authors'][:6])}"
-            + (f" 等 {len(p['authors'])} 人" if len(p['authors']) > 6 else "") + "  ",
+            f"**作者**: {authors_line}  ",
             f"**提交**: {p['date']} · [论文链接]({p['url']})",
             "",
             f"- **做了什么**: {it['oneliner']}",
@@ -177,9 +224,17 @@ def update_index():
 
 
 def main():
+    if not API_KEY:
+        print("[错误] 未配置 PM_API_KEY（环境变量或项目根 .env）。"
+              "缺少 key 时全部解读会降级为英文内容，已停止生成，不产出坏日报。")
+        return 1
+
     os.makedirs(DIGEST_DIR, exist_ok=True)
     papers = fetch_papers()
     print(f"[抓取] 命中 {len(papers)} 篇（按提交时间倒序）")
+
+    date_str = datetime.datetime.now(CST).strftime("%Y-%m-%d")
+    out = os.path.join(DIGEST_DIR, f"{date_str}.md")
 
     seen = load_seen()
     fresh = [p for p in papers if p["id"] not in seen]
@@ -187,33 +242,34 @@ def main():
     recent = [p for p in fresh if p["_dt"] >= cutoff]
     # 周末/节假日 arXiv 不更新时，回退取最新未推送论文，保证日报有内容
     target = recent or fresh[:10]
-    print(f"[筛选] 未推送 {len(fresh)} 篇，其中近{DAYS_BACK}天 {len(recent)} 篇"
-          f" -> 本期收录 {len(target)} 篇")
-    if not target:
-        print("[完成] 全部已推送过，跳过")
-        return
-    fresh = target
 
-    for p in fresh:  # 逐篇 LLM 解读（失败自动降级）
+    # 当天重跑：已有日报中解读完好的条目原样保留，失败降级条目重新解读
+    existing = parse_digest(out) if os.path.exists(out) else []
+    ok = [p for p in existing if not is_failed(p)]
+    ok_ids = {p["id"] for p in ok}
+    redo = [p for p in existing if p["id"] not in ok_ids]
+    target = [p for p in target if p["id"] not in ok_ids]
+
+    todo = target + redo
+    print(f"[筛选] 未推送 {len(fresh)} 篇，其中近{DAYS_BACK}天 {len(recent)} 篇；"
+          f"保留完好条目 {len(ok)} 篇，重试失败条目 {len(redo)} 篇")
+    if not todo:
+        print("[完成] 无新增论文且已有条目解读完好，跳过")
+        return 0
+
+    for p in todo:  # 逐篇 LLM 解读（单篇失败自动降级，重跑时可修复）
         p["interp"] = interpret(p)
         print(f"[解读] {stars(p['interp']['rating'])} {p['interp']['title_zh'][:40]}")
 
-    date_str = datetime.datetime.now(CST).strftime("%Y-%m-%d")
-    out = os.path.join(DIGEST_DIR, f"{date_str}.md")
-    old_seen = set(seen)
-    if os.path.exists(out):  # 当天重跑：合并已有内容
-        with open(out, encoding="utf-8") as f:
-            existing_ids = set(re.findall(r"arxiv\.org/abs/([\d.]+)", f.read()))
-        fresh = [p for p in fresh if p["id"] not in existing_ids] or fresh
-        seen |= existing_ids
+    final = ok + todo
     with open(out, "w", encoding="utf-8") as f:
-        f.write(render_md(fresh, date_str))
-    seen |= {p["id"] for p in fresh} | old_seen
+        f.write(render_md(final, date_str))
+    seen |= {p["id"] for p in final}
 
     with open(SEEN_FILE, "w", encoding="utf-8") as f:
         json.dump(sorted(seen), f, ensure_ascii=False, indent=0)
     update_index()
-    print(f"[完成] 日报已生成: digest/{date_str}.md ({len(fresh)} 篇)")
+    print(f"[完成] 日报已生成: digest/{date_str}.md ({len(final)} 篇)")
 
 
 if __name__ == "__main__":
