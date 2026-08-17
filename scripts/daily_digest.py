@@ -91,13 +91,16 @@ def interpret(paper: dict) -> dict:
     """DeepSeek 解读单篇论文；单篇瞬时失败则降级为原题（重跑时自动重试）。"""
     prompt = (
         "你是CV论文解读助手。根据标题和摘要输出JSON（不要多余文字）：\n"
-        '{"title_zh":"中文标题(意译)","oneliner":"一句话说清做了什么(<=60字)",'
-        '"highlights":"方法亮点/创新点(<=90字)","rating":1到5整数'
+        '{"title_zh":"中文标题(意译)","oneliner":"一句话说清做了什么(完整句子,<=120字)",'
+        '"highlights":"方法亮点/创新点(<=90字)","tags":"从[视频,工业,医学,联邦学习,'
+        '基准,多模态,少样本,3D]选1-2个最相关标签,逗号分隔",'
+        '"rating":1到5整数'
         '(5=方法/结果重磅突破,4=明显创新,3=扎实增量,2=常规改进,1=价值有限)}\n\n'
         f"标题: {paper['title']}\n摘要: {paper['abstract']}"
     )
-    fallback = {"title_zh": paper["title"], "oneliner": paper["abstract"][:80] + "…",
-                "highlights": "（LLM 解读失败，见原文摘要）", "rating": 3}
+    fallback = {"title_zh": paper["title"], "oneliner": paper["abstract"][:120] + "…",
+                "highlights": "（LLM 解读失败，见原文摘要）", "rating": 3,
+                "tags": detect_topics(paper["title"], paper["abstract"])}
     import time as _time
     for attempt in range(3):  # 代理/网络抖动重试
         try:
@@ -115,6 +118,8 @@ def interpret(paper: dict) -> dict:
             return {"title_zh": data["title_zh"][:60],
                     "oneliner": data["oneliner"][:120],
                     "highlights": data["highlights"][:180],
+                    "tags": detect_topics(paper["title"], paper["abstract"],
+                                          data.get("tags", "")),
                     "rating": max(1, min(5, rating))}
         except Exception as e:
             if attempt == 2:
@@ -128,12 +133,52 @@ def stars(n: int) -> str:
     return "★" * n + "☆" * (5 - n)
 
 
+TOPIC_RULES = [
+    ("视频", ["video", "vad", "surveillance", "temporal"]),
+    ("工业", ["industrial", "manufacturing", "defect", "inspection", "electrode"]),
+    ("医学", ["alzheimer", "medical", "mri", "clinical", "neuro"]),
+    ("联邦学习", ["federated"]),
+    ("基准", ["benchmark", "dataset"]),
+    ("多模态", ["multimodal", "multi-modal", "x-ray"]),
+    ("少样本", ["few-shot", "few shot"]),
+    ("3D", ["3d", "pose", "sparse view", "reconstruction"]),
+]
+
+
+def detect_topics(title: str, abstract: str, llm_tags: str = "") -> str:
+    """优先用 LLM 给的标签（限定在已知词表内），否则按关键词规则兜底。"""
+    valid = {name for name, _ in TOPIC_RULES}
+    tags = [t.strip() for t in re.split(r"[,，/、\s]+", llm_tags) if t.strip() in valid]
+    if not tags:
+        low = f"{title} {abstract}".lower()
+        tags = [name for name, kws in TOPIC_RULES if any(k in low for k in kws)]
+    return "、".join(tags[:2])
+
+
+def summarize(papers: list) -> str:
+    """生成「今日概览」：主题分布 + 高分论文。"""
+    counts = {}
+    for p in papers:
+        for t in p["interp"]["tags"].split("、"):
+            if t:
+                counts[t] = counts.get(t, 0) + 1
+    top = sorted(counts.items(), key=lambda kv: -kv[1])[:3]
+    hot = [p for p in papers if p["interp"]["rating"] >= 4]
+    parts = [f"本期 {len(papers)} 篇"]
+    if top:
+        parts.append("主题集中在" + "、".join(f"{t}（{n} 篇）" for t, n in top))
+    if hot:
+        parts.append("推荐：" + "；".join(p["interp"]["title_zh"] for p in hot))
+    return "，".join(parts) + "。"
+
+
 ENTRY_RE = re.compile(
     r"^### \d+\. (?P<title_zh>.+?) (?P<stars>[★☆]{5})\n"
     r"\n"
     r"\*\*原题\*\*: (?P<title>.+?)  \n"
     r"\*\*作者\*\*: (?P<authors>.+?)  \n"
     r"\*\*提交\*\*: (?P<date>\d{4}-\d{2}-\d{2}) · \[论文链接\]\((?P<url>https://arxiv\.org/abs/(?P<id>[\d.]+))\)\n"
+    r"(?:\*\*主题\*\*: (?P<tags>.+?)  \n)?"
     r"\n"
     r"- \*\*做了什么\*\*: (?P<oneliner>.*)\n"
     r"- \*\*亮点\*\*: (?P<highlights>.*)\n"
@@ -153,6 +198,7 @@ def parse_digest(path: str) -> list:
         text = f.read()
     papers = []
     for m in ENTRY_RE.finditer(text):
+        tags = m.group("tags") or detect_topics(m.group("title"), m.group("abstract"))
         papers.append({
             "id": m.group("id"),
             "url": m.group("url"),
@@ -165,6 +211,7 @@ def parse_digest(path: str) -> list:
                 "title_zh": m.group("title_zh"),
                 "oneliner": m.group("oneliner"),
                 "highlights": m.group("highlights"),
+                "tags": tags,
                 "rating": m.group("stars").count("★"),
             },
         })
@@ -181,14 +228,16 @@ def render_md(papers: list, date_str: str) -> str:
         f"`anomaly detection` 相关论文 {len(papers)} 篇，DeepSeek 中文解读，"
         "按推荐度排序。[订阅历史](./README.md)",
         "",
-        "| 推荐 | 中文标题 | 一句话解读 | 链接 |",
-        "|---|---|---|---|",
+        f"**今日概览**：{summarize(papers)}",
+        "",
+        "| 推荐 | 中文标题 | 主题 | 一句话解读 | 链接 |",
+        "|---|---|---|---|---|",
     ]
     for p in papers:
         it = p["interp"]
         one = it["oneliner"].replace("|", "\\|")
         lines.append(f"| {stars(it['rating'])} | **{it['title_zh']}** "
-                     f"| {one} | [abs]({p['url']}) |")
+                     f"| {it['tags']} | {one} | [abs]({p['url']}) |")
     lines.append("\n## 论文详情\n")
     for i, p in enumerate(papers, 1):
         it = p["interp"]
@@ -203,6 +252,7 @@ def render_md(papers: list, date_str: str) -> str:
             f"**原题**: {p['title']}  ",
             f"**作者**: {authors_line}  ",
             f"**提交**: {p['date']} · [论文链接]({p['url']})",
+            f"**主题**: {it['tags']}  ",
             "",
             f"- **做了什么**: {it['oneliner']}",
             f"- **亮点**: {it['highlights']}",
