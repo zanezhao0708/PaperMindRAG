@@ -1,0 +1,40 @@
+name: Weekly Paper Digest
+
+on:
+  schedule:
+    - cron: "30 1 * * 1"   # UTC 周一 01:30 = 北京时间 09:30
+  workflow_dispatch:        # 支持手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install requests
+
+      - name: Generate weekly report
+        run: python scripts/weekly_digest.py
+
+      - name: Build site & feed
+        run: python scripts/build_site.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add digest/
+          if git diff --cached --quiet; then
+            echo "本周无更新，跳过提交"
+          else
+            git commit -m "docs: 自动论文周报 $(date -u +%F)"
+            git push
+          fi

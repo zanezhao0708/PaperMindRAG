@@ -7,9 +7,21 @@
 
 ## 🔔 每日论文日报（自动更新，每天可用）
 
-**每天北京时间 09:00**，GitHub Actions 自动完成：抓取 arXiv 最新 CV 异常检测论文 → DeepSeek 中文解读（标题翻译/一句话总结/方法亮点/★推荐评级）→ 自动生成日报提交到仓库。无需任何人工操作，Star 后每天来仓库看 [digest/](./digest/README.md) 就能跟踪领域最新进展。
+**每天北京时间 09:00**，GitHub Actions 自动完成：抓取 arXiv 最新 CV 异常检测论文 → DeepSeek 中文解读（标题翻译/一句话总结/方法亮点/★推荐评级/主题标签/今日概览）→ 自动生成日报提交到仓库。无需任何人工操作，Star 后每天来仓库看 [digest/](./digest/README.md) 就能跟踪领域最新进展。
 
 **这一步同时也是 RAG 知识库的自动供给**——新论文持续入库，问答系统随之"越用越懂"。
+
+### 三种订阅方式
+
+| 方式 | 入口 | 说明 |
+|---|---|---|
+| 在线浏览页 | [digest/index.html](./digest/index.html) | 主题标签筛选 / 评分过滤 / 关键词搜索 / 近 4 周趋势卡片，自包含单文件 |
+| RSS 订阅 | [digest/feed.xml](./digest/feed.xml) | 任意 RSS 阅读器添加 raw 链接即可订阅 |
+| 邮件推送 | 配置下方 SMTP Secrets | 日报生成后自动发送到指定邮箱，未配置则自动跳过 |
+
+**每周一 09:30** 自动生成周报（近 7 天聚合 + 与上期环比趋势对比 + 本周必读），归档在 [digest/weekly/](./digest/weekly/)，见 [weekly.yml](.github/workflows/weekly.yml)。
+
+RSS raw 链接：`https://raw.githubusercontent.com/zanezhao0708/PaperMindRAG/main/digest/feed.xml`
 
 ---
 
@@ -89,6 +101,13 @@ PM_LOCAL_EMBED_MODEL=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
 HF_ENDPOINT=https://hf-mirror.com   # 模型权重国内镜像
 HF_HUB_DISABLE_XET=1               # 镜像站不支持 xet 协议时禁用
 PM_LOG_LEVEL=INFO                  # 日志级别
+
+# 邮件推送（可选；配到 GitHub Secrets 后每日日报自动发邮箱）
+PM_SMTP_HOST=smtp.qq.com           # SMTP 服务器
+PM_SMTP_PORT=465                   # SSL 端口，默认 465
+PM_SMTP_USER=you@qq.com            # 发件账号
+PM_SMTP_PASS=授权码                 # QQ 邮箱用授权码，非登录密码
+PM_MAIL_TO=you@qq.com,peer@x.com   # 收件人，逗号分隔
 ```
 
 ## 目录结构
@@ -107,11 +126,11 @@ papermind/
 │   ├── server.py       # Flask 应用工厂
 │   └── cli.py          # papermind 命令行
 ├── tests/              # pytest 测试套件（离线）
-├── scripts/            # 论文下载 / 每日日报
+├── scripts/            # 论文下载 / 每日日报 / 周报 / 站点 / 邮件
 ├── templates/index.html# Web UI
 ├── app.py              # 兼容旧启动方式
 ├── Dockerfile / Makefile / pyproject.toml
-└── .github/workflows/  # CI（lint+test）+ 每日日报
+└── .github/workflows/  # CI（lint+test）+ 每日日报 + 每周周报
 ```
 
 ## 混合检索（BM25 + 稠密向量 RRF 融合）
