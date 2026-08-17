@@ -26,6 +26,9 @@ jobs:
           PM_API_KEY: ${{ secrets.PM_API_KEY }}
         run: python scripts/daily_digest.py
 
+      - name: Build site & feed
+        run: python scripts/build_site.py
+
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
@@ -37,3 +40,12 @@ jobs:
             git commit -m "docs: 自动论文日报 $(date -u +%F)"
             git push
           fi
+
+      - name: Send email (optional)
+        env:
+          PM_SMTP_HOST: ${{ secrets.PM_SMTP_HOST }}
+          PM_SMTP_PORT: ${{ secrets.PM_SMTP_PORT }}
+          PM_SMTP_USER: ${{ secrets.PM_SMTP_USER }}
+          PM_SMTP_PASS: ${{ secrets.PM_SMTP_PASS }}
+          PM_MAIL_TO: ${{ secrets.PM_MAIL_TO }}
+        run: python scripts/send_mail.py

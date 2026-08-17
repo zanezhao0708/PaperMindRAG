@@ -267,7 +267,15 @@ def update_index():
     files = sorted((f for f in os.listdir(DIGEST_DIR)
                     if re.fullmatch(r"\d{4}-\d{2}-\d{2}\.md", f)), reverse=True)
     lines = ["# 每日论文日报（自动更新）", "",
-             "GitHub Actions 每天自动抓取 arXiv CV 异常检测方向新论文并生成中文解读。", ""]
+             "GitHub Actions 每天自动抓取 arXiv CV 异常检测方向新论文并生成中文解读。", "",
+             "- [论文浏览页（主题筛选/搜索/趋势）](./index.html) · "
+             "[RSS 订阅](./feed.xml)"]
+    weekly_dir = os.path.join(DIGEST_DIR, "weekly")
+    if os.path.isdir(weekly_dir):
+        for w in sorted(os.listdir(weekly_dir), reverse=True):
+            if w.endswith(".md"):
+                lines.append(f"- [周报 {w[:-3]}](./weekly/{w})")
+    lines += ["", "## 日报", ""]
     lines += [f"- [{d[:-3]}]({d})" for d in files] or ["暂无日报"]
     with open(os.path.join(DIGEST_DIR, "README.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
