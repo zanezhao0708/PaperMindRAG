@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+    <title>PaperMind · CV 异常检测论文日报</title>
+    <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
+    <description>每日 arXiv CV 异常检测论文中文解读</description>
+    <lastBuildDate>Mon, 17 Aug 2026 19:47:47 +0800</lastBuildDate>
+  <item>
+    <title>LIBAD：锂离子电池电极制造多模态异常检测基准</title>
+    <link>https://arxiv.org/abs/2608.07958</link>
+    <description>构建首个锂电池电极制造多模态异常检测基准 LIBAD，数据来自真实卷对卷产线，涵盖可见光与两种 X 射线成像。</description>
+    <pubDate>Sat, 08 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.07958</guid>
+  </item>
+  <item>
+    <title>瞥视、细察与思考：从免训练到智能体推理的视频异常检测</title>
+    <link>https://arxiv.org/abs/2608.11260</link>
+    <description>模仿人查看监控的"扫视—细察—思考"习惯，统一视频异常检测中时间定位与语义理解两大能力。</description>
+    <pubDate>Sat, 08 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.11260</guid>
+  </item>
+  <item>
+    <title>Parcel2Progression：解剖感知的阿尔茨海默病纵向诊断框架</title>
+    <link>https://arxiv.org/abs/2608.08753</link>
+    <description>提出纵向 Transformer 框架 P2P，用图谱引导的脑分区编码器处理高分辨率变长 4D MRI 序列，诊断阿尔茨海默病。</description>
+    <pubDate>Sun, 09 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.08753</guid>
+  </item>
+  <item>
+    <title>VTO：面向视频异常检测的视觉工具编排</title>
+    <link>https://arxiv.org/abs/2608.08219</link>
+    <description>提出过程监督强化学习框架 VTO，让智能体编排视觉工具完成视频异常检测，避免粗粒度奖励导致的过早终止。</description>
+    <pubDate>Sun, 09 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.08219</guid>
+  </item>
+  <item>
+    <title>从基准成绩到工具部署：人在回路的异常检测</title>
+    <link>https://arxiv.org/abs/2608.07770</link>
+    <description>在含反光表面与细微缺陷的制造数据集 BowTie 上评估 19 个无监督模型，发现真实工况性能远不如标准基准稳定。</description>
+    <pubDate>Sat, 08 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.07770</guid>
+  </item>
+  <item>
+    <title>MuST-VAD：视频异常检测的互构学习框架</title>
+    <link>https://arxiv.org/abs/2608.06913</link>
+    <description>提出互构学习框架，让异常检测器与大视觉语言模型双向交换知识，突破语义单向迁移的性能上限。</description>
+    <pubDate>Fri, 07 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.06913</guid>
+  </item>
+  <item>
+    <title>FedVAR：原型对齐的视频异常识别联邦框架</title>
+    <link>https://arxiv.org/abs/2608.06876</link>
+    <description>针对联邦学习中各端"正常/异常"特征语义错位问题，提出原型对齐框架，适配工业物联网分布式场景。</description>
+    <pubDate>Fri, 07 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.06876</guid>
+  </item>
+  <item>
+    <title>ConceptADapt：概念引导自适应特征重建的少样本工业异常检测</title>
+    <link>https://arxiv.org/abs/2608.05743</link>
+    <description>面向冷启动阶段正常样本稀缺问题，以概念引导与动态注意力做自适应特征重建，增强少样本工业检测泛化。</description>
+    <pubDate>Thu, 06 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.05743</guid>
+  </item>
+  <item>
+    <title>VQ-VAD：以人为本视频异常检测的向量化运动表征学习</title>
+    <link>https://arxiv.org/abs/2608.05069</link>
+    <description>将人体姿态运动表征由连续潜空间改为向量量化离散码本，学到更紧凑运动模式，兼顾隐私保护。</description>
+    <pubDate>Thu, 06 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.05069</guid>
+  </item>
+  <item>
+    <title>PADFormer：稀疏视角图像的姿态无关异常检测</title>
+    <link>https://arxiv.org/abs/2608.04210</link>
+    <description>用 ViT 从稀疏视角图像直接重建无异常查询图，无需昂贵 3D 重建即可应对任意姿态下的异常检测。</description>
+    <pubDate>Wed, 05 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.04210</guid>
+  </item>
+</channel>
+</rss>
