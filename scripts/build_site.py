@@ -14,7 +14,7 @@ from email.utils import format_datetime
 from xml.sax.saxutils import escape
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from daily_digest import CST, DIGEST_DIR  # noqa: E402
+from daily_digest import CST, DIGEST_DIR, RSS_RAW  # noqa: E402
 from weekly_digest import parse_digest_file, topic_counts  # noqa: E402
 
 REPO_URL = "https://github.com/zanezhao0708/PaperMindRAG"
@@ -26,6 +26,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" type="application/rss+xml"
+      title="PaperMind 论文日报 RSS" href="feed.xml">
 <title>PaperMind · CV 异常检测论文追踪</title>
 <style>
   :root { --bg:#0f1117; --card:#171a23; --line:#2a2f3d; --fg:#e8eaf0;
@@ -37,6 +39,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   h1 { font-size:24px; letter-spacing:.5px; } h1 span { color:var(--accent); }
   .sub { color:var(--muted); font-size:13px; margin:6px 0 18px; }
   .sub a { color:var(--accent); text-decoration:none; }
+  .btn { display:inline-block; background:var(--accent); color:#fff;
+         padding:6px 14px; border-radius:8px; font-size:13px;
+         font-weight:600; text-decoration:none; margin-left:6px; }
+  .btn:hover { opacity:.88; }
   .toolbar { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;
              align-items:center; }
   .chips { display:flex; flex-wrap:wrap; gap:6px; }
@@ -76,7 +82,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   <h1>Paper<span>Mind</span> 论文追踪</h1>
   <div class="sub">__TOTAL__ 篇 · 更新于 __GENERATED__ ·
     <a href="__REPO__/blob/main/digest/README.md">日报目录</a> ·
-    <a href="feed.xml">RSS 订阅</a></div>
+    <a class="btn" href="feed.xml"
+       title="__RSS_RAW__">订阅 RSS</a></div>
   <div class="toolbar">
     <div class="chips" id="chips"></div>
     <select id="rating">
@@ -221,7 +228,8 @@ def main():
                 .replace("__DATA__", data_json)
                 .replace("__TOTAL__", str(len(papers)))
                 .replace("__GENERATED__", data["generated"])
-                .replace("__REPO__", REPO_URL))
+                .replace("__REPO__", REPO_URL)
+                .replace("__RSS_RAW__", RSS_RAW))
     with open(SITE_FILE, "w", encoding="utf-8") as f:
         f.write(html_out)
     with open(FEED_FILE, "w", encoding="utf-8") as f:

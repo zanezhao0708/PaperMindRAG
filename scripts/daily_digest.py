@@ -19,6 +19,10 @@ import requests
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DIGEST_DIR = os.path.join(ROOT, "digest")
 SEEN_FILE = os.path.join(DIGEST_DIR, "seen.json")
+# 订阅入口（GitHub Pages 托管浏览页；RSS 为 raw 直链）
+PAGES_URL = "https://zanezhao0708.github.io/PaperMindRAG/"
+RSS_RAW = ("https://raw.githubusercontent.com/zanezhao0708/"
+           "PaperMindRAG/main/digest/feed.xml")
 
 # ---------- 配置 ----------
 ARXIV_API = "https://export.arxiv.org/api/query"
@@ -268,13 +272,19 @@ def update_index():
                     if re.fullmatch(r"\d{4}-\d{2}-\d{2}\.md", f)), reverse=True)
     lines = ["# 每日论文日报（自动更新）", "",
              "GitHub Actions 每天自动抓取 arXiv CV 异常检测方向新论文并生成中文解读。", "",
-             "- [论文浏览页（主题筛选/搜索/趋势）](./index.html) · "
-             "[RSS 订阅](./feed.xml)"]
+             "## 订阅方式", "",
+             f"- **[论文浏览页（在线）]({PAGES_URL})** 主题筛选 / 搜索 / 趋势",
+             f"- **[RSS 订阅]({RSS_RAW})** 复制链接加到任意 RSS 阅读器"
+             "（浏览页已埋自动发现标签，阅读器可直接识别）",
+             "",
+             "## 周报", ""]
     weekly_dir = os.path.join(DIGEST_DIR, "weekly")
     if os.path.isdir(weekly_dir):
-        for w in sorted(os.listdir(weekly_dir), reverse=True):
-            if w.endswith(".md"):
-                lines.append(f"- [周报 {w[:-3]}](./weekly/{w})")
+        lines += [f"- [{w[:-3]}](./weekly/{w})"
+                  for w in sorted(os.listdir(weekly_dir), reverse=True)
+                  if w.endswith(".md")] or ["- 暂无周报（每周一自动生成）"]
+    else:
+        lines.append("- 暂无周报（每周一自动生成）")
     lines += ["", "## 日报", ""]
     lines += [f"- [{d[:-3]}]({d})" for d in files] or ["暂无日报"]
     with open(os.path.join(DIGEST_DIR, "README.md"), "w", encoding="utf-8") as f:

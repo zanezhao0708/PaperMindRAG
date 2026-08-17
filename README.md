@@ -5,6 +5,8 @@
 [![Latest](https://img.shields.io/badge/日报-每日自动更新-blue)](./digest/README.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
+> 📚 **[论文浏览页（在线）](https://zanezhao0708.github.io/PaperMindRAG/)** 主题筛选 · 搜索 · 趋势　|　📡 **[RSS 订阅](https://raw.githubusercontent.com/zanezhao0708/PaperMindRAG/main/digest/feed.xml)** 复制到任意阅读器　|　📖 [每日日报](./digest/README.md)　|　📈 [每周周报](./digest/weekly/)
+
 ## 🔔 每日论文日报（自动更新，每天可用）
 
 **每天北京时间 09:00**，GitHub Actions 自动完成：抓取 arXiv 最新 CV 异常检测论文 → DeepSeek 中文解读（标题翻译/一句话总结/方法亮点/★推荐评级/主题标签/今日概览）→ 自动生成日报提交到仓库。无需任何人工操作，Star 后每天来仓库看 [digest/](./digest/README.md) 就能跟踪领域最新进展。
@@ -15,8 +17,8 @@
 
 | 方式 | 入口 | 说明 |
 |---|---|---|
-| 在线浏览页 | [digest/index.html](./digest/index.html) | 主题标签筛选 / 评分过滤 / 关键词搜索 / 近 4 周趋势卡片，自包含单文件 |
-| RSS 订阅 | [digest/feed.xml](./digest/feed.xml) | 任意 RSS 阅读器添加 raw 链接即可订阅 |
+| 在线浏览页 | [zanezhao0708.github.io/PaperMindRAG](https://zanezhao0708.github.io/PaperMindRAG/) | 主题标签筛选 / 评分过滤 / 关键词搜索 / 近 4 周趋势卡片，GitHub Pages 自动部署 |
+| RSS 订阅 | [digest/feed.xml](https://raw.githubusercontent.com/zanezhao0708/PaperMindRAG/main/digest/feed.xml) | 任意 RSS 阅读器添加 raw 链接；浏览页已埋自动发现标签 |
 | 邮件推送 | 配置下方 SMTP Secrets | 日报生成后自动发送到指定邮箱，未配置则自动跳过 |
 
 **每周一 09:30** 自动生成周报（近 7 天聚合 + 与上期环比趋势对比 + 本周必读），归档在 [digest/weekly/](./digest/weekly/)，见 [weekly.yml](.github/workflows/weekly.yml)。
