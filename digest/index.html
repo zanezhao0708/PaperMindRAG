@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PaperMind · CV 异常检测论文追踪</title>
+<style>
+  :root { --bg:#0f1117; --card:#171a23; --line:#2a2f3d; --fg:#e8eaf0;
+          --muted:#9aa3b5; --accent:#6c8cff; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--fg);
+         font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif; }
+  .wrap { max-width:1080px; margin:0 auto; padding:28px 18px 60px; }
+  h1 { font-size:24px; letter-spacing:.5px; } h1 span { color:var(--accent); }
+  .sub { color:var(--muted); font-size:13px; margin:6px 0 18px; }
+  .sub a { color:var(--accent); text-decoration:none; }
+  .toolbar { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;
+             align-items:center; }
+  .chips { display:flex; flex-wrap:wrap; gap:6px; }
+  .chip { background:#1e2330; border:1px solid var(--line); border-radius:999px;
+          padding:5px 13px; font-size:13px; color:var(--muted); cursor:pointer;
+          text-decoration:none; }
+  .chip.on { border-color:var(--accent); color:var(--accent); }
+  input, select { background:#11141c; color:var(--fg); border:1px solid var(--line);
+          border-radius:8px; padding:7px 12px; font-size:13px; outline:none; }
+  input:focus { border-color:var(--accent); }
+  .weeks { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px; }
+  .wcard { background:var(--card); border:1px solid var(--line); border-radius:10px;
+           padding:12px 16px; min-width:210px; flex:1; }
+  .wcard .d { color:var(--muted); font-size:12px; }
+  .wcard .n { font-size:20px; margin:4px 0; }
+  .wcard .t { font-size:12px; color:var(--accent); }
+  table { width:100%; border-collapse:collapse; background:var(--card);
+          border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+  th, td { padding:10px 12px; font-size:13.5px; text-align:left;
+           border-bottom:1px solid var(--line); line-height:1.6;
+           vertical-align:top; }
+  th { color:var(--muted); font-weight:600; font-size:12.5px; }
+  tr:last-child td { border-bottom:none; }
+  td a { color:var(--fg); text-decoration:none; font-weight:600; }
+  td a:hover { color:var(--accent); }
+  .tag { display:inline-block; background:#1e2330; border:1px solid var(--line);
+         border-radius:4px; padding:1px 7px; margin-right:4px; font-size:11.5px;
+         color:var(--muted); }
+  .stars { color:#f5c518; letter-spacing:1px; white-space:nowrap; }
+  .date { color:var(--muted); font-size:12.5px; white-space:nowrap; }
+  .empty { text-align:center; color:var(--muted); padding:30px; display:none; }
+  .wl { color:var(--muted); font-size:12.5px; margin-top:16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Paper<span>Mind</span> 论文追踪</h1>
+  <div class="sub">10 篇 · 更新于 2026-08-17 19:47 ·
+    <a href="https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md">日报目录</a> ·
+    <a href="feed.xml">RSS 订阅</a></div>
+  <div class="toolbar">
+    <div class="chips" id="chips"></div>
+    <select id="rating">
+      <option value="0">全部评分</option>
+      <option value="4">★★★★ 以上</option>
+      <option value="5">★★★★★</option>
+    </select>
+    <input id="q" placeholder="搜索标题 / 解读 / 原题…">
+  </div>
+  <div class="weeks" id="weeks"></div>
+  <table>
+    <thead><tr><th>日期</th><th>推荐</th><th>标题</th><th>主题</th>
+      <th>一句话解读</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <div class="empty" id="empty">没有匹配的论文</div>
+  <div class="wl" id="weeklyLinks"></div>
+</div>
+<script>
+const DATA = {"generated": "2026-08-17 19:47", "total": 10, "papers": [{"date": "2026-08-08", "digest_date": "2026-08-17", "title_zh": "LIBAD：锂离子电池电极制造多模态异常检测基准", "title": "LIBAD: A Multimodal Anomaly Detection Benchmark for Li-Ion Battery Electrode Manufacturing", "url": "https://arxiv.org/abs/2608.07958", "oneliner": "构建首个锂电池电极制造多模态异常检测基准 LIBAD，数据来自真实卷对卷产线，涵盖可见光与两种 X 射线成像。", "rating": 4, "tags": ["工业", "基准"]}, {"date": "2026-08-08", "digest_date": "2026-08-17", "title_zh": "瞥视、细察与思考：从免训练到智能体推理的视频异常检测", "title": "Glance, Scrutinize, and Think: Advancing Video Anomaly Detection from Training-Free to Agentic Reasoning", "url": "https://arxiv.org/abs/2608.11260", "oneliner": "模仿人查看监控的\"扫视—细察—思考\"习惯，统一视频异常检测中时间定位与语义理解两大能力。", "rating": 4, "tags": ["视频"]}, {"date": "2026-08-09", "digest_date": "2026-08-17", "title_zh": "Parcel2Progression：解剖感知的阿尔茨海默病纵向诊断框架", "title": "Parcel2Progression: An Anatomy-aware Longitudinal Framework for Alzheimer's Disease Diagnosis", "url": "https://arxiv.org/abs/2608.08753", "oneliner": "提出纵向 Transformer 框架 P2P，用图谱引导的脑分区编码器处理高分辨率变长 4D MRI 序列，诊断阿尔茨海默病。", "rating": 3, "tags": ["医学", "3D"]}, {"date": "2026-08-09", "digest_date": "2026-08-17", "title_zh": "VTO：面向视频异常检测的视觉工具编排", "title": "VTO: Visual Tool Orchestration for Video Anomaly Detection", "url": "https://arxiv.org/abs/2608.08219", "oneliner": "提出过程监督强化学习框架 VTO，让智能体编排视觉工具完成视频异常检测，避免粗粒度奖励导致的过早终止。", "rating": 3, "tags": ["视频"]}, {"date": "2026-08-08", "digest_date": "2026-08-17", "title_zh": "从基准成绩到工具部署：人在回路的异常检测", "title": "From Benchmark Performance to Tool Deployment: Human-in-the-Loop Anomaly Detection", "url": "https://arxiv.org/abs/2608.07770", "oneliner": "在含反光表面与细微缺陷的制造数据集 BowTie 上评估 19 个无监督模型，发现真实工况性能远不如标准基准稳定。", "rating": 3, "tags": ["工业", "基准"]}, {"date": "2026-08-07", "digest_date": "2026-08-17", "title_zh": "MuST-VAD：视频异常检测的互构学习框架", "title": "MuST-VAD: Mutual Structured Learning for Video Anomaly Detection", "url": "https://arxiv.org/abs/2608.06913", "oneliner": "提出互构学习框架，让异常检测器与大视觉语言模型双向交换知识，突破语义单向迁移的性能上限。", "rating": 3, "tags": ["视频"]}, {"date": "2026-08-07", "digest_date": "2026-08-17", "title_zh": "FedVAR：原型对齐的视频异常识别联邦框架", "title": "FedVAR: Prototype-Aligned Federated Framework for Video Anomaly Recognition", "url": "https://arxiv.org/abs/2608.06876", "oneliner": "针对联邦学习中各端\"正常/异常\"特征语义错位问题，提出原型对齐框架，适配工业物联网分布式场景。", "rating": 3, "tags": ["视频", "联邦学习"]}, {"date": "2026-08-06", "digest_date": "2026-08-17", "title_zh": "ConceptADapt：概念引导自适应特征重建的少样本工业异常检测", "title": "ConceptADapt: Concept-guided Adaptive Feature Reconstruction with Dynamic Attention for Few-Shot Industrial Anomaly Detection", "url": "https://arxiv.org/abs/2608.05743", "oneliner": "面向冷启动阶段正常样本稀缺问题，以概念引导与动态注意力做自适应特征重建，增强少样本工业检测泛化。", "rating": 3, "tags": ["工业", "少样本"]}, {"date": "2026-08-06", "digest_date": "2026-08-17", "title_zh": "VQ-VAD：以人为本视频异常检测的向量化运动表征学习", "title": "VQ-VAD: Vector-quantized Motion Representation Learning for Human-centric Video Anomaly Detection", "url": "https://arxiv.org/abs/2608.05069", "oneliner": "将人体姿态运动表征由连续潜空间改为向量量化离散码本，学到更紧凑运动模式，兼顾隐私保护。", "rating": 3, "tags": ["视频"]}, {"date": "2026-08-05", "digest_date": "2026-08-17", "title_zh": "PADFormer：稀疏视角图像的姿态无关异常检测", "title": "PADFormer: Pose-agnostic Anomaly Detection from Sparse View Images", "url": "https://arxiv.org/abs/2608.04210", "oneliner": "用 ViT 从稀疏视角图像直接重建无异常查询图，无需昂贵 3D 重建即可应对任意姿态下的异常检测。", "rating": 3, "tags": ["3D"]}], "weeks": [{"label": "2026-W34（08-17~08-17）", "count": 10, "top": "视频 5、工业 3"}], "weeklies": ["2026-W34.md"]};
+let activeTopic = "全部", minRating = 0, query = "";
+const starStr = n => "★".repeat(n) + "☆".repeat(5 - n);
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+
+function renderChips(){
+  const counts = {};
+  DATA.papers.forEach(p => p.tags.forEach(t => counts[t] = (counts[t]||0)+1));
+  const topics = Object.entries(counts).sort((a,b) => b[1]-a[1]);
+  document.getElementById("chips").innerHTML =
+    [["全部", DATA.papers.length], ...topics]
+      .map(([t,c]) => `<span class="chip${t===activeTopic?' on':''}"
+        data-t="${t}">${t} ${c}</span>`)
+      .join("");
+  document.querySelectorAll(".chip").forEach(el =>
+    el.onclick = () => { activeTopic = el.dataset.t; renderChips(); renderRows(); });
+}
+function renderWeeks(){
+  document.getElementById("weeks").innerHTML = DATA.weeks.map(w => `
+    <div class="wcard"><div class="d">${w.label}</div>
+    <div class="n">${w.count} 篇</div><div class="t">${w.top}</div></div>`).join("");
+}
+function renderRows(){
+  const q = query.trim().toLowerCase();
+  const list = DATA.papers.filter(p =>
+    (activeTopic === "全部" || p.tags.includes(activeTopic)) &&
+    p.rating >= minRating &&
+    (!q || (p.title_zh + p.oneliner + p.title).toLowerCase().includes(q)));
+  document.getElementById("rows").innerHTML = list.map(p => `
+    <tr><td class="date">${p.digest_date.slice(5)}</td>
+    <td class="stars">${starStr(p.rating)}</td>
+    <td><a href="${p.url}" target="_blank" rel="noopener">${esc(p.title_zh)}</a></td>
+    <td>${p.tags.map(t => `<span class="tag">${t}</span>`).join("")}</td>
+    <td>${esc(p.oneliner)}</td></tr>`).join("");
+  document.getElementById("empty").style.display = list.length ? "none" : "block";
+}
+renderChips(); renderWeeks(); renderRows();
+document.getElementById("rating").onchange = e => { minRating = +e.target.value; renderRows(); };
+document.getElementById("q").oninput = e => { query = e.target.value; renderRows(); };
+const wl = DATA.weeklies.map(w =>
+  `<a class="chip" href="weekly/${w}">${w.replace(".md","")}</a>`).join(" ");
+document.getElementById("weeklyLinks").innerHTML =
+  wl ? "周报归档：" + wl : "";
+</script>
+</body>
+</html>
