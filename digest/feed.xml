@@ -4,11 +4,81 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Tue, 18 Aug 2026 10:08:36 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 15:06:18 +0800</lastBuildDate>
   <item>
-    <title>Unsupervised Anomaly Detection for Image Dataset Quality Assurance in Multi-Center Breast MRI</title>
+    <title>持续异常检测中贪心采样的有界记忆延续</title>
+    <link>https://arxiv.org/abs/2608.15277</link>
+    <description>提出ContCore方法，通过贪心扩展与合并，在固定内存下延续贪心采样构建核心集，实现持续异常检测，并具有理论保证和SOTA性能。</description>
+    <pubDate>Sat, 15 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.15277</guid>
+  </item>
+  <item>
+    <title>PRISM：用于多元异常检测的强大时间序列到图像表示</title>
+    <link>https://arxiv.org/abs/2608.03926</link>
+    <description>提出PRISM元工作流，系统构建和评估多元时间序列的图像表示，在14个数据集上10个取得最佳VUS-PR，平均提升41%，并引入新的通道化方案MSM。</description>
+    <pubDate>Wed, 05 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.03926</guid>
+  </item>
+  <item>
+    <title>AgenticVAU：用于视频异常理解的多智能体探索-验证推理框架</title>
+    <link>https://arxiv.org/abs/2608.03779</link>
+    <description>提出一种免训练的多智能体框架，将视频异常理解建模为探索-验证过程，通过四个专职智能体协作发现并验证异常，提升证据覆盖与推理性能。</description>
+    <pubDate>Tue, 04 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.03779</guid>
+  </item>
+  <item>
+    <title>保留针，修剪干草堆：面向高效零样本异常检测的缺陷保持型令牌剪枝</title>
+    <link>https://arxiv.org/abs/2608.03681</link>
+    <description>提出KeepAD框架，通过高召回、异常感知的令牌路由，在零样本异常检测中实现低于20%的令牌保留率，同时将AUROC下降控制在2.7个百分点内，并带来7.9倍加速。</description>
+    <pubDate>Tue, 04 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.03681</guid>
+  </item>
+  <item>
+    <title>LDU-Bench：面向布局变化电路背景下的光刻缺陷理解多模态大模型评测基准</title>
+    <link>https://arxiv.org/abs/2608.03078</link>
+    <description>提出了一个多任务多模态基准LDU-Bench，用于系统评估多模态大模型在光刻缺陷理解中的分诊、形态识别、粗定位和原因分析能力，并揭示现有模型在结构化理解上的瓶颈。</description>
+    <pubDate>Tue, 04 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.03078</guid>
+  </item>
+  <item>
+    <title>从Fisher信息视角理解并克服多模态异常检测中的跨模态融合偏差</title>
+    <link>https://arxiv.org/abs/2608.00986</link>
+    <description>本文从Fisher信息视角分析多模态异常检测中的跨模态融合偏差，并提出UCFB框架，通过动态校准和典型相关分析缓解偏差，提升检测性能。</description>
+    <pubDate>Sun, 02 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.00986</guid>
+  </item>
+  <item>
+    <title>FreqAnchorAD：基于频率偏差锚定的无语言零样本异常检测</title>
+    <link>https://arxiv.org/abs/2608.00695</link>
+    <description>提出一种频率感知的零样本异常检测框架，通过局部频率补偿和频率偏差锚定投影器，在工业与医学基准上实现SOTA性能。</description>
+    <pubDate>Sat, 01 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.00695</guid>
+  </item>
+  <item>
+    <title>基于掩码引导潜在扩散的重构偏移判别用于医学异常检测</title>
+    <link>https://arxiv.org/abs/2608.00444</link>
+    <description>提出DMD框架，结合残差定位与重构偏移判别，通过掩码扰动潜在区域并训练分类器，提升医学图像异常检测性能。</description>
+    <pubDate>Sat, 01 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.00444</guid>
+  </item>
+  <item>
+    <title>超越静态锚点：有界原型条件化用于无语言医学异常检测</title>
+    <link>https://arxiv.org/abs/2608.00442</link>
+    <description>提出ReCAP框架，用输入条件化的视觉原型替代静态文本/视觉锚点，通过有界门控调制实现查询自适应的异常评分，在跨域医学异常检测中达到最优性能。</description>
+    <pubDate>Sat, 01 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.00442</guid>
+  </item>
+  <item>
+    <title>OSAGEN：面向工业异常生成的对象感知掩码先验与多阶段解耦扩散</title>
+    <link>https://arxiv.org/abs/2607.29533</link>
+    <description>提出OSAGEN，结合对象感知掩码先验和多阶段解耦扩散，生成更真实且与对象对齐的工业异常图像-掩码对，提升异常检测与定位性能。</description>
+    <pubDate>Fri, 31 Jul 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2607.29533</guid>
+  </item>
+  <item>
+    <title>多中心乳腺MRI图像数据集质量保障的无监督异常检测</title>
     <link>https://arxiv.org/abs/2608.16725</link>
-    <description>Corrupted, inconsistent, or anomalous data silently threatens the safety and reliability of medical AI. Despite growing …</description>
+    <description>本文提出利用无监督异常检测和分布外检测，对多中心动态对比增强乳腺MRI进行自动化数据集质量保障，并构建了包含17种真实异常类型的基准。</description>
     <pubDate>Mon, 17 Aug 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2608.16725</guid>
   </item>
@@ -74,13 +144,6 @@
     <description>将人体姿态运动表征由连续潜空间改为向量量化离散码本，学到更紧凑运动模式，兼顾隐私保护。</description>
     <pubDate>Thu, 06 Aug 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2608.05069</guid>
-  </item>
-  <item>
-    <title>PADFormer：稀疏视角图像的姿态无关异常检测</title>
-    <link>https://arxiv.org/abs/2608.04210</link>
-    <description>用 ViT 从稀疏视角图像直接重建无异常查询图，无需昂贵 3D 重建即可应对任意姿态下的异常检测。</description>
-    <pubDate>Wed, 05 Aug 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2608.04210</guid>
   </item>
 </channel>
 </rss>
