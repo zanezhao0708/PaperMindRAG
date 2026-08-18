@@ -60,6 +60,13 @@ python scripts/download_papers.py
 python app.py            # 打开 http://127.0.0.1:5000
 ```
 
+启动后会进入图形化论文工作台，无需额外安装前端工具链。界面支持：
+
+- PDF / TXT / MD 多文件选择、拖拽导入与导入队列
+- 知识库文档/文本块统计，以及检索、嵌入、生成模型运行状态
+- 快捷问题、问答历史、耗时信息和可定位的原文引用
+- 亮/暗主题切换、API 配置弹窗、桌面三栏布局与移动端自适应布局
+
 CLI（`pip install -e .` 后可用）：
 
 ```bash
@@ -84,7 +91,7 @@ make docker-build && make docker-run   # gunicorn 生产级 WSGI
 
 ## 工程化实践
 
-- **测试**：`tests/` 42 个用例覆盖分块/向量库/嵌入降级/BM25/混合检索/端到端/HTTP 契约，**全离线可跑**（stub 掉外部依赖，本机与 CI 行为一致），CI 4 分钟内完成
+- **测试**：`tests/` 54 个用例覆盖分块/向量库/嵌入降级/BM25/混合检索/端到端/HTTP 契约，**全离线可跑**（stub 掉外部依赖，本机与 CI 行为一致），CI 4 分钟内完成
 - **CI**：[ci.yml](.github/workflows/ci.yml) push/PR 自动 lint + pytest（Python 3.10-3.12 矩阵），[daily.yml](.github/workflows/daily.yml) 每日日报
 - **增量摄入**：按 source 替换旧块（`VectorStore.remove_source`），重复上传不膨胀
 - **应用工厂**：`create_app()` + 懒加载 Pipeline + `/api/health` 存活探针 + 统一 JSON 错误处理（400/404/413/500）
@@ -95,6 +102,11 @@ make docker-build && make docker-run   # gunicorn 生产级 WSGI
 
 ## 配置（.env，已 gitignore）
 
+启动 Web 界面后可点击右上角 **⚙** 配置生成 API 与嵌入 API。设置会写入
+本机写入项目根目录的 `.env`，Render 部署写入持久磁盘中的 `.env`，并立即生效。
+密钥不会由读取接口回传；公网部署仅 `PM_ADMIN_EMAIL` 指定的账户可修改配置。
+也可以继续手动编辑：
+
 ```ini
 PM_API_KEY=sk-xxx                # DeepSeek（生成模型）
 PM_BASE_URL=https://api.deepseek.com/v1
@@ -104,6 +116,25 @@ HF_ENDPOINT=https://hf-mirror.com   # 模型权重国内镜像
 HF_HUB_DISABLE_XET=1               # 镜像站不支持 xet 协议时禁用
 PM_LOG_LEVEL=INFO                  # 日志级别
 
+# Web 登录（默认开启；邮箱账户保存在 data/users.db）
+PM_AUTH_REQUIRED=1
+PM_SECRET_KEY=请替换为至少32字节的随机值
+PM_COOKIE_SECURE=0                 # HTTPS 部署时改为 1
+PM_ADMIN_EMAIL=owner@example.com  # 公网部署的 API 配置管理员
+
+# GitHub OAuth
+PM_GITHUB_CLIENT_ID=
+PM_GITHUB_CLIENT_SECRET=
+
+# Google OAuth
+PM_GOOGLE_CLIENT_ID=
+PM_GOOGLE_CLIENT_SECRET=
+
+# Microsoft OAuth（common 同时支持个人与组织账户）
+PM_MICROSOFT_CLIENT_ID=
+PM_MICROSOFT_CLIENT_SECRET=
+PM_MICROSOFT_TENANT=common
+
 # 邮件推送（可选；配到 GitHub Secrets 后每日日报自动发邮箱）
 PM_SMTP_HOST=smtp.qq.com           # SMTP 服务器
 PM_SMTP_PORT=465                   # SSL 端口，默认 465
@@ -112,12 +143,69 @@ PM_SMTP_PASS=授权码                 # QQ 邮箱用授权码，非登录密码
 PM_MAIL_TO=you@qq.com,peer@x.com   # 收件人，逗号分隔
 ```
 
+OAuth 应用需要登记与当前访问域名完全一致的回调地址。本机默认端口示例：
+
+```text
+http://localhost:5000/auth/oauth/github/callback
+http://localhost:5000/auth/oauth/google/callback
+http://localhost:5000/auth/oauth/microsoft/callback
+```
+
+未填写某个平台的 Client ID/Secret 时，对应快捷登录按钮仍会展示，但保持禁用。
+生产环境应使用 HTTPS、设置 `PM_COOKIE_SECURE=1`，并显式配置稳定的
+`PM_SECRET_KEY`。未配置时，PaperMind 会在已忽略版本控制的 `data/.session_secret`
+中生成本机开发密钥。
+
+## Windows 桌面版
+
+桌面入口使用系统 WebView2（Chromium）显示现有 Flask 页面。双击程序会在本机
+`127.0.0.1:5000` 启动服务，并通过 `localhost:5000` 加载界面；关闭窗口时服务同步退出。第三方登录会
+在系统默认浏览器中完成，再自动回到桌面窗口，避免 OAuth 平台拦截内嵌浏览器。登录账户、论文、索引和网页内保存的 API
+配置位于 `%LOCALAPPDATA%\PaperMind`，升级 EXE 不会覆盖这些数据。
+
+如端口 5000 已被占用，可在启动前通过 `PM_DESKTOP_PORT` 改为其他固定端口，并同步
+修改 OAuth 平台登记的回调地址。
+
+桌面版右上角的账户菜单可以切换或添加本机用户。切换账户会回到登录页并要求重新
+验证密码；每个用户的 API Key、模型配置和亮暗主题偏好分别保存在本机
+`data\users.db` 中，密钥不会通过接口回传。旧版 `settings.env` 中已有的 API 配置会
+在升级后首次使用时迁移给第一个本机用户，后续用户不会继承其密钥。论文知识库仍是
+这台设备上的共享资源。
+
+```powershell
+python -m pip install -r requirements-desktop.txt
+powershell -ExecutionPolicy Bypass -File scripts\build_desktop.ps1
+```
+
+构建结果为 `dist\PaperMind.exe`。目标电脑需要 Windows 10/11 和 Microsoft Edge
+WebView2 Runtime（Windows 11 通常已预装）。
+
+## Render 部署
+
+仓库根目录的 `render.yaml` 会创建新加坡区域的 Docker Web Service，并把
+`/app/data` 挂载为 1 GB 持久磁盘。邮箱用户、上传文档、向量索引、模型缓存和网页内
+保存的 API 配置都保存在该目录。服务使用单进程 Gunicorn，避免 SQLite 和本地索引
+被多个进程并发写入。
+
+Render 创建 Blueprint 时需要填写 `PM_ADMIN_EMAIL`。OAuth 的 Client ID/Secret
+应在对应平台创建应用后填写，回调地址格式如下（按最终服务域名替换）：
+
+```text
+https://papermindrag-lauk1z.onrender.com/auth/oauth/github/callback
+https://papermindrag-lauk1z.onrender.com/auth/oauth/google/callback
+https://papermindrag-lauk1z.onrender.com/auth/oauth/microsoft/callback
+```
+
+持久磁盘只能附加到 Render 付费 Web Service；免费实例的 SQLite、上传文件和索引会
+在休眠、重启或重新部署时丢失，因此本 Blueprint 明确使用 `starter` 套餐。
+
 ## 目录结构
 
 ```
 papermind/
 ├── papermind/          # 核心包（可 pip install）
 │   ├── config.py       # 集中配置 + .env 加载 + 参数校验
+│   ├── auth.py         # 邮箱账户、会话保护与 OAuth 登录
 │   ├── loader.py       # PDF/TXT/MD 加载
 │   ├── chunker.py      # 递归字符分块（可重叠）
 │   ├── embeddings.py   # 三级降级嵌入
@@ -129,9 +217,9 @@ papermind/
 │   └── cli.py          # papermind 命令行
 ├── tests/              # pytest 测试套件（离线）
 ├── scripts/            # 论文下载 / 每日日报 / 周报 / 站点 / 邮件
-├── templates/index.html# Web UI
+├── templates/          # 工作台与登录页面
 ├── app.py              # 兼容旧启动方式
-├── Dockerfile / Makefile / pyproject.toml
+├── Dockerfile / render.yaml / Makefile / pyproject.toml
 └── .github/workflows/  # CI（lint+test）+ 每日日报 + 每周周报
 ```
 

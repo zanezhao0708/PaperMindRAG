@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PaperMind 快捷登录</title>
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, "Microsoft YaHei", sans-serif; }
+    body { min-height: 100vh; margin: 0; display: grid; place-items: center; background: #0d1117; color: #f0f6fc; }
+    main { width: min(420px, calc(100% - 40px)); padding: 32px; border: 1px solid #30363d; border-radius: 12px; background: #161b22; text-align: center; box-sizing: border-box; }
+    h1 { margin: 0 0 12px; font-size: 24px; }
+    p { margin: 0; color: #8b949e; line-height: 1.6; }
+    .error { color: #ff7b72; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>{{ '登录完成' if ok else '登录未完成' }}</h1>
+    <p class="{{ '' if ok else 'error' }}">{{ '已返回 PaperMind，可以关闭此页面。' if ok else error }}</p>
+  </main>
+</body>
+</html>

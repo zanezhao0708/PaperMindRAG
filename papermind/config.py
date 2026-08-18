@@ -17,9 +17,10 @@ def setup_logging(level: str = None):
 
 
 def _load_dotenv():
-    """加载项目根目录的 .env 文件到环境变量（不覆盖已存在的变量）。"""
-    env_path = os.path.join(os.path.dirname(os.path.dirname(
-        os.path.abspath(__file__))), ".env")
+    """加载配置文件到环境变量（不覆盖部署平台已注入的变量）。"""
+    env_path = os.environ.get("PM_ENV_PATH") or os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env"
+    )
     if not os.path.exists(env_path):
         return
     with open(env_path, encoding="utf-8") as f:

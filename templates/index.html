@@ -3,146 +3,1931 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PaperMind · CV 异常检测论文问答</title>
+<meta name="theme-color" content="#010409">
+<title>PaperMind · 论文知识工作台</title>
 <style>
-  :root { --bg:#0f1117; --card:#171a23; --line:#2a2f3d; --fg:#e8eaf0;
-          --muted:#9aa3b5; --accent:#6c8cff; --accent2:#4f6ef7; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { background:var(--bg); color:var(--fg); font-family:"PingFang SC",
-         "Microsoft YaHei", system-ui, sans-serif; min-height:100vh; }
-  .wrap { max-width:880px; margin:0 auto; padding:32px 20px 60px; }
-  header { display:flex; align-items:baseline; gap:14px; margin-bottom:6px; }
-  h1 { font-size:26px; letter-spacing:.5px; }
-  h1 span { color:var(--accent); }
-  .sub { color:var(--muted); font-size:13px; margin-bottom:22px; }
-  .card { background:var(--card); border:1px solid var(--line);
-          border-radius:12px; padding:18px 20px; margin-bottom:16px; }
-  .card h2 { font-size:14px; color:var(--muted); font-weight:600;
-             margin-bottom:12px; letter-spacing:.5px; }
-  .stats { display:flex; flex-wrap:wrap; gap:10px; }
-  .pill { background:#1e2330; border:1px solid var(--line); border-radius:999px;
-          padding:5px 12px; font-size:12.5px; color:var(--muted); }
-  .pill b { color:var(--fg); font-weight:600; }
-  textarea { width:100%; background:#11141c; color:var(--fg);
-             border:1px solid var(--line); border-radius:8px;
-             padding:12px 14px; font-size:14.5px; resize:vertical;
-             min-height:64px; outline:none; line-height:1.6; }
-  textarea:focus { border-color:var(--accent); }
-  .row { display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;
-         align-items:center; }
-  button { background:var(--accent2); border:none; color:#fff;
-           border-radius:8px; padding:10px 22px; font-size:14px;
-           cursor:pointer; transition:.15s; }
-  button:hover { background:var(--accent); }
-  button:disabled { opacity:.5; cursor:not-allowed; }
-  button.ghost { background:transparent; border:1px solid var(--line);
-                 color:var(--muted); }
-  button.ghost:hover { border-color:var(--accent); color:var(--fg); }
-  #drop { border:1.5px dashed var(--line); border-radius:10px;
-          padding:22px; text-align:center; color:var(--muted);
-          font-size:13.5px; transition:.15s; cursor:pointer; }
-  #drop.over { border-color:var(--accent); color:var(--accent); }
-  #answer { font-size:14.5px; line-height:1.85; white-space:pre-wrap; }
-  .src { border-top:1px solid var(--line); margin-top:14px; padding-top:12px; }
-  .src-item { font-size:12.5px; color:var(--muted); margin-bottom:8px;
-              line-height:1.55; }
-  .src-item b { color:var(--accent); }
-  .tag { display:inline-block; background:#1e2330; border:1px solid var(--line);
-         border-radius:4px; padding:1px 7px; margin-right:6px; font-size:11.5px; }
-  .hint { font-size:12px; color:var(--muted); margin-top:8px; }
-  .ok { color:#67c98a; } .err { color:#e06c6c; }
+  :root {
+    color-scheme: light;
+    --canvas: #f1f3f7;
+    --panel: #ffffff;
+    --panel-rgb: 255, 255, 255;
+    --panel-soft: #f7f8fb;
+    --ink: #17213d;
+    --ink-secondary: #36415a;
+    --answer: #28334d;
+    --muted: #667085;
+    --faint: #98a2b3;
+    --line: #e3e7ee;
+    --line-strong: #d3d9e4;
+    --brand: #3458d4;
+    --brand-dark: #2444b7;
+    --brand-soft: #edf1ff;
+    --success: #087c67;
+    --success-soft: #e7f7f2;
+    --danger: #c43d4b;
+    --danger-soft: #fff0f1;
+    --warning: #a86513;
+    --warning-soft: #fff6e7;
+    --topbar: #010409;
+    --on-dark: #ffffff;
+    --shadow: 0 12px 34px rgba(22, 34, 68, .08);
+    --radius: 16px;
+  }
+
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --canvas: #0d1117;
+    --panel: #0d1117;
+    --panel-rgb: 13, 17, 23;
+    --panel-soft: #161b22;
+    --ink: #f0f6fc;
+    --ink-secondary: #c9d1d9;
+    --answer: #c9d1d9;
+    --muted: #8b949e;
+    --faint: #6e7681;
+    --line: #30363d;
+    --line-strong: #484f58;
+    --brand: #58a6ff;
+    --brand-dark: #1f6feb;
+    --brand-soft: #17243a;
+    --success: #3fb950;
+    --success-soft: #12261e;
+    --danger: #f85149;
+    --danger-soft: #321b1f;
+    --warning: #d29922;
+    --warning-soft: #2d240d;
+    --topbar: #010409;
+    --shadow: 0 18px 42px rgba(1, 4, 9, .48);
+  }
+
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+
+  html, body { height: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--canvas);
+    color: var(--ink);
+    font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button, textarea, input { font: inherit; }
+
+  button { color: inherit; }
+
+  button:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 3px solid rgba(52, 88, 212, .22);
+    outline-offset: 2px;
+  }
+
+  .topbar {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 24px;
+    background: var(--topbar);
+    color: var(--on-dark);
+    border-bottom: 1px solid #21262d;
+  }
+
+  .brand, .brand-copy, .top-actions, .status-badge, .account-button, .panel-title,
+  .section-title, .message-meta, .composer-actions, .upload-actions {
+    display: flex;
+    align-items: center;
+  }
+
+  .brand { gap: 12px; min-width: 0; }
+
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 11px;
+    background: linear-gradient(145deg, #7894ff 0%, #4969e9 48%, #2c4cc5 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .34),
+                0 7px 18px rgba(40, 70, 185, .28);
+    overflow: hidden;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+
+  .brand-mark svg { width: 32px; height: 32px; overflow: visible; }
+  .brand-mark .logo-page { fill: rgba(255, 255, 255, .94); }
+  .brand-mark .logo-detail {
+    fill: none;
+    stroke: #4969e9;
+    stroke-width: 1.15;
+    stroke-linecap: round;
+    opacity: .46;
+  }
+  .brand-mark .logo-spine {
+    fill: none;
+    stroke: rgba(255, 255, 255, .72);
+    stroke-width: 1.1;
+    stroke-linecap: round;
+  }
+  .brand-mark .logo-link {
+    fill: none;
+    stroke: #79f0cf;
+    stroke-width: 1.35;
+    stroke-linecap: round;
+  }
+  .brand-mark .logo-node {
+    fill: #79f0cf;
+    stroke: rgba(255, 255, 255, .9);
+    stroke-width: .8;
+  }
+  .brand:hover .brand-mark {
+    transform: translateY(-1px) rotate(-1deg);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .38),
+                0 9px 22px rgba(40, 70, 185, .36);
+  }
+
+  .brand-copy { gap: 10px; min-width: 0; }
+  .brand-copy strong { font-size: 17px; letter-spacing: -.2px; }
+  .brand-copy span {
+    color: #8b949e;
+    font-size: 12px;
+    padding-left: 10px;
+    border-left: 1px solid rgba(255, 255, 255, .18);
+    white-space: nowrap;
+  }
+
+  .top-actions { gap: 10px; }
+
+  .status-badge {
+    gap: 8px;
+    padding: 7px 11px;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 999px;
+    font-size: 12px;
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #f4b44f;
+    box-shadow: 0 0 0 4px rgba(244, 180, 79, .12);
+  }
+
+  .status-badge.online .status-dot {
+    background: #56d3aa;
+    box-shadow: 0 0 0 4px rgba(86, 211, 170, .12);
+  }
+
+  .status-badge.offline .status-dot {
+    background: #ff7887;
+    box-shadow: 0 0 0 4px rgba(255, 120, 135, .12);
+  }
+
+  .icon-button {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    background: #161b22;
+    color: #c9d1d9;
+    cursor: pointer;
+    transition: background .16s, transform .16s;
+  }
+
+  .icon-button:hover { background: #21262d; }
+  .icon-button:active { transform: translateY(1px); }
+
+  .account-button {
+    min-height: 36px;
+    gap: 8px;
+    padding: 4px 9px 4px 5px;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    background: #161b22;
+    color: #c9d1d9;
+    cursor: pointer;
+  }
+  .account-button:hover { background: #21262d; }
+  .account-avatar {
+    width: 26px;
+    height: 26px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    background: var(--brand);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .account-name {
+    max-width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 11px;
+    font-weight: 650;
+  }
+  .account-exit { color: #8b949e; font-size: 10px; }
+  .login-link { color: #c9d1d9; text-decoration: none; }
+  .account-slot { position: relative; display: flex; align-items: center; }
+  .account-menu {
+    position: absolute;
+    top: 44px;
+    right: 0;
+    z-index: 30;
+    width: 250px;
+    padding: 8px;
+    border: 1px solid #30363d;
+    border-radius: 11px;
+    background: #161b22;
+    box-shadow: 0 16px 38px rgba(1, 4, 9, .48);
+  }
+  .account-menu[hidden] { display: none; }
+  .account-menu-label {
+    padding: 7px 9px;
+    color: #8b949e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+  }
+  .account-menu-user, .account-menu-action {
+    width: 100%;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 7px 9px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: #c9d1d9;
+    text-align: left;
+    cursor: pointer;
+  }
+  .account-menu-user:hover, .account-menu-action:hover { background: #21262d; }
+  .account-menu-user.current { color: #f0f6fc; cursor: default; }
+  .account-menu-copy { min-width: 0; display: grid; gap: 2px; }
+  .account-menu-copy strong, .account-menu-copy span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .account-menu-copy strong { font-size: 11.5px; }
+  .account-menu-copy span { color: #8b949e; font-size: 10px; }
+  .account-menu-separator { height: 1px; margin: 6px 0; background: #30363d; }
+
+  .direct-file-notice {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: rgba(1, 4, 9, .88);
+    backdrop-filter: blur(8px);
+  }
+  .direct-file-notice[hidden] { display: none; }
+  .direct-file-card {
+    width: min(100%, 480px);
+    padding: 28px;
+    border: 1px solid #30363d;
+    border-radius: 14px;
+    background: #161b22;
+    color: #f0f6fc;
+    box-shadow: 0 22px 68px rgba(1, 4, 9, .58);
+    text-align: center;
+  }
+  .direct-file-card h2 { margin: 0 0 10px; font-size: 20px; }
+  .direct-file-card p { margin: 0 0 18px; color: #8b949e; line-height: 1.7; }
+  .direct-file-card code {
+    display: block;
+    margin-bottom: 18px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #0d1117;
+    color: #c9d1d9;
+  }
+  .direct-file-card a {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 8px;
+    background: #2f81f7;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .workspace {
+    height: calc(100vh - 68px);
+    display: grid;
+    grid-template-columns: 310px minmax(420px, 1fr) 286px;
+    gap: 1px;
+    background: var(--line);
+  }
+
+  .column {
+    min-width: 0;
+    background: var(--panel);
+    overflow: auto;
+  }
+
+  .library-panel, .details-panel { padding: 22px; }
+
+  .panel-title { justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+  .panel-title h2, .chat-heading h1 { margin: 0; }
+  .panel-title h2 { font-size: 15px; letter-spacing: -.1px; }
+  .eyebrow {
+    margin: 0 0 5px;
+    color: var(--brand);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+
+  .text-button {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--brand);
+    font-size: 12px;
+    font-weight: 650;
+    cursor: pointer;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .stat-card {
+    padding: 13px 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--panel-soft);
+  }
+
+  .stat-card span {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    margin-bottom: 5px;
+  }
+
+  .stat-card strong { font-size: 21px; letter-spacing: -.5px; }
+
+  .section {
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+
+  .section-title {
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 11px;
+  }
+
+  .section-title h3 {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: .1px;
+  }
+
+  .count {
+    min-width: 24px;
+    padding: 2px 7px;
+    text-align: center;
+    border-radius: 999px;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 10px;
+    font-weight: 750;
+  }
+
+  .dropzone {
+    padding: 22px 16px;
+    text-align: center;
+    border: 1.5px dashed var(--line-strong);
+    border-radius: 13px;
+    background: var(--panel-soft);
+    cursor: pointer;
+    transition: border-color .16s, background .16s, transform .16s;
+  }
+
+  .dropzone:hover, .dropzone.over {
+    border-color: var(--brand);
+    background: var(--brand-soft);
+  }
+
+  .dropzone.over { transform: scale(.99); }
+
+  .upload-icon {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 10px;
+    border-radius: 11px;
+    background: var(--brand-soft);
+    color: var(--brand);
+  }
+
+  .upload-icon-symbol {
+    width: 20px;
+    height: 20px;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+
+  .dropzone strong { display: block; font-size: 12px; margin-bottom: 5px; }
+  .dropzone span { color: var(--muted); font-size: 10.5px; line-height: 1.5; }
+
+  .file-queue, .document-list, .citation-list {
+    display: grid;
+    gap: 8px;
+  }
+
+  .file-queue { margin-top: 10px; }
+
+  .queue-item, .document-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+    padding: 9px 10px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--panel);
+  }
+
+  .file-kind {
+    width: 29px;
+    height: 29px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 8px;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 8px;
+    font-weight: 800;
+  }
+
+  .file-copy { min-width: 0; flex: 1; }
+  .file-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 11px;
+    font-weight: 650;
+  }
+  .file-meta { margin-top: 2px; color: var(--faint); font-size: 9.5px; }
+
+  .remove-file {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--faint);
+    cursor: pointer;
+  }
+  .remove-file:hover { background: var(--danger-soft); color: var(--danger); }
+
+  .upload-actions { gap: 8px; margin-top: 10px; }
+
+  .primary-button {
+    min-height: 38px;
+    padding: 0 15px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--brand);
+    color: var(--on-dark);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 14px rgba(52, 88, 212, .18);
+    transition: background .16s, transform .16s;
+  }
+
+  .primary-button:hover { background: var(--brand-dark); }
+  .primary-button:active { transform: translateY(1px); }
+  .primary-button:disabled { opacity: .5; cursor: not-allowed; box-shadow: none; }
+  .primary-button.wide { width: 100%; }
+
+  .upload-message {
+    min-height: 17px;
+    margin: 9px 0 0;
+    color: var(--muted);
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+  .upload-message.success { color: var(--success); }
+  .upload-message.error { color: var(--danger); }
+
+  .document-list { max-height: 250px; overflow: auto; }
+  .document-item::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: #6a88f3;
+  }
+  .document-item span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--ink-secondary);
+    font-size: 10.5px;
+  }
+
+  .empty-mini {
+    padding: 16px 10px;
+    color: var(--faint);
+    text-align: center;
+    border: 1px dashed var(--line);
+    border-radius: 10px;
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+
+  .chat-panel {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .chat-toolbar {
+    min-height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .chat-heading h1 { font-size: 17px; letter-spacing: -.25px; }
+  .chat-heading p { margin: 4px 0 0; color: var(--muted); font-size: 10.5px; }
+
+  .secondary-button {
+    padding: 8px 11px;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: var(--panel);
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 650;
+    cursor: pointer;
+  }
+  .secondary-button:hover { border-color: var(--line-strong); color: var(--ink); }
+
+  .messages {
+    flex: 1;
+    overflow: auto;
+    padding: 24px clamp(22px, 5vw, 62px);
+    scroll-behavior: smooth;
+  }
+
+  .welcome {
+    max-width: 640px;
+    margin: clamp(40px, 9vh, 92px) auto 0;
+    text-align: center;
+  }
+
+  .welcome-mark {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 18px;
+    border-radius: 18px;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  .welcome h2 { margin: 0; font-size: 24px; letter-spacing: -.55px; }
+  .welcome > p {
+    max-width: 510px;
+    margin: 12px auto 24px;
+    color: var(--muted);
+    font-size: 12.5px;
+    line-height: 1.75;
+  }
+
+  .prompt-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    text-align: left;
+  }
+
+  .prompt-chip {
+    min-height: 68px;
+    padding: 13px 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--panel);
+    color: var(--ink-secondary);
+    font-size: 11.5px;
+    line-height: 1.55;
+    cursor: pointer;
+    transition: border-color .16s, box-shadow .16s, transform .16s;
+  }
+  .prompt-chip:hover {
+    border-color: #b8c4ee;
+    box-shadow: 0 8px 24px rgba(36, 68, 183, .08);
+    transform: translateY(-1px);
+  }
+
+  .message { max-width: 760px; margin: 0 auto 24px; }
+  .message.user { display: flex; justify-content: flex-end; }
+  .message.user .message-bubble {
+    max-width: 82%;
+    padding: 12px 15px;
+    border-radius: 14px 14px 4px 14px;
+    background: var(--brand);
+    color: var(--on-dark);
+    font-size: 12.5px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+  }
+
+  .message.assistant .message-meta {
+    gap: 8px;
+    margin-bottom: 9px;
+    color: var(--muted);
+    font-size: 10.5px;
+    font-weight: 700;
+  }
+
+  .assistant-avatar {
+    width: 26px;
+    height: 26px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 8px;
+    font-weight: 850;
+  }
+
+  .assistant-body {
+    color: var(--answer);
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .assistant-body p { margin: 0 0 10px; }
+  .assistant-body p:last-child { margin-bottom: 0; }
+
+  .answer-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 14px;
+  }
+
+  .metric {
+    padding: 4px 8px;
+    border-radius: 7px;
+    background: var(--panel-soft);
+    color: var(--muted);
+    font-size: 9.5px;
+  }
+
+  .citation-ref {
+    display: inline;
+    padding: 1px 4px;
+    border: 0;
+    border-radius: 5px;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: .86em;
+    font-weight: 750;
+    cursor: pointer;
+  }
+
+  .typing {
+    display: inline-flex;
+    gap: 4px;
+    padding: 10px 0;
+  }
+  .typing i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #8ca0df;
+    animation: pulse 1s infinite ease-in-out;
+  }
+  .typing i:nth-child(2) { animation-delay: .14s; }
+  .typing i:nth-child(3) { animation-delay: .28s; }
+  @keyframes pulse {
+    0%, 70%, 100% { opacity: .3; transform: translateY(0); }
+    35% { opacity: 1; transform: translateY(-3px); }
+  }
+
+  .composer-wrap {
+    padding: 14px 24px 20px;
+    background: linear-gradient(to top, rgba(var(--panel-rgb), 1) 84%,
+                                rgba(var(--panel-rgb), 0));
+  }
+
+  .composer {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 10px 11px 9px 15px;
+    border: 1px solid var(--line-strong);
+    border-radius: 15px;
+    background: var(--panel);
+    box-shadow: 0 12px 32px rgba(25, 42, 79, .09);
+  }
+
+  .composer textarea {
+    width: 100%;
+    min-height: 49px;
+    max-height: 150px;
+    padding: 4px 0;
+    resize: none;
+    border: 0;
+    outline: 0;
+    color: var(--ink);
+    background: transparent;
+    font-size: 12.5px;
+    line-height: 1.65;
+  }
+  .composer textarea::placeholder { color: var(--faint); }
+
+  .composer-actions { justify-content: space-between; gap: 12px; }
+  .composer-hint { color: var(--faint); font-size: 9.5px; }
+
+  .send-button {
+    min-width: 72px;
+    height: 34px;
+    border: 0;
+    border-radius: 9px;
+    background: var(--brand);
+    color: var(--on-dark);
+    font-size: 11px;
+    font-weight: 750;
+    cursor: pointer;
+  }
+  .send-button:hover { background: var(--brand-dark); }
+  .send-button:disabled { opacity: .5; cursor: not-allowed; }
+
+  .details-panel section + section {
+    margin-top: 24px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+  }
+
+  .runtime-list { display: grid; gap: 9px; }
+
+  .runtime-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 10.5px;
+  }
+  .runtime-row:last-child { border-bottom: 0; }
+  .runtime-row span { color: var(--muted); }
+  .runtime-row strong {
+    max-width: 145px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 700;
+    text-align: right;
+  }
+
+  .mode-note {
+    margin: 12px 0 0;
+    padding: 10px 11px;
+    border-radius: 10px;
+    background: var(--warning-soft);
+    color: var(--warning);
+    font-size: 9.5px;
+    line-height: 1.55;
+  }
+  .mode-note.ready { background: var(--success-soft); color: var(--success); }
+
+  .citation-card {
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    background: var(--panel-soft);
+    scroll-margin-top: 16px;
+  }
+  .citation-card.highlight {
+    border-color: #91a7f1;
+    box-shadow: 0 0 0 3px var(--brand-soft);
+  }
+  .citation-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 7px;
+  }
+  .citation-index {
+    color: var(--brand);
+    font-size: 10px;
+    font-weight: 800;
+  }
+  .citation-score {
+    color: var(--success);
+    font-size: 9px;
+    font-weight: 700;
+  }
+  .citation-source {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 7px;
+    color: var(--ink-secondary);
+    font-size: 10.5px;
+    font-weight: 700;
+  }
+  .citation-snippet {
+    margin: 0;
+    color: var(--muted);
+    font-size: 9.5px;
+    line-height: 1.55;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .toast {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 10;
+    max-width: 340px;
+    padding: 12px 15px;
+    border-radius: 11px;
+    background: var(--topbar);
+    color: var(--on-dark);
+    box-shadow: var(--shadow);
+    font-size: 11.5px;
+    line-height: 1.5;
+    transform: translateY(18px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s, transform .2s;
+  }
+  .toast.show { opacity: 1; transform: translateY(0); }
+  .toast.error { background: #8f2632; }
+
+  .settings-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: rgba(1, 4, 9, .68);
+    backdrop-filter: blur(5px);
+  }
+
+  .settings-dialog {
+    width: min(720px, 100%);
+    max-height: min(760px, calc(100vh - 40px));
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+    border-radius: 18px;
+    background: var(--panel);
+    box-shadow: 0 26px 80px rgba(0, 0, 0, .28);
+  }
+
+  .settings-header, .settings-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 22px;
+  }
+
+  .settings-header { border-bottom: 1px solid var(--line); }
+  .settings-header h2 { margin: 0; font-size: 17px; }
+  .settings-header p { margin: 4px 0 0; color: var(--muted); font-size: 10.5px; }
+
+  .dialog-close {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: var(--panel-soft);
+    color: var(--muted);
+    cursor: pointer;
+  }
+
+  .settings-form { overflow: auto; }
+  .settings-content { display: grid; gap: 24px; padding: 22px; }
+
+  .settings-section h3 { margin: 0 0 4px; font-size: 13px; }
+  .settings-section > p {
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.55;
+  }
+
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field.wide { grid-column: 1 / -1; }
+  .field label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--ink-secondary);
+    font-size: 10.5px;
+    font-weight: 700;
+  }
+
+  .field input[type="text"], .field input[type="password"] {
+    width: 100%;
+    height: 40px;
+    padding: 0 11px;
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    outline: 0;
+    background: var(--panel-soft);
+    color: var(--ink);
+    font-size: 11.5px;
+  }
+  .field input:focus { border-color: var(--brand); }
+
+  .secret-input { position: relative; }
+  .secret-input input { padding-right: 58px !important; }
+  .secret-toggle {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 30px;
+    padding: 0 9px;
+    border: 0;
+    border-radius: 7px;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 9.5px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .field-help {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 6px;
+    color: var(--faint);
+    font-size: 9.5px;
+  }
+  .key-status.configured { color: var(--success); }
+
+  .clear-option { display: inline-flex !important; align-items: center; gap: 5px; margin: 0 !important; }
+  .clear-option input { accent-color: var(--danger); }
+
+  .settings-footer {
+    border-top: 1px solid var(--line);
+    background: var(--panel-soft);
+  }
+  .settings-message { min-height: 16px; color: var(--muted); font-size: 10.5px; }
+  .settings-message.error { color: var(--danger); }
+  .settings-message.success { color: var(--success); }
+  .settings-buttons { display: flex; gap: 8px; }
+
+  @media (max-width: 1120px) {
+    .workspace { grid-template-columns: 290px minmax(420px, 1fr); }
+    .details-panel { display: none; }
+  }
+
+  @media (max-width: 760px) {
+    html, body { height: auto; }
+    body { overflow: auto; }
+    .topbar { height: 62px; padding: 0 15px; }
+    .brand-copy span, .account-name, .account-exit, .refresh-label { display: none; }
+    .status-badge, #refreshAll { display: none; }
+    .account-button { width: 36px; height: 36px; justify-content: center; padding: 0; }
+    .workspace { height: auto; display: flex; flex-direction: column; }
+    .column { overflow: visible; }
+    .library-panel { order: 2; padding: 20px 16px 34px; }
+    .chat-panel { order: 1; min-height: calc(100vh - 62px); }
+    .chat-toolbar { min-height: 68px; padding: 14px 16px; }
+    .messages { min-height: 410px; padding: 20px 16px; }
+    .welcome { margin-top: 26px; }
+    .welcome h2 { font-size: 20px; }
+    .prompt-grid { grid-template-columns: 1fr; }
+    .composer-wrap { padding: 12px 12px 16px; }
+    .message.user .message-bubble { max-width: 92%; }
+    .settings-overlay { padding: 0; align-items: end; }
+    .settings-dialog { max-height: 92vh; border-radius: 18px 18px 0 0; }
+    .form-grid { grid-template-columns: 1fr; }
+    .field.wide { grid-column: auto; }
+    .settings-footer { align-items: flex-start; flex-direction: column; }
+    .settings-buttons { width: 100%; }
+    .settings-buttons button { flex: 1; }
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header><h1>Paper<span>Mind</span></h1></header>
-  <div class="sub">计算机视觉异常检测论文 RAG 问答系统 · 检索增强生成 · 引用可溯源</div>
-
-  <div class="card">
-    <h2>知识库状态</h2>
-    <div class="stats" id="stats">加载中…</div>
+<div class="direct-file-notice" id="directFileNotice" role="dialog" aria-modal="true" aria-labelledby="directFileTitle" hidden>
+  <div class="direct-file-card">
+    <h2 id="directFileTitle">请通过 PaperMind 服务打开</h2>
+    <p>这个页面包含登录和知识库接口，不能直接双击 HTML 文件运行。</p>
+    <code>python app.py</code>
+    <a href="http://127.0.0.1:5000/">打开运行中的 PaperMind</a>
   </div>
-
-  <div class="card">
-    <h2>上传论文（PDF / TXT / MD，支持多选与拖拽）</h2>
-    <div id="drop">点击选择或将文件拖到这里，上传后自动摄入知识库</div>
-    <input type="file" id="file" multiple accept=".pdf,.txt,.md" hidden>
-    <div class="hint" id="upmsg"></div>
-  </div>
-
-  <div class="card">
-    <h2>提问</h2>
-    <textarea id="q" placeholder="例如：PatchCore 是如何用 memory bank 做异常检测的？"></textarea>
-    <div class="row">
-      <button id="ask">提问</button>
-      <button class="ghost" id="demo">示例问题</button>
-      <span class="hint" id="qmsg"></span>
+</div>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">
+      <svg class="brand-symbol" viewBox="0 0 40 40" focusable="false">
+        <path class="logo-page" d="M5.8 11.8c5.5-1.5 10.1.1 14.2 3.8v15.1c-4-3.5-8.7-4.8-14.2-3.5V11.8Z"/>
+        <path class="logo-page" d="M34.2 11.8c-5.5-1.5-10.1.1-14.2 3.8v15.1c4-3.5 8.7-4.8 14.2-3.5V11.8Z"/>
+        <path class="logo-spine" d="M20 15.7v14.8"/>
+        <path class="logo-detail" d="M9.6 16.7c2.6-.2 4.8.5 6.9 2M9.6 20.5c2.5-.1 4.7.6 6.9 2"/>
+        <path class="logo-detail" d="M30.4 18.8c-2.4-.1-4.5.6-6.4 2M30.4 22.5c-2.4-.1-4.5.6-6.4 2"/>
+        <path class="logo-link" d="m25.7 16.7 3.2-3.4"/>
+        <circle class="logo-node" cx="30.5" cy="11.6" r="2.15"/>
+      </svg>
+    </div>
+    <div class="brand-copy">
+      <strong>PaperMind</strong>
+      <span>异常检测论文知识工作台</span>
     </div>
   </div>
+  <div class="top-actions">
+    <div class="status-badge" id="serviceStatus" aria-live="polite">
+      <i class="status-dot" aria-hidden="true"></i>
+      <span>正在连接</span>
+    </div>
+    <button class="icon-button" id="themeToggle" type="button" aria-label="切换深色模式" title="切换亮暗模式">☾</button>
+    <button class="icon-button" id="settingsOpen" type="button" aria-label="打开 API 配置" title="API 配置">⚙</button>
+    <button class="icon-button" id="refreshAll" type="button" aria-label="刷新知识库状态" title="刷新状态">↻</button>
+    <div class="account-slot" id="accountSlot">
+      <a class="account-button login-link" id="loginLink" href="/login">登录</a>
+    </div>
+  </div>
+</header>
 
-  <div class="card" id="anscard" hidden>
-    <h2>回答</h2>
-    <div id="answer"></div>
-    <div class="src" id="sources"></div>
+<div class="workspace" data-testid="papermind-workbench">
+  <aside class="column library-panel" aria-label="知识库管理">
+    <div class="panel-title">
+      <div>
+        <p class="eyebrow">Knowledge Base</p>
+        <h2>论文知识库</h2>
+      </div>
+      <button class="text-button" id="refreshStats" type="button">刷新</button>
+    </div>
+
+    <div class="stat-grid" aria-live="polite">
+      <div class="stat-card"><span>文档数量</span><strong id="statDocs">—</strong></div>
+      <div class="stat-card"><span>文本块</span><strong id="statChunks">—</strong></div>
+    </div>
+
+    <section class="section" aria-labelledby="uploadTitle">
+      <div class="section-title">
+        <h3 id="uploadTitle">导入论文</h3>
+        <span class="count" id="queueCount">0</span>
+      </div>
+      <input id="fileInput" type="file" multiple accept=".pdf,.txt,.md" hidden>
+      <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-label="选择或拖入论文文件">
+        <div class="upload-icon" aria-hidden="true">
+          <svg class="upload-icon-symbol" viewBox="0 0 20 20" focusable="false">
+            <path d="M10 3.5v13M3.5 10h13"/>
+          </svg>
+        </div>
+        <strong>拖入文件或点击选择</strong>
+        <span>支持 PDF、TXT、MD · 单次最多 64 MB</span>
+      </div>
+      <div class="file-queue" id="fileQueue"></div>
+      <div class="upload-actions" id="uploadActions" hidden>
+        <button class="primary-button wide" id="uploadButton" type="button">开始导入</button>
+      </div>
+      <p class="upload-message" id="uploadMessage" aria-live="polite"></p>
+    </section>
+
+    <section class="section" aria-labelledby="documentsTitle">
+      <div class="section-title">
+        <h3 id="documentsTitle">已入库文档</h3>
+        <span class="count" id="documentCount">0</span>
+      </div>
+      <div class="document-list" id="documentList">
+        <div class="empty-mini">正在读取知识库…</div>
+      </div>
+    </section>
+  </aside>
+
+  <main class="column chat-panel">
+    <div class="chat-toolbar">
+      <div class="chat-heading">
+        <h1>论文问答</h1>
+        <p>每个回答均附带可核验的原文引用</p>
+      </div>
+      <button class="secondary-button" id="clearChat" type="button">清空对话</button>
+    </div>
+
+    <div class="messages" id="messages" aria-live="polite">
+      <section class="welcome" id="welcome">
+        <div class="welcome-mark" aria-hidden="true">⌁</div>
+        <h2>从论文中找到可靠答案</h2>
+        <p>先在左侧导入论文，再用中文提问。PaperMind 会同时进行语义与关键词检索，并给出可回溯到原文片段的回答。</p>
+        <div class="prompt-grid">
+          <button class="prompt-chip" type="button">PatchCore 如何构建 memory bank，并用 coreset 降低检索成本？</button>
+          <button class="prompt-chip" type="button">对比 PaDiM 与 PatchCore 的特征建模方式和适用场景。</button>
+          <button class="prompt-chip" type="button">总结库中论文常用的工业异常检测评估指标。</button>
+          <button class="prompt-chip" type="button">哪些方法能处理少样本或零样本异常检测？请列出依据。</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="composer-wrap">
+      <div class="composer">
+        <textarea id="question" rows="2" maxlength="2000" placeholder="输入你的论文问题…"></textarea>
+        <div class="composer-actions">
+          <span class="composer-hint"><span id="charCount">0</span>/2000 · Ctrl / ⌘ + Enter 发送</span>
+          <button class="send-button" id="askButton" type="button">提问 →</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <aside class="column details-panel" aria-label="运行信息与引用">
+    <section>
+      <div class="panel-title">
+        <div>
+          <p class="eyebrow">Runtime</p>
+          <h2>运行状态</h2>
+        </div>
+      </div>
+      <div class="runtime-list">
+        <div class="runtime-row"><span>检索策略</span><strong id="runtimeRetrieval">—</strong></div>
+        <div class="runtime-row"><span>嵌入模式</span><strong id="runtimeEmbed">—</strong></div>
+        <div class="runtime-row"><span>生成模型</span><strong id="runtimeModel">—</strong></div>
+        <div class="runtime-row"><span>召回数量</span><strong id="runtimeTopK">—</strong></div>
+      </div>
+      <p class="mode-note" id="modeNote">正在检查模型配置…</p>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h3>当前回答引用</h3>
+        <span class="count" id="citationCount">0</span>
+      </div>
+      <div class="citation-list" id="citationList">
+        <div class="empty-mini">完成一次提问后，引用原文会显示在这里。</div>
+      </div>
+    </section>
+  </aside>
+</div>
+
+<div class="settings-overlay" id="settingsOverlay" hidden>
+  <div class="settings-dialog" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+    <div class="settings-header">
+      <div>
+        <h2 id="settingsTitle">API 配置</h2>
+        <p>配置保存在服务端持久目录中，保存后立即生效。</p>
+      </div>
+      <button class="dialog-close" id="settingsClose" type="button" aria-label="关闭配置">×</button>
+    </div>
+
+    <form class="settings-form" id="settingsForm">
+      <div class="settings-content">
+        <section class="settings-section">
+          <h3>生成模型</h3>
+          <p>支持 DeepSeek、OpenAI 及其他兼容 OpenAI Chat Completions 协议的服务。</p>
+          <div class="form-grid">
+            <div class="field wide">
+              <label for="apiKey">API Key</label>
+              <div class="secret-input">
+                <input id="apiKey" type="password" autocomplete="new-password" placeholder="留空则保持当前密钥不变">
+                <button class="secret-toggle" type="button" data-secret="apiKey">显示</button>
+              </div>
+              <div class="field-help">
+                <span class="key-status" id="apiKeyStatus">正在读取…</span>
+                <label class="clear-option"><input id="clearApiKey" type="checkbox"> 清除现有密钥</label>
+              </div>
+            </div>
+            <div class="field wide">
+              <label for="apiBaseUrl">API 地址</label>
+              <input id="apiBaseUrl" type="text" spellcheck="false" placeholder="https://api.deepseek.com/v1" required>
+            </div>
+            <div class="field wide">
+              <label for="chatModel">模型名称</label>
+              <input id="chatModel" type="text" spellcheck="false" placeholder="deepseek-chat" required>
+            </div>
+          </div>
+        </section>
+
+        <section class="settings-section">
+          <h3>嵌入模型（可选）</h3>
+          <p>未配置时继续使用本地语义模型，并在不可用时自动降级到哈希嵌入。</p>
+          <div class="form-grid">
+            <div class="field wide">
+              <label for="embedApiKey">嵌入 API Key</label>
+              <div class="secret-input">
+                <input id="embedApiKey" type="password" autocomplete="new-password" placeholder="留空则保持当前密钥不变">
+                <button class="secret-toggle" type="button" data-secret="embedApiKey">显示</button>
+              </div>
+              <div class="field-help">
+                <span class="key-status" id="embedApiKeyStatus">正在读取…</span>
+                <label class="clear-option"><input id="clearEmbedApiKey" type="checkbox"> 清除现有密钥</label>
+              </div>
+            </div>
+            <div class="field wide">
+              <label for="embedBaseUrl">嵌入 API 地址</label>
+              <input id="embedBaseUrl" type="text" spellcheck="false" placeholder="https://api.openai.com/v1">
+            </div>
+            <div class="field wide">
+              <label for="embedModel">嵌入模型名称</label>
+              <input id="embedModel" type="text" spellcheck="false" placeholder="text-embedding-3-small" required>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="settings-footer">
+        <span class="settings-message" id="settingsMessage" aria-live="polite"></span>
+        <div class="settings-buttons">
+          <button class="secondary-button" id="settingsCancel" type="button">取消</button>
+          <button class="primary-button" id="settingsSave" type="submit">保存并应用</button>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
 
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 <script>
-const $ = id => document.getElementById(id);
-async function refreshStats() {
-  const r = await fetch('/api/stats').then(r => r.json());
-  $('stats').innerHTML =
-    `<span class="pill">文本块 <b>${r.chunks}</b></span>` +
-    `<span class="pill">文档 <b>${r.sources.length}</b></span>` +
-    `<span class="pill">嵌入模式 <b>${r.embed_mode}</b></span>` +
-    `<span class="pill">生成模型 <b>${r.llm_model}</b></span>` +
-    (r.sources||[]).map(s=>`<span class="pill">${s}</span>`).join('');
+const get = id => document.getElementById(id);
+const savedTheme = localStorage.getItem('pm-theme');
+const initialTheme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches
+  ? 'dark' : 'light');
+const state = { queue: [], asking: false, uploading: false, maxUploadMb: 64 };
+let authCsrfToken = '';
+let currentUserId = 0;
+const allowedExtensions = new Set(['pdf', 'txt', 'md']);
+let toastTimer;
+
+function applyTheme(theme, persist = true) {
+  const isDark = theme === 'dark';
+  document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
+  get('themeToggle').textContent = isDark ? '☀' : '☾';
+  get('themeToggle').setAttribute('aria-label', isDark ? '切换浅色模式' : '切换深色模式');
+  document.querySelector('meta[name="theme-color"]').content = '#010409';
+  if (persist) {
+    const key = currentUserId ? `pm-theme:${currentUserId}` : 'pm-theme';
+    localStorage.setItem(key, isDark ? 'dark' : 'light');
+  }
 }
-async function ask() {
-  const q = $('q').value.trim();
-  if (!q) return;
-  $('ask').disabled = true; $('qmsg').textContent = '检索 + 生成中…';
-  $('anscard').hidden = false; $('answer').textContent = '思考中…'; $('sources').innerHTML = '';
+
+applyTheme(initialTheme, Boolean(savedTheme));
+
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, char => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+  })[char]);
+}
+
+function formatBytes(bytes) {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+  return `${(bytes / 1024 / 1024).toFixed(1)} MB`;
+}
+
+function extensionOf(name) {
+  return String(name).split('.').pop().toLowerCase();
+}
+
+function showToast(message, type = '') {
+  const toast = get('toast');
+  toast.textContent = message;
+  toast.className = `toast show ${type}`.trim();
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { toast.className = 'toast'; }, 2800);
+}
+
+function setSettingsMessage(message, type = '') {
+  const target = get('settingsMessage');
+  target.textContent = message;
+  target.className = `settings-message ${type}`.trim();
+}
+
+function setKeyStatus(id, configured) {
+  const target = get(id);
+  target.textContent = configured ? '已配置 · 留空保持不变' : '尚未配置';
+  target.className = `key-status ${configured ? 'configured' : ''}`.trim();
+}
+
+async function requestJson(url, options) {
+  const response = await fetch(url, options);
+  let body;
   try {
-    const r = await fetch('/api/query', {method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({question: q})}).then(r=>r.json());
-    if (!r.ok) throw new Error(r.error);
-    $('answer').textContent = r.answer;
-    $('sources').innerHTML = '<h2>引用来源</h2>' + (r.sources||[]).map((s,i) =>
-      `<div class="src-item"><span class="tag">[${i+1}] ${s.score}</span>` +
-      `<b>${s.source}</b> · 块${s.seq}<br>${s.snippet}…</div>`).join('') +
-      `<div class="hint">嵌入:${r.embed_mode} | 模型:${r.model} | 耗时:${r.elapsed}s</div>`;
-    $('qmsg').innerHTML = `<span class="ok">完成 (${r.elapsed}s)</span>`;
-  } catch (e) {
-    $('answer').textContent = '出错了：' + e.message;
-    $('qmsg').innerHTML = `<span class="err">失败</span>`;
-  } finally { $('ask').disabled = false; }
+    body = await response.json();
+  } catch (_) {
+    body = { ok: false, error: `请求失败（HTTP ${response.status}）` };
+  }
+  if (!response.ok || body.ok === false) {
+    throw new Error(body.error || `请求失败（HTTP ${response.status}）`);
+  }
+  return body;
 }
-async function upload(files) {
-  if (!files.length) return;
-  const fd = new FormData();
-  [...files].forEach(f => fd.append('files', f));
-  $('upmsg').textContent = '上传并嵌入中（首次会下载本地嵌入模型）…';
-  const r = await fetch('/api/ingest', {method:'POST', body:fd}).then(r=>r.json());
-  if (r.ok) {
-    const s = r.stats;
-    $('upmsg').innerHTML = `<span class="ok">已摄入 ${s.docs} 篇 → ${s.chunks} 块 ` +
-      `(${s.embed_mode}, ${s.elapsed}s)</span>`;
-    refreshStats();
-  } else $('upmsg').innerHTML = `<span class="err">失败</span>`;
+
+async function loadApiConfig() {
+  setSettingsMessage('正在读取配置…');
+  get('settingsSave').disabled = true;
+  try {
+    const data = await requestJson('/api/config');
+    get('apiKey').value = '';
+    get('apiKey').disabled = false;
+    get('apiBaseUrl').value = data.base_url || '';
+    get('chatModel').value = data.chat_model || '';
+    get('embedApiKey').value = '';
+    get('embedApiKey').disabled = false;
+    get('embedBaseUrl').value = data.embed_base_url || '';
+    get('embedModel').value = data.embed_api_model || '';
+    get('clearApiKey').checked = false;
+    get('clearApiKey').disabled = !data.api_key_configured;
+    get('clearEmbedApiKey').checked = false;
+    get('clearEmbedApiKey').disabled = !data.embed_api_key_configured;
+    setKeyStatus('apiKeyStatus', data.api_key_configured);
+    setKeyStatus('embedApiKeyStatus', data.embed_api_key_configured);
+    setSettingsMessage('密钥不会从服务端回传；输入新值才会替换。');
+  } catch (error) {
+    setSettingsMessage(error.message, 'error');
+  } finally {
+    get('settingsSave').disabled = false;
+  }
 }
-$('ask').onclick = ask;
-$('q').addEventListener('keydown', e => { if (e.key==='Enter' && (e.metaKey||e.ctrlKey)) ask(); });
-$('demo').onclick = () => { $('q').value = 'PatchCore 是如何利用 memory bank 和 coreset 做工业异常检测的？和 PaDiM 相比有什么优势？'; };
-$('drop').onclick = () => $('file').click();
-$('file').onchange = e => upload(e.target.files);
-['dragover','dragleave','drop'].forEach(ev => $('drop').addEventListener(ev, e => {
-  e.preventDefault();
-  $('drop').classList.toggle('over', ev==='dragover');
-  if (ev==='drop') upload(e.dataTransfer.files);
+
+async function openSettings() {
+  get('settingsOverlay').hidden = false;
+  document.body.style.overflow = 'hidden';
+  await loadApiConfig();
+  get('apiBaseUrl').focus();
+}
+
+function closeSettings() {
+  get('settingsOverlay').hidden = true;
+  document.body.style.overflow = '';
+  document.querySelectorAll('.secret-input input').forEach(input => { input.type = 'password'; });
+  document.querySelectorAll('.secret-toggle').forEach(button => { button.textContent = '显示'; });
+}
+
+async function saveApiConfig(event) {
+  event.preventDefault();
+  const apiKey = get('apiKey').value.trim();
+  const embedApiKey = get('embedApiKey').value.trim();
+  const payload = {
+    base_url: get('apiBaseUrl').value.trim(),
+    chat_model: get('chatModel').value.trim(),
+    embed_base_url: get('embedBaseUrl').value.trim(),
+    embed_api_model: get('embedModel').value.trim(),
+    clear_api_key: get('clearApiKey').checked,
+    clear_embed_api_key: get('clearEmbedApiKey').checked
+  };
+  if (apiKey) payload.api_key = apiKey;
+  if (embedApiKey) payload.embed_api_key = embedApiKey;
+
+  get('settingsSave').disabled = true;
+  setSettingsMessage('正在保存并重新加载配置…');
+  try {
+    const result = await requestJson('/api/config', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': authCsrfToken
+      },
+      body: JSON.stringify(payload)
+    });
+    get('apiKey').value = '';
+    get('apiKey').disabled = false;
+    get('embedApiKey').value = '';
+    get('embedApiKey').disabled = false;
+    get('clearApiKey').checked = false;
+    get('clearEmbedApiKey').checked = false;
+    get('clearApiKey').disabled = !result.api_key_configured;
+    get('clearEmbedApiKey').disabled = !result.embed_api_key_configured;
+    setKeyStatus('apiKeyStatus', result.api_key_configured);
+    setKeyStatus('embedApiKeyStatus', result.embed_api_key_configured);
+    setSettingsMessage(result.message || '配置已保存并生效', 'success');
+    await refreshStats();
+    showToast('API 配置已保存并生效');
+  } catch (error) {
+    setSettingsMessage(error.message, 'error');
+  } finally {
+    get('settingsSave').disabled = false;
+  }
+}
+
+function setServiceStatus(mode, text) {
+  const badge = get('serviceStatus');
+  badge.className = `status-badge ${mode}`.trim();
+  badge.querySelector('span').textContent = text;
+}
+
+async function checkHealth() {
+  try {
+    await requestJson('/api/health');
+    setServiceStatus('online', '服务正常');
+    return true;
+  } catch (_) {
+    setServiceStatus('offline', '服务离线');
+    return false;
+  }
+}
+
+function renderDocuments(sources) {
+  const list = get('documentList');
+  get('documentCount').textContent = sources.length;
+  if (!sources.length) {
+    list.innerHTML = '<div class="empty-mini">知识库为空，请先导入论文。</div>';
+    return;
+  }
+  list.innerHTML = sources.map(source =>
+    `<div class="document-item" title="${escapeHtml(source)}"><span>${escapeHtml(source)}</span></div>`
+  ).join('');
+}
+
+async function refreshStats() {
+  const button = get('refreshStats');
+  button.disabled = true;
+  try {
+    const data = await requestJson('/api/stats');
+    const sources = Array.isArray(data.sources) ? data.sources : [];
+    get('statDocs').textContent = sources.length;
+    get('statChunks').textContent = Number(data.chunks || 0).toLocaleString('zh-CN');
+    get('runtimeRetrieval').textContent = data.retrieval_mode || 'hybrid';
+    get('runtimeEmbed').textContent = data.embed_mode || '—';
+    get('runtimeModel').textContent = data.llm_model || '—';
+    get('runtimeTopK').textContent = data.top_k || '5';
+    state.maxUploadMb = Number(data.max_upload_mb || 64);
+    get('dropzone').querySelector('span').textContent =
+      `支持 PDF、TXT、MD · 单次最多 ${state.maxUploadMb} MB`;
+    const modeNote = get('modeNote');
+    if (data.llm_configured) {
+      modeNote.className = 'mode-note ready';
+      modeNote.textContent = '生成模型已配置，将基于检索结果生成带引用回答。';
+    } else {
+      modeNote.className = 'mode-note';
+      modeNote.textContent = '未配置 PM_API_KEY，当前使用离线抽取式回答。';
+    }
+    renderDocuments(sources);
+  } catch (error) {
+    get('documentList').innerHTML = '<div class="empty-mini">知识库状态读取失败。</div>';
+    showToast(error.message, 'error');
+  } finally {
+    button.disabled = false;
+  }
+}
+
+function renderQueue() {
+  const queue = get('fileQueue');
+  get('queueCount').textContent = state.queue.length;
+  get('uploadActions').hidden = state.queue.length === 0;
+  get('uploadButton').textContent = state.uploading
+    ? '正在导入…'
+    : `开始导入 ${state.queue.length} 个文件`;
+  queue.innerHTML = state.queue.map((file, index) => `
+    <div class="queue-item">
+      <span class="file-kind">${escapeHtml(extensionOf(file.name).toUpperCase())}</span>
+      <div class="file-copy">
+        <div class="file-name" title="${escapeHtml(file.name)}">${escapeHtml(file.name)}</div>
+        <div class="file-meta">${formatBytes(file.size)}</div>
+      </div>
+      <button class="remove-file" type="button" data-remove="${index}" aria-label="移除 ${escapeHtml(file.name)}">×</button>
+    </div>
+  `).join('');
+}
+
+function addFiles(fileList) {
+  const incoming = Array.from(fileList || []);
+  const rejected = incoming.filter(file => !allowedExtensions.has(extensionOf(file.name)));
+  const accepted = incoming.filter(file => allowedExtensions.has(extensionOf(file.name)));
+  const known = new Set(state.queue.map(file => `${file.name}:${file.size}:${file.lastModified}`));
+  accepted.forEach(file => {
+    const key = `${file.name}:${file.size}:${file.lastModified}`;
+    if (!known.has(key)) {
+      state.queue.push(file);
+      known.add(key);
+    }
+  });
+  renderQueue();
+  if (rejected.length) {
+    showToast(`已忽略 ${rejected.length} 个不支持的文件`, 'error');
+  }
+}
+
+async function uploadQueuedFiles() {
+  if (!state.queue.length || state.uploading) return;
+  const totalBytes = state.queue.reduce((sum, file) => sum + file.size, 0);
+  if (totalBytes > state.maxUploadMb * 1024 * 1024) {
+    showToast(`文件总大小超过 ${state.maxUploadMb} MB`, 'error');
+    return;
+  }
+
+  state.uploading = true;
+  get('uploadButton').disabled = true;
+  get('uploadMessage').className = 'upload-message';
+  get('uploadMessage').textContent = '正在解析、分块并写入向量索引，请稍候…';
+  renderQueue();
+
+  try {
+    const form = new FormData();
+    state.queue.forEach(file => form.append('files', file));
+    const result = await requestJson('/api/ingest', { method: 'POST', body: form });
+    const stats = result.stats || {};
+    get('uploadMessage').className = 'upload-message success';
+    get('uploadMessage').textContent =
+      `导入完成：${stats.docs || 0} 篇论文，生成 ${stats.chunks || 0} 个文本块。`;
+    state.queue = [];
+    get('fileInput').value = '';
+    await refreshStats();
+    showToast('论文已成功加入知识库');
+  } catch (error) {
+    get('uploadMessage').className = 'upload-message error';
+    get('uploadMessage').textContent = error.message;
+    showToast(error.message, 'error');
+  } finally {
+    state.uploading = false;
+    get('uploadButton').disabled = false;
+    renderQueue();
+  }
+}
+
+function hideWelcome() {
+  const welcome = get('welcome');
+  if (welcome) welcome.remove();
+}
+
+function appendUserMessage(question) {
+  hideWelcome();
+  const article = document.createElement('article');
+  article.className = 'message user';
+  const bubble = document.createElement('div');
+  bubble.className = 'message-bubble';
+  bubble.textContent = question;
+  article.appendChild(bubble);
+  get('messages').appendChild(article);
+}
+
+function appendAssistantLoading() {
+  const article = document.createElement('article');
+  article.className = 'message assistant';
+  article.innerHTML = `
+    <div class="message-meta"><span class="assistant-avatar">PM</span><span>PaperMind</span></div>
+    <div class="assistant-body"><span class="typing" aria-label="正在生成回答"><i></i><i></i><i></i></span></div>`;
+  get('messages').appendChild(article);
+  return article;
+}
+
+function formatAnswer(answer) {
+  const safe = escapeHtml(answer);
+  const cited = safe.replace(/\[(\d+)]/g,
+    '<button class="citation-ref" type="button" data-citation="$1">[$1]</button>');
+  return cited.split(/\n{2,}/).map(paragraph =>
+    `<p>${paragraph.replace(/\n/g, '<br>')}</p>`
+  ).join('');
+}
+
+function renderAnswer(article, result) {
+  const body = article.querySelector('.assistant-body');
+  body.innerHTML = formatAnswer(result.answer || '没有生成回答。') + `
+    <div class="answer-footer">
+      <span class="metric">耗时 ${escapeHtml(result.elapsed ?? '—')}s</span>
+      <span class="metric">嵌入 ${escapeHtml(result.embed_mode || '—')}</span>
+      <span class="metric">模型 ${escapeHtml(result.model || '—')}</span>
+      <span class="metric">引用 ${(result.sources || []).length}</span>
+    </div>`;
+}
+
+function renderCitations(sources) {
+  const items = Array.isArray(sources) ? sources : [];
+  const list = get('citationList');
+  get('citationCount').textContent = items.length;
+  if (!items.length) {
+    list.innerHTML = '<div class="empty-mini">本次回答没有命中可用的引用片段。</div>';
+    return;
+  }
+  list.innerHTML = items.map((source, index) => `
+    <article class="citation-card" id="citation-${index + 1}">
+      <div class="citation-head">
+        <span class="citation-index">引用 [${index + 1}] · 块 ${escapeHtml(source.seq ?? '—')}</span>
+        <span class="citation-score">相关度 ${escapeHtml(source.score ?? '—')}</span>
+      </div>
+      <div class="citation-source" title="${escapeHtml(source.source)}">${escapeHtml(source.source)}</div>
+      <p class="citation-snippet">${escapeHtml(source.snippet || '')}</p>
+    </article>
+  `).join('');
+}
+
+function focusCitation(index) {
+  const card = get(`citation-${index}`);
+  if (!card) return;
+  card.classList.add('highlight');
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  setTimeout(() => card.classList.remove('highlight'), 1300);
+}
+
+function scrollMessages() {
+  const messages = get('messages');
+  messages.scrollTop = messages.scrollHeight;
+}
+
+async function askQuestion() {
+  const input = get('question');
+  const question = input.value.trim();
+  if (!question || state.asking) return;
+
+  state.asking = true;
+  get('askButton').disabled = true;
+  appendUserMessage(question);
+  const responseMessage = appendAssistantLoading();
+  input.value = '';
+  get('charCount').textContent = '0';
+  scrollMessages();
+  renderCitations([]);
+
+  try {
+    const result = await requestJson('/api/query', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question })
+    });
+    renderAnswer(responseMessage, result);
+    renderCitations(result.sources || []);
+  } catch (error) {
+    responseMessage.querySelector('.assistant-body').innerHTML =
+      `<p style="color:var(--danger)">回答失败：${escapeHtml(error.message)}</p>`;
+    showToast(error.message, 'error');
+  } finally {
+    state.asking = false;
+    get('askButton').disabled = false;
+    input.focus();
+    scrollMessages();
+  }
+}
+
+function clearChat() {
+  get('messages').innerHTML = `
+    <section class="welcome" id="welcome">
+      <div class="welcome-mark" aria-hidden="true">⌁</div>
+      <h2>开始新的论文问题</h2>
+      <p>左侧知识库中的论文仍会保留。输入问题即可开始新的检索。</p>
+    </section>`;
+  renderCitations([]);
+  get('question').focus();
+}
+
+get('dropzone').addEventListener('click', () => get('fileInput').click());
+get('dropzone').addEventListener('keydown', event => {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    get('fileInput').click();
+  }
+});
+get('fileInput').addEventListener('change', event => addFiles(event.target.files));
+['dragenter', 'dragover'].forEach(name => get('dropzone').addEventListener(name, event => {
+  event.preventDefault();
+  get('dropzone').classList.add('over');
 }));
-refreshStats();
+['dragleave', 'drop'].forEach(name => get('dropzone').addEventListener(name, event => {
+  event.preventDefault();
+  get('dropzone').classList.remove('over');
+  if (name === 'drop') addFiles(event.dataTransfer.files);
+}));
+get('fileQueue').addEventListener('click', event => {
+  const button = event.target.closest('[data-remove]');
+  if (!button || state.uploading) return;
+  state.queue.splice(Number(button.dataset.remove), 1);
+  renderQueue();
+});
+get('uploadButton').addEventListener('click', uploadQueuedFiles);
+get('askButton').addEventListener('click', askQuestion);
+get('question').addEventListener('input', event => {
+  get('charCount').textContent = event.target.value.length;
+  event.target.style.height = 'auto';
+  event.target.style.height = `${Math.min(event.target.scrollHeight, 150)}px`;
+});
+get('question').addEventListener('keydown', event => {
+  if (event.key === 'Enter' && (event.ctrlKey || event.metaKey)) {
+    event.preventDefault();
+    askQuestion();
+  }
+});
+document.querySelectorAll('.prompt-chip').forEach(button => button.addEventListener('click', () => {
+  get('question').value = button.textContent.trim();
+  get('charCount').textContent = get('question').value.length;
+  get('question').focus();
+}));
+get('messages').addEventListener('click', event => {
+  const citation = event.target.closest('[data-citation]');
+  if (citation) focusCitation(citation.dataset.citation);
+});
+get('clearChat').addEventListener('click', clearChat);
+get('themeToggle').addEventListener('click', () => {
+  const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+  if (authCsrfToken) {
+    fetch('/auth/preferences', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': authCsrfToken
+      },
+      body: JSON.stringify({ theme: next })
+    }).catch(() => {});
+  }
+});
+get('settingsOpen').addEventListener('click', openSettings);
+get('settingsClose').addEventListener('click', closeSettings);
+get('settingsCancel').addEventListener('click', closeSettings);
+get('settingsForm').addEventListener('submit', saveApiConfig);
+get('settingsOverlay').addEventListener('click', event => {
+  if (event.target === get('settingsOverlay')) closeSettings();
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && !get('settingsOverlay').hidden) closeSettings();
+  const accountMenu = get('accountMenu');
+  if (event.key === 'Escape' && accountMenu && !accountMenu.hidden) {
+    accountMenu.hidden = true;
+    get('accountMenuButton').setAttribute('aria-expanded', 'false');
+  }
+});
+document.querySelectorAll('.secret-toggle').forEach(button => button.addEventListener('click', () => {
+  const input = get(button.dataset.secret);
+  input.type = input.type === 'password' ? 'text' : 'password';
+  button.textContent = input.type === 'password' ? '显示' : '隐藏';
+}));
+[
+  ['clearApiKey', 'apiKey'],
+  ['clearEmbedApiKey', 'embedApiKey']
+].forEach(([checkboxId, inputId]) => get(checkboxId).addEventListener('change', event => {
+  const input = get(inputId);
+  input.disabled = event.target.checked;
+  if (event.target.checked) input.value = '';
+}));
+get('refreshStats').addEventListener('click', refreshStats);
+get('refreshAll').addEventListener('click', async () => {
+  await checkHealth();
+  await refreshStats();
+  showToast('状态已刷新');
+});
+async function logout(target = '/login') {
+  try {
+    const response = await fetch('/auth/logout', {
+      method: 'POST',
+      headers: { 'X-CSRF-Token': authCsrfToken }
+    });
+    if (!response.ok) throw new Error('退出失败');
+    window.location.assign(target);
+  } catch (_) {
+    showToast('退出失败，请刷新后重试', 'error');
+  }
+}
+
+function accountAvatar(user) {
+  const avatar = document.createElement('span');
+  avatar.className = 'account-avatar';
+  avatar.setAttribute('aria-hidden', 'true');
+  avatar.textContent = Array.from(user.display_name || user.email || '?')[0].toUpperCase();
+  return avatar;
+}
+
+function accountMenuUser(user, current = false) {
+  const button = document.createElement('button');
+  const copy = document.createElement('span');
+  const name = document.createElement('strong');
+  const email = document.createElement('span');
+  button.className = `account-menu-user${current ? ' current' : ''}`;
+  button.type = 'button';
+  button.append(accountAvatar(user), copy);
+  copy.className = 'account-menu-copy';
+  name.textContent = user.display_name || user.email;
+  email.textContent = user.email;
+  copy.append(name, email);
+  if (!current) button.addEventListener('click', () => logout(`/login?account=${user.id}`));
+  return button;
+}
+
+function accountMenuAction(label, target) {
+  const button = document.createElement('button');
+  button.className = 'account-menu-action';
+  button.type = 'button';
+  button.textContent = label;
+  button.addEventListener('click', () => logout(target));
+  return button;
+}
+
+function renderAccount(user, accounts) {
+  const button = document.createElement('button');
+  const name = document.createElement('span');
+  const exit = document.createElement('span');
+  button.className = 'account-button';
+  button.id = 'accountMenuButton';
+  button.type = 'button';
+  button.title = `${user.email} · 账户菜单`;
+  button.setAttribute('aria-expanded', 'false');
+  name.className = 'account-name';
+  name.textContent = user.display_name || user.email;
+  exit.className = 'account-exit';
+  exit.textContent = Array.isArray(accounts) ? '▾' : '退出';
+  button.append(accountAvatar(user), name, exit);
+
+  if (!Array.isArray(accounts)) {
+    button.addEventListener('click', () => logout());
+    get('accountSlot').replaceChildren(button);
+    return;
+  }
+
+  const menu = document.createElement('div');
+  const label = document.createElement('div');
+  const separator = document.createElement('div');
+  menu.className = 'account-menu';
+  menu.id = 'accountMenu';
+  menu.hidden = true;
+  label.className = 'account-menu-label';
+  label.textContent = '本机用户';
+  separator.className = 'account-menu-separator';
+  menu.append(label, accountMenuUser(user, true));
+  accounts.filter(account => account.id !== user.id)
+    .forEach(account => menu.append(accountMenuUser(account)));
+  menu.append(separator, accountMenuAction('添加或注册其他用户', '/login?mode=register'));
+  menu.append(accountMenuAction('退出登录', '/login'));
+  button.addEventListener('click', event => {
+    event.stopPropagation();
+    menu.hidden = !menu.hidden;
+    button.setAttribute('aria-expanded', String(!menu.hidden));
+  });
+  get('accountSlot').replaceChildren(button, menu);
+}
+
+async function loadAccount() {
+  try {
+    const response = await fetch('/auth/me');
+    if (!response.ok) return;
+    const body = await response.json();
+    authCsrfToken = body.csrf_token || '';
+    currentUserId = body.user.id || 0;
+    const userTheme = body.preferences?.theme
+      || localStorage.getItem(`pm-theme:${currentUserId}`);
+    if (userTheme) applyTheme(userTheme, false);
+    get('settingsOpen').hidden = !body.can_configure;
+    renderAccount(body.user, body.accounts);
+  } catch (_) {
+    // 服务状态由健康检查统一提示。
+  }
+}
+
+document.addEventListener('click', event => {
+  const menu = get('accountMenu');
+  if (menu && !menu.hidden && !get('accountSlot').contains(event.target)) {
+    menu.hidden = true;
+    get('accountMenuButton').setAttribute('aria-expanded', 'false');
+  }
+});
+
+async function initialize() {
+  if (window.location.protocol === 'file:') {
+    get('directFileNotice').hidden = false;
+    return;
+  }
+  await loadAccount();
+  await checkHealth();
+  await refreshStats();
+}
+
+initialize();
 </script>
 </body>
 </html>

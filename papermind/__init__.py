@@ -2,4 +2,12 @@
 
 __version__ = "1.0.0"
 
-from .config import Config  # noqa: F401
+__all__ = ["Config"]
+
+
+def __getattr__(name):
+    if name == "Config":
+        from .config import Config
+
+        return Config
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

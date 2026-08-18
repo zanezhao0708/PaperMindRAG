@@ -11,6 +11,7 @@ license = { file = "LICENSE" }
 authors = [{ name = "zanezhao0708" }]
 requires-python = ">=3.9"
 dependencies = [
+    "authlib>=1.6,<2",
     "flask>=3.0",
     "numpy>=1.26",
     "requests>=2.31",

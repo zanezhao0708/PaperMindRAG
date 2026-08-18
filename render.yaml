@@ -1,0 +1,49 @@
+services:
+  - type: web
+    name: papermindrag-lauk1z
+    runtime: docker
+    region: singapore
+    plan: starter
+    healthCheckPath: /api/health
+    dockerCommand: gunicorn -w 1 -b 0.0.0.0:$PORT --timeout 120 --access-logfile - app:app
+    disk:
+      name: papermind-data
+      mountPath: /app/data
+      sizeGB: 1
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: PM_DATA_ROOT
+        value: /app/data
+      - key: PM_DATA_DIR
+        value: /app/data/docs
+      - key: PM_INDEX_DIR
+        value: /app/data/index
+      - key: PM_ENV_PATH
+        value: /app/data/.env
+      - key: XDG_CACHE_HOME
+        value: /app/data/.cache
+      - key: PM_AUTH_REQUIRED
+        value: "1"
+      - key: PM_COOKIE_SECURE
+        value: "1"
+      - key: PM_TRUST_PROXY
+        value: "1"
+      - key: PM_SECRET_KEY
+        generateValue: true
+      - key: PM_ADMIN_EMAIL
+        sync: false
+      - key: PM_GITHUB_CLIENT_ID
+        sync: false
+      - key: PM_GITHUB_CLIENT_SECRET
+        sync: false
+      - key: PM_GOOGLE_CLIENT_ID
+        sync: false
+      - key: PM_GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: PM_MICROSOFT_CLIENT_ID
+        sync: false
+      - key: PM_MICROSOFT_CLIENT_SECRET
+        sync: false
+      - key: PM_MICROSOFT_TENANT
+        value: common
