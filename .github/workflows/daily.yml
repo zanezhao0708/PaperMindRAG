@@ -41,6 +41,17 @@ jobs:
             git push
           fi
 
+      - name: Verify digest quality
+        run: |
+          DATE=$(TZ=Asia/Shanghai date +%F)
+          if grep -q "LLM 解读失败" "digest/$DATE.md" 2>/dev/null; then
+            echo "::error::日报 $DATE 存在 LLM 解读失败条目（已降级为原题并写入失败原因）"
+            grep -n "LLM 解读失败" "digest/$DATE.md" | head -5
+            echo "::error::请检查 PM_API_KEY 有效性/余额，修复后重跑本工作流可自动修复"
+            exit 1
+          fi
+          echo "日报质量检查通过：无失败条目"
+
       - name: Send email (optional)
         env:
           PM_SMTP_HOST: ${{ secrets.PM_SMTP_HOST }}

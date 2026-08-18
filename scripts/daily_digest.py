@@ -92,7 +92,7 @@ def load_seen() -> set:
 
 # ================= 二、LLM 中文解读 =================
 def interpret(paper: dict) -> dict:
-    """DeepSeek 解读单篇论文；单篇瞬时失败则降级为原题（重跑时自动重试）。"""
+    """DeepSeek 解读单篇论文；失败则降级为原题并把原因写入标记（重跑时自动重试）。"""
     prompt = (
         "你是CV论文解读助手。根据标题和摘要输出JSON（不要多余文字）：\n"
         '{"title_zh":"中文标题(意译)","oneliner":"一句话说清做了什么(完整句子,<=120字)",'
@@ -102,10 +102,8 @@ def interpret(paper: dict) -> dict:
         '(5=方法/结果重磅突破,4=明显创新,3=扎实增量,2=常规改进,1=价值有限)}\n\n'
         f"标题: {paper['title']}\n摘要: {paper['abstract']}"
     )
-    fallback = {"title_zh": paper["title"], "oneliner": paper["abstract"][:120] + "…",
-                "highlights": "（LLM 解读失败，见原文摘要）", "rating": 3,
-                "tags": detect_topics(paper["title"], paper["abstract"])}
     import time as _time
+    last_err = ""
     for attempt in range(3):  # 代理/网络抖动重试
         try:
             r = requests.post(
@@ -125,11 +123,25 @@ def interpret(paper: dict) -> dict:
                     "tags": detect_topics(paper["title"], paper["abstract"],
                                           data.get("tags", "")),
                     "rating": max(1, min(5, rating))}
-        except Exception as e:
+        except requests.HTTPError as e:
+            body = ""
+            if e.response is not None:
+                body = e.response.text[:120]
+            last_err = f"HTTP {e.response.status_code}: {body}" \
+                if e.response is not None else str(e)
             if attempt == 2:
-                print(f"[解读失败] {paper['id']}: {e}")
-                return fallback
+                break
             _time.sleep(2 * (attempt + 1))
+        except Exception as e:
+            last_err = str(e)[:160]
+            if attempt == 2:
+                break
+            _time.sleep(2 * (attempt + 1))
+    # 3 次重试均失败：降级为原题，原因写入标记（重跑时可自愈）
+    print(f"[解读失败] {paper['id']}: {last_err}")
+    return {"title_zh": paper["title"], "oneliner": paper["abstract"][:120] + "…",
+            "highlights": f"（LLM 解读失败：{last_err}。见原文摘要）", "rating": 3,
+            "tags": detect_topics(paper["title"], paper["abstract"])}
 
 
 # ================= 三、日报生成 =================
@@ -325,9 +337,19 @@ def main():
         print("[完成] 无新增论文且已有条目解读完好，跳过")
         return 0
 
-    for p in todo:  # 逐篇 LLM 解读（单篇失败自动降级，重跑时可修复）
+    for p in todo:  # 逐篇 LLM 解读（单篇失败自动降级）
         p["interp"] = interpret(p)
         print(f"[解读] {stars(p['interp']['rating'])} {p['interp']['title_zh'][:40]}")
+
+    # 第一轮失败的条目冷却后再试一轮，缓解限流/瞬时故障
+    failed = [p for p in todo if is_failed(p)]
+    if failed:
+        import time as _time
+        print(f"[重试] {len(failed)} 篇解读失败，60s 后重试一轮")
+        _time.sleep(60)
+        for p in failed:
+            p["interp"] = interpret(p)
+        failed = [p for p in todo if is_failed(p)]
 
     final = ok + todo
     with open(out, "w", encoding="utf-8") as f:
@@ -338,6 +360,11 @@ def main():
         json.dump(sorted(seen), f, ensure_ascii=False, indent=0)
     update_index()
     print(f"[完成] 日报已生成: digest/{date_str}.md ({len(final)} 篇)")
+    if failed:
+        print(f"[警告] {len(failed)} 篇解读失败已降级为原题（失败原因已写入日报）。"
+              "daily.yml 的 verify 步骤会使本次运行标红提醒；"
+              "检查 PM_API_KEY 有效性/余额后重跑，可自动修复这些条目。")
+    return 0
 
 
 if __name__ == "__main__":
