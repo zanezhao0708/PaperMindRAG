@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Mon, 17 Aug 2026 21:38:44 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 10:08:36 +0800</lastBuildDate>
+  <item>
+    <title>Unsupervised Anomaly Detection for Image Dataset Quality Assurance in Multi-Center Breast MRI</title>
+    <link>https://arxiv.org/abs/2608.16725</link>
+    <description>Corrupted, inconsistent, or anomalous data silently threatens the safety and reliability of medical AI. Despite growing …</description>
+    <pubDate>Mon, 17 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.16725</guid>
+  </item>
   <item>
     <title>LIBAD：锂离子电池电极制造多模态异常检测基准</title>
     <link>https://arxiv.org/abs/2608.07958</link>
