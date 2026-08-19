@@ -12,6 +12,7 @@ import json
 import os
 import re
 import sys
+import time
 import xml.etree.ElementTree as ET
 
 import requests
@@ -52,14 +53,29 @@ API_KEY = load_api_key()
 
 # ================= 一、抓取 arXiv =================
 def fetch_papers() -> list:
-    """调用 arXiv API，返回最近 DAYS_BACK 天内的论文列表。"""
-    resp = requests.get(ARXIV_API, params={
-        "search_query": ARXIV_QUERY,
-        "sortBy": "submittedDate", "sortOrder": "descending",
-        "max_results": MAX_RESULTS,
-    }, headers={"User-Agent": "PaperMind-digest/1.0 (research tracker)"},
-        timeout=60)
-    resp.raise_for_status()
+    """调用 arXiv API，返回最近 DAYS_BACK 天内的论文列表。
+
+    arXiv 对高频请求返回 429 限流，这里做线性退避重试。
+    """
+    last_err = None
+    for attempt in range(5):
+        try:
+            resp = requests.get(ARXIV_API, params={
+                "search_query": ARXIV_QUERY,
+                "sortBy": "submittedDate", "sortOrder": "descending",
+                "max_results": MAX_RESULTS,
+            }, headers={"User-Agent": "PaperMind-digest/1.0 (research tracker)"},
+                timeout=60)
+            resp.raise_for_status()
+            break
+        except requests.RequestException as e:
+            last_err = e
+            wait = 15 * (attempt + 1)  # 15s/30s/45s/60s/75s
+            print(f"arXiv 抓取失败（{e}），{wait}s 后重试 "
+                  f"({attempt + 1}/5)", file=sys.stderr)
+            time.sleep(wait)
+    else:
+        raise SystemExit(f"arXiv 抓取 5 次均失败：{last_err}")
 
     ns = {"a": "http://www.w3.org/2005/Atom"}
     root = ET.fromstring(resp.text)
