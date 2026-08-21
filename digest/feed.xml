@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Thu, 20 Aug 2026 10:11:48 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 21 Aug 2026 10:16:23 +0800</lastBuildDate>
+  <item>
+    <title>STEP：基于分数的时序能量用于人体姿态视频异常检测</title>
+    <link>https://arxiv.org/abs/2608.19987</link>
+    <description>提出STEP框架，利用PCA将姿态序列投影到白化主成分空间，使噪声注入产生物理合理的姿态变化，并集成置信度加权，提升骨架视频异常检测性能。</description>
+    <pubDate>Thu, 20 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.19987</guid>
+  </item>
   <item>
     <title>深度卷积大间隔ℓp-SVDD用于视觉异常检测</title>
     <link>https://arxiv.org/abs/2607.22212</link>
@@ -137,13 +144,6 @@
     <description>提出在零信任SDN中利用微分割数据训练ViT和1D-CNN模型，将异常检测F1分数从0.90提升至0.95，有效识别横向移动攻击。</description>
     <pubDate>Sat, 25 Jul 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2608.02627</guid>
-  </item>
-  <item>
-    <title>持续异常检测中贪心采样的有界记忆延续</title>
-    <link>https://arxiv.org/abs/2608.15277</link>
-    <description>提出ContCore方法，通过贪心扩展与合并，在固定内存下延续贪心采样构建核心集，实现持续异常检测，并具有理论保证和SOTA性能。</description>
-    <pubDate>Sat, 15 Aug 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2608.15277</guid>
   </item>
 </channel>
 </rss>
