@@ -4,7 +4,28 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Mon, 24 Aug 2026 10:39:30 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 10:11:22 +0800</lastBuildDate>
+  <item>
+    <title>问题在哪里？评估视觉语言模型中的时间一致性</title>
+    <link>https://arxiv.org/abs/2608.23474</link>
+    <description>通过将时间定位转化为异常检测任务，提出TimeCatch基准，发现视觉语言模型在帧级异常检测上表现良好，但在时间异常检测上接近随机水平。</description>
+    <pubDate>Tue, 25 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.23474</guid>
+  </item>
+  <item>
+    <title>基于语义分割与板级特征提取的印刷电路板引脚插入质量检测</title>
+    <link>https://arxiv.org/abs/2608.22937</link>
+    <description>提出一种结合U-Net语义分割、轮廓特征提取和逻辑回归的PCB引脚错插自动检测方法，在工业与公开数据集上分别达到0.990和1.000的ROC-AUC。</description>
+    <pubDate>Mon, 24 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.22937</guid>
+  </item>
+  <item>
+    <title>引导流：一种用于增材制造异常检测的注意力引导框架</title>
+    <link>https://arxiv.org/abs/2608.22789</link>
+    <description>提出GuidedFlow，一种注意力引导的归一化流模型，通过预训练ResNet微调和时空注意力网络，在增材制造图像和视频中检测微小缺陷，并在AM3D-AD和MVTec-AD数据集上优于多数现有方法。</description>
+    <pubDate>Mon, 24 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.22789</guid>
+  </item>
   <item>
     <title>VLM答案并非异常分数：无训练视频异常检测中的排名压缩</title>
     <link>https://arxiv.org/abs/2608.21244</link>
@@ -123,27 +144,6 @@
     <description>提出一种免训练的少样本异常检测框架，利用ViT的[CLS]令牌的嵌入和注意力图双重特性，实现无需手动调参的稳定异常评分与定位。</description>
     <pubDate>Mon, 27 Jul 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2607.23924</guid>
-  </item>
-  <item>
-    <title>XMatchAD：基于重建的异常检测的跨模态匹配视角</title>
-    <link>https://arxiv.org/abs/2607.23658</link>
-    <description>提出XMatchAD框架，将输入与重建图像视为互补模态，通过注意力引导的跨模态匹配和自适应频率融合，提升多类异常检测与定位的精度。</description>
-    <pubDate>Sun, 26 Jul 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2607.23658</guid>
-  </item>
-  <item>
-    <title>RadSight：迈向感知可靠的医学影像多模态理解</title>
-    <link>https://arxiv.org/abs/2607.22293</link>
-    <description>本文提出RadSight，一种基于双2D/3D编码器架构的感知驱动医学多模态大模型，通过四阶段渐进式训练提升低层视觉感知能力，从而增强临床诊断可靠性。</description>
-    <pubDate>Fri, 24 Jul 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2607.22293</guid>
-  </item>
-  <item>
-    <title>评估视觉语言模型在游戏QA中自主智能体驱动的几何裁剪检测中的表现</title>
-    <link>https://arxiv.org/abs/2607.25921</link>
-    <description>本研究评估了六种视觉语言模型在零样本提示下检测游戏QA流程中几何裁剪异常的能力，发现它们虽能捕捉视觉线索但误报率高，更适合作为多阶段QA中的高召回候选过滤器。</description>
-    <pubDate>Wed, 29 Jul 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2607.25921</guid>
   </item>
 </channel>
 </rss>
