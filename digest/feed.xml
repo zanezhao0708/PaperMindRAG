@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Tue, 25 Aug 2026 10:11:22 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 10:17:44 +0800</lastBuildDate>
+  <item>
+    <title>DriftAD：视觉引导的文本漂移用于少样本工业异常检测</title>
+    <link>https://arxiv.org/abs/2608.23723</link>
+    <description>提出DriftAD框架，通过视觉引导文本漂移动态调整CLIP文本嵌入，实现层内空间自适应的异常描述，提升少样本工业缺陷检测性能。</description>
+    <pubDate>Tue, 25 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.23723</guid>
+  </item>
   <item>
     <title>问题在哪里？评估视觉语言模型中的时间一致性</title>
     <link>https://arxiv.org/abs/2608.23474</link>
@@ -137,13 +144,6 @@
     <description>提出一种基于DINOMALY的无监督盆腔MRI异常检测框架，利用冻结的DINOv3编码器和噪声MLP瓶颈及线性注意力解码器，实现无需标注的实时异常定位与评分。</description>
     <pubDate>Tue, 28 Jul 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2607.24703</guid>
-  </item>
-  <item>
-    <title>DuoAD：利用[CLS]双重特性实现免训练少样本异常检测</title>
-    <link>https://arxiv.org/abs/2607.23924</link>
-    <description>提出一种免训练的少样本异常检测框架，利用ViT的[CLS]令牌的嵌入和注意力图双重特性，实现无需手动调参的稳定异常评分与定位。</description>
-    <pubDate>Mon, 27 Jul 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2607.23924</guid>
   </item>
 </channel>
 </rss>
