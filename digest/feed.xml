@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Wed, 26 Aug 2026 10:17:44 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 27 Aug 2026 18:43:39 +0800</lastBuildDate>
+  <item>
+    <title>CoRE：驾驶视频中弱监督的由粗到细风险证据学习</title>
+    <link>https://arxiv.org/abs/2608.25344</link>
+    <description>提出CoRE框架，仅用视频级粗标签，通过冻结粗预测器并干预候选时空区域生成细粒度监督信号，蒸馏学生模型直接预测风险的时间与实体证据。</description>
+    <pubDate>Wed, 26 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.25344</guid>
+  </item>
+  <item>
+    <title>看得更多，检测更少？多视角异常检测中的信息泄漏控制</title>
+    <link>https://arxiv.org/abs/2608.25168</link>
+    <description>提出GLAD框架，通过限制跨视角信息流入解码器，解决多视角异常检测中重建间隙崩溃问题，提升检测性能。</description>
+    <pubDate>Wed, 26 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.25168</guid>
+  </item>
   <item>
     <title>DriftAD：视觉引导的文本漂移用于少样本工业异常检测</title>
     <link>https://arxiv.org/abs/2608.23723</link>
@@ -130,20 +144,6 @@
     <description>本文提出一个多模态机器学习框架，通过统一流程结合质量指标、特征表示、分类、异常检测和XAI，对考古数字化中的多种传感采集进行质量评估与自适应校准。</description>
     <pubDate>Wed, 29 Jul 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2608.00074</guid>
-  </item>
-  <item>
-    <title>计算细胞学中用于异常检测的群等变扩散模型</title>
-    <link>https://arxiv.org/abs/2607.25503</link>
-    <description>提出一种D4等变扩散框架，在架构和推理中强制旋转/反射对称，实现变换一致的伪健康重建，提升细胞学异常检测的AUC和稳定性。</description>
-    <pubDate>Tue, 28 Jul 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2607.25503</guid>
-  </item>
-  <item>
-    <title>Panda：用于实时磁共振成像的无监督盆腔异常检测</title>
-    <link>https://arxiv.org/abs/2607.24703</link>
-    <description>提出一种基于DINOMALY的无监督盆腔MRI异常检测框架，利用冻结的DINOv3编码器和噪声MLP瓶颈及线性注意力解码器，实现无需标注的实时异常定位与评分。</description>
-    <pubDate>Tue, 28 Jul 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2607.24703</guid>
   </item>
 </channel>
 </rss>
