@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Thu, 27 Aug 2026 18:43:39 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 20:21:08 +0800</lastBuildDate>
+  <item>
+    <title>GeoMAD：基于可变形融合与分布对齐的几何感知多视角异常检测</title>
+    <link>https://arxiv.org/abs/2608.26724</link>
+    <description>提出统一的多视角多类别异常检测框架GeoMAD，通过跨视角可变形融合模块学习连续几何对应，并引入分布对齐正则化，无需相机标定或3D监督即可实现高效且几何感知的融合。</description>
+    <pubDate>Thu, 27 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.26724</guid>
+  </item>
   <item>
     <title>CoRE：驾驶视频中弱监督的由粗到细风险证据学习</title>
     <link>https://arxiv.org/abs/2608.25344</link>
@@ -137,13 +144,6 @@
     <description>提出ReMoE，将正常医学报告语义蒸馏到图像到文本先验学生模型中，通过报告引导的模态调制和混合专家路由，提升多模态OCT/OCTA异常检测性能。</description>
     <pubDate>Fri, 31 Jul 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2607.29039</guid>
-  </item>
-  <item>
-    <title>可解释多模态AI用于考古传感工作流的自适应校准</title>
-    <link>https://arxiv.org/abs/2608.00074</link>
-    <description>本文提出一个多模态机器学习框架，通过统一流程结合质量指标、特征表示、分类、异常检测和XAI，对考古数字化中的多种传感采集进行质量评估与自适应校准。</description>
-    <pubDate>Wed, 29 Jul 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2608.00074</guid>
   </item>
 </channel>
 </rss>
