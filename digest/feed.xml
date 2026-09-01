@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Mon, 31 Aug 2026 15:06:22 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 13:49:43 +0800</lastBuildDate>
+  <item>
+    <title>基于YOLO姿态估计与CLIP语义评分的实时视频异常检测</title>
+    <link>https://arxiv.org/abs/2608.31074</link>
+    <description>提出一个轻量级两阶段框架，利用YOLO姿态估计和CLIP语义评分实现实时视频异常检测，无需光流和密度评分模块。</description>
+    <pubDate>Tue, 01 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.31074</guid>
+  </item>
+  <item>
+    <title>InspectorGPT：面向全面工业异常检测的对比推理增强视觉语言模型</title>
+    <link>https://arxiv.org/abs/2608.29783</link>
+    <description>提出InspectorGPT，通过对比推理（将查询图像与无缺陷参考比较）结合CoT微调和GRPO强化学习，实现零样本工业异常检测、定位与分割，并采用任务向量融合解决分割与推理的冲突。</description>
+    <pubDate>Sun, 30 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.29783</guid>
+  </item>
   <item>
     <title>GeoMAD：基于可变形融合与分布对齐的几何感知多视角异常检测</title>
     <link>https://arxiv.org/abs/2608.26724</link>
@@ -130,20 +144,6 @@
     <description>提出SwinAD，利用冻结的Swin Transformer V2编码器和特征多样性保持的重建解码器，通过多尺度特征重建与双分支解码提升多类无监督工业异常检测的定位精度。</description>
     <pubDate>Thu, 16 Jul 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2607.14534</guid>
-  </item>
-  <item>
-    <title>VFAD：变分语义提示与频率自适应表示学习用于零样本异常检测</title>
-    <link>https://arxiv.org/abs/2607.29370</link>
-    <description>提出VFAD框架，结合变分语义提示提取器和频率自适应聚合模块，提升零样本异常检测的判别力与定位精度。</description>
-    <pubDate>Fri, 31 Jul 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2607.29370</guid>
-  </item>
-  <item>
-    <title>ReMoE：基于报告引导的混合专家模型用于多模态OCT/OCTA异常检测</title>
-    <link>https://arxiv.org/abs/2607.29039</link>
-    <description>提出ReMoE，将正常医学报告语义蒸馏到图像到文本先验学生模型中，通过报告引导的模态调制和混合专家路由，提升多模态OCT/OCTA异常检测性能。</description>
-    <pubDate>Fri, 31 Jul 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2607.29039</guid>
   </item>
 </channel>
 </rss>
