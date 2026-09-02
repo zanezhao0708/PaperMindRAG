@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Tue, 01 Sep 2026 13:49:43 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 13:12:52 +0800</lastBuildDate>
+  <item>
+    <title>什么、在哪里以及如何：探究视频基础模型中的时空表征</title>
+    <link>https://arxiv.org/abs/2609.01551</link>
+    <description>本文系统分析了视频基础模型V-JEPA 2和VideoMAE-v2的逐层表征，发现相机运动在60-70%深度处可线性解码且几何有序，但物理推理能力有限，并利用样条插值实现相机运动操控。</description>
+    <pubDate>Wed, 02 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.01551</guid>
+  </item>
+  <item>
+    <title>面向卫星降水数据伪影检测的传感器自适应增量学习框架</title>
+    <link>https://arxiv.org/abs/2609.01514</link>
+    <description>提出一种利用预训练视觉模型和少量人工标注数据，对卫星降水产品中的伪影进行检测的增量学习框架，并在SSMI和SSMIS数据上验证了有效性。</description>
+    <pubDate>Wed, 02 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.01514</guid>
+  </item>
   <item>
     <title>基于YOLO姿态估计与CLIP语义评分的实时视频异常检测</title>
     <link>https://arxiv.org/abs/2608.31074</link>
@@ -130,20 +144,6 @@
     <description>提出一种免训练的智能体框架，通过跟踪工业场景中物体的时空状态演化并推理其轨迹，无需领域知识即可检测异常并生成可解释报告。</description>
     <pubDate>Tue, 21 Jul 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2607.18142</guid>
-  </item>
-  <item>
-    <title>物理感知掩码扩散模型用于城市鱼眼灾害检测的洪水模拟</title>
-    <link>https://arxiv.org/abs/2607.15527</link>
-    <description>提出PhysFlood系统，利用扩散模型从单张鱼眼图像合成逼真洪水，并支持通过物理变量控制生成多样场景。</description>
-    <pubDate>Fri, 17 Jul 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2607.15527</guid>
-  </item>
-  <item>
-    <title>SwinAD：用于无监督工业异常检测的多阶段特征重建</title>
-    <link>https://arxiv.org/abs/2607.14534</link>
-    <description>提出SwinAD，利用冻结的Swin Transformer V2编码器和特征多样性保持的重建解码器，通过多尺度特征重建与双分支解码提升多类无监督工业异常检测的定位精度。</description>
-    <pubDate>Thu, 16 Jul 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2607.14534</guid>
   </item>
 </channel>
 </rss>
