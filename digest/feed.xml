@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Wed, 02 Sep 2026 13:12:52 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 13:16:50 +0800</lastBuildDate>
+  <item>
+    <title>DPA：解耦产品无关的异常表征用于零样本异常生成</title>
+    <link>https://arxiv.org/abs/2609.02075</link>
+    <description>提出一种基于异常迁移的零样本异常生成方法，通过扩散模型解耦产品无关的异常表征，并利用自适应掩码生成逼真异常，提升下游检测性能。</description>
+    <pubDate>Wed, 02 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.02075</guid>
+  </item>
   <item>
     <title>什么、在哪里以及如何：探究视频基础模型中的时空表征</title>
     <link>https://arxiv.org/abs/2609.01551</link>
@@ -137,13 +144,6 @@
     <description>提出OPD-IAD框架，通过在线策略自蒸馏将特权缺陷证据蒸馏到模型自身的判断轨迹中，并利用语言引导视觉锚定生成像素级异常图，实现精确的工业异常定位。</description>
     <pubDate>Tue, 21 Jul 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2607.18850</guid>
-  </item>
-  <item>
-    <title>O-VAD：通过以对象为中心的跟踪与推理实现工业视频异常检测</title>
-    <link>https://arxiv.org/abs/2607.18142</link>
-    <description>提出一种免训练的智能体框架，通过跟踪工业场景中物体的时空状态演化并推理其轨迹，无需领域知识即可检测异常并生成可解释报告。</description>
-    <pubDate>Tue, 21 Jul 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2607.18142</guid>
   </item>
 </channel>
 </rss>
