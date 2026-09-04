@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Thu, 03 Sep 2026 13:16:50 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 13:12:09 +0800</lastBuildDate>
+  <item>
+    <title>PL-SCEA：重新配置预训练注意力用于少样本工业异常检测</title>
+    <link>https://arxiv.org/abs/2609.03655</link>
+    <description>提出PL-SCEA方法，通过幂律自相关增强注意力重新配置冻结视觉基础模型的注意力计算，提升少样本工业异常检测的定位能力。</description>
+    <pubDate>Thu, 03 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.03655</guid>
+  </item>
+  <item>
+    <title>神经坍缩引导的无任务持续异常检测</title>
+    <link>https://arxiv.org/abs/2609.03406</link>
+    <description>提出NC-TFAD框架，利用神经坍缩原理和几何驱动方法，在无任务边界的数据流上实现持续工业异常检测与定位。</description>
+    <pubDate>Thu, 03 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.03406</guid>
+  </item>
   <item>
     <title>DPA：解耦产品无关的异常表征用于零样本异常生成</title>
     <link>https://arxiv.org/abs/2609.02075</link>
@@ -130,20 +144,6 @@
     <description>提出CSI-VAD，一种无需训练的视频异常检测方法，通过将视频分解为环境、物体和时间三个上下文分支进行推理，提升异常检测性能。</description>
     <pubDate>Tue, 21 Jul 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2607.19077</guid>
-  </item>
-  <item>
-    <title>IMMoE：基于视图专家融合的不完整多视图异常检测</title>
-    <link>https://arxiv.org/abs/2607.19032</link>
-    <description>针对多视图异常检测中视图信息缺失的问题，提出IMMoE方法，通过多视图专家融合和局部异常增强编码器，在RIMAD和Real-IAD数据集上取得最优性能。</description>
-    <pubDate>Tue, 21 Jul 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2607.19032</guid>
-  </item>
-  <item>
-    <title>OPD-IAD：从语言判断到工业异常检测——基于在线策略自蒸馏</title>
-    <link>https://arxiv.org/abs/2607.18850</link>
-    <description>提出OPD-IAD框架，通过在线策略自蒸馏将特权缺陷证据蒸馏到模型自身的判断轨迹中，并利用语言引导视觉锚定生成像素级异常图，实现精确的工业异常定位。</description>
-    <pubDate>Tue, 21 Jul 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2607.18850</guid>
   </item>
 </channel>
 </rss>
