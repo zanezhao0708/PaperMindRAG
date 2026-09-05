@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Fri, 04 Sep 2026 13:12:09 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 05 Sep 2026 13:01:24 +0800</lastBuildDate>
+  <item>
+    <title>基于跨类别迁移的协同进化提示优化用于零样本异常检测</title>
+    <link>https://arxiv.org/abs/2608.29467</link>
+    <description>提出CoEvoAD框架，利用进化算法在离散自然语言空间搜索提示，并引入跨类别迁移目标提升零样本异常检测的跨类别泛化能力。</description>
+    <pubDate>Sun, 30 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.29467</guid>
+  </item>
+  <item>
+    <title>NFAD：分布偏移下的干扰过滤异常检测</title>
+    <link>https://arxiv.org/abs/2608.29112</link>
+    <description>提出NFAD框架，通过估计并抑制成像条件变化引起的干扰子空间，在无目标域数据下提升分布偏移场景的异常检测与定位性能。</description>
+    <pubDate>Sat, 29 Aug 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2608.29112</guid>
+  </item>
   <item>
     <title>PL-SCEA：重新配置预训练注意力用于少样本工业异常检测</title>
     <link>https://arxiv.org/abs/2609.03655</link>
@@ -130,20 +144,6 @@
     <description>系统综述了扩散模型在医学图像修复中的应用，涵盖60项研究，提出方法分类，并指出标准化基准缺失等挑战。</description>
     <pubDate>Fri, 24 Jul 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2607.21904</guid>
-  </item>
-  <item>
-    <title>重新思考开放世界视频异常检测：诊断定义盲区</title>
-    <link>https://arxiv.org/abs/2607.20780</link>
-    <description>本文指出当前开放世界视频异常检测评估存在“定义盲区”，即模型对查询定义不敏感却得分高，并提出新指标和对比评分规则以修正评估。</description>
-    <pubDate>Thu, 23 Jul 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2607.20780</guid>
-  </item>
-  <item>
-    <title>基于上下文结构的大视觉语言模型视频异常检测</title>
-    <link>https://arxiv.org/abs/2607.19077</link>
-    <description>提出CSI-VAD，一种无需训练的视频异常检测方法，通过将视频分解为环境、物体和时间三个上下文分支进行推理，提升异常检测性能。</description>
-    <pubDate>Tue, 21 Jul 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2607.19077</guid>
   </item>
 </channel>
 </rss>
