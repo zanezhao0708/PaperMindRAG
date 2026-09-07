@@ -4,7 +4,28 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Sun, 06 Sep 2026 13:15:27 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 13:23:53 +0800</lastBuildDate>
+  <item>
+    <title>基于校准融合的无训练逻辑与结构异常检测</title>
+    <link>https://arxiv.org/abs/2609.05091</link>
+    <description>提出一种无需训练和部件标注的异常检测方法，通过正常集校准融合冻结特征，同时处理逻辑和结构异常，在MVTec-LOCO上达到92.5平均AUROC。</description>
+    <pubDate>Fri, 04 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.05091</guid>
+  </item>
+  <item>
+    <title>自适应多粒度时序建模用于弱监督视频异常检测</title>
+    <link>https://arxiv.org/abs/2609.05066</link>
+    <description>提出自适应多粒度时序建模框架，通过时序细化模块和事件分割模块捕捉不同时长异常，并用相似度融合替代固定top-k聚合，提升弱监督视频异常检测性能。</description>
+    <pubDate>Fri, 04 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.05066</guid>
+  </item>
+  <item>
+    <title>LUMIN：用于异常检测的轻量级通用制造检测网络</title>
+    <link>https://arxiv.org/abs/2609.04775</link>
+    <description>提出一种零骨干前向传播的PSP采样流程和并行推理优化，实现快速构建记忆库与毫秒级实时异常检测。</description>
+    <pubDate>Fri, 04 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.04775</guid>
+  </item>
   <item>
     <title>基于跨类别迁移的协同进化提示优化用于零样本异常检测</title>
     <link>https://arxiv.org/abs/2608.29467</link>
@@ -123,27 +144,6 @@
     <description>本文提出VLM-based视频异常检测中答案接口的概念，证明概率读取优于生成读取，避免排名压缩，提升AUROC/AP达5-13点。</description>
     <pubDate>Fri, 21 Aug 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2608.21244</guid>
-  </item>
-  <item>
-    <title>STEP：基于分数的时序能量用于人体姿态视频异常检测</title>
-    <link>https://arxiv.org/abs/2608.19987</link>
-    <description>提出STEP框架，利用PCA将姿态序列投影到白化主成分空间，使噪声注入产生物理合理的姿态变化，并集成置信度加权，提升骨架视频异常检测性能。</description>
-    <pubDate>Thu, 20 Aug 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2608.19987</guid>
-  </item>
-  <item>
-    <title>深度卷积大间隔ℓp-SVDD用于视觉异常检测</title>
-    <link>https://arxiv.org/abs/2607.22212</link>
-    <description>提出DLM-SVDD框架，联合学习卷积特征和显式核决策边界，通过大间隔ℓp-SVDD实现显式间隔最大化和非线性松弛惩罚，提升异常检测性能。</description>
-    <pubDate>Fri, 24 Jul 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2607.22212</guid>
-  </item>
-  <item>
-    <title>医学图像修复中的扩散模型：挑战、解决方案分类与未来方向</title>
-    <link>https://arxiv.org/abs/2607.21904</link>
-    <description>系统综述了扩散模型在医学图像修复中的应用，涵盖60项研究，提出方法分类，并指出标准化基准缺失等挑战。</description>
-    <pubDate>Fri, 24 Jul 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2607.21904</guid>
   </item>
 </channel>
 </rss>
