@@ -4,7 +4,35 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Tue, 08 Sep 2026 13:25:11 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2026 13:29:09 +0800</lastBuildDate>
+  <item>
+    <title>基于自动异常分组的群稀疏低秩张量分解高光谱异常检测</title>
+    <link>https://arxiv.org/abs/2609.08121</link>
+    <description>提出一种基于群稀疏低秩张量分解的高光谱异常检测方法，通过自动异常分组和谱-空融合提升检测性能与效率。</description>
+    <pubDate>Tue, 08 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.08121</guid>
+  </item>
+  <item>
+    <title>ReactVAU：面向流式视频异常理解的慢-快解耦框架</title>
+    <link>https://arxiv.org/abs/2609.07941</link>
+    <description>提出ReactVAU，一种慢-快解耦框架，用于实时流式视频异常理解，通过轻量检测模块持续过滤异常、异常感知持久记忆保护关键线索，并仅在可疑事件时唤醒重型推理模块，兼顾效率与性能。</description>
+    <pubDate>Tue, 08 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.07941</guid>
+  </item>
+  <item>
+    <title>无解析器VLM验证用于联邦弱监督视频异常检测</title>
+    <link>https://arxiv.org/abs/2609.07455</link>
+    <description>提出一种轻量级联邦MIL-VLM级联方法，仅训练紧凑MIL评分器，用冻结VLM事后验证高分可疑片段，并对比文本生成与logit两种反馈接口。</description>
+    <pubDate>Mon, 07 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.07455</guid>
+  </item>
+  <item>
+    <title>Proximity-CLIP：面向零样本异常检测的文本引导语义邻近学习</title>
+    <link>https://arxiv.org/abs/2609.07229</link>
+    <description>提出Proximity-CLIP框架，通过视觉校准语义间隔并利用异常查询模块从局部视觉块中检索缺陷线索，解决零样本异常检测中正常与异常文本原型语义重叠问题。</description>
+    <pubDate>Mon, 07 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.07229</guid>
+  </item>
   <item>
     <title>基于校准融合的无训练逻辑与结构异常检测</title>
     <link>https://arxiv.org/abs/2609.05091</link>
@@ -116,34 +144,6 @@
     <description>提出DriftAD框架，通过视觉引导文本漂移动态调整CLIP文本嵌入，实现层内空间自适应的异常描述，提升少样本工业缺陷检测性能。</description>
     <pubDate>Tue, 25 Aug 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2608.23723</guid>
-  </item>
-  <item>
-    <title>问题在哪里？评估视觉语言模型中的时间一致性</title>
-    <link>https://arxiv.org/abs/2608.23474</link>
-    <description>通过将时间定位转化为异常检测任务，提出TimeCatch基准，发现视觉语言模型在帧级异常检测上表现良好，但在时间异常检测上接近随机水平。</description>
-    <pubDate>Tue, 25 Aug 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2608.23474</guid>
-  </item>
-  <item>
-    <title>基于语义分割与板级特征提取的印刷电路板引脚插入质量检测</title>
-    <link>https://arxiv.org/abs/2608.22937</link>
-    <description>提出一种结合U-Net语义分割、轮廓特征提取和逻辑回归的PCB引脚错插自动检测方法，在工业与公开数据集上分别达到0.990和1.000的ROC-AUC。</description>
-    <pubDate>Mon, 24 Aug 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2608.22937</guid>
-  </item>
-  <item>
-    <title>引导流：一种用于增材制造异常检测的注意力引导框架</title>
-    <link>https://arxiv.org/abs/2608.22789</link>
-    <description>提出GuidedFlow，一种注意力引导的归一化流模型，通过预训练ResNet微调和时空注意力网络，在增材制造图像和视频中检测微小缺陷，并在AM3D-AD和MVTec-AD数据集上优于多数现有方法。</description>
-    <pubDate>Mon, 24 Aug 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2608.22789</guid>
-  </item>
-  <item>
-    <title>VLM答案并非异常分数：无训练视频异常检测中的排名压缩</title>
-    <link>https://arxiv.org/abs/2608.21244</link>
-    <description>本文提出VLM-based视频异常检测中答案接口的概念，证明概率读取优于生成读取，避免排名压缩，提升AUROC/AP达5-13点。</description>
-    <pubDate>Fri, 21 Aug 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2608.21244</guid>
   </item>
 </channel>
 </rss>
