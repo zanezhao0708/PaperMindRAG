@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Wed, 09 Sep 2026 13:29:09 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 13:25:01 +0800</lastBuildDate>
+  <item>
+    <title>卷积神经网络的分层可调提升方案</title>
+    <link>https://arxiv.org/abs/2609.09827</link>
+    <description>提出三种基于格结构的可调提升小波滤波器组策略，嵌入ResNet-18后在纹理分类和工业异常检测任务上取得稳定提升。</description>
+    <pubDate>Wed, 09 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.09827</guid>
+  </item>
   <item>
     <title>基于自动异常分组的群稀疏低秩张量分解高光谱异常检测</title>
     <link>https://arxiv.org/abs/2609.08121</link>
@@ -137,13 +144,6 @@
     <description>提出GLAD框架，通过限制跨视角信息流入解码器，解决多视角异常检测中重建间隙崩溃问题，提升检测性能。</description>
     <pubDate>Wed, 26 Aug 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2608.25168</guid>
-  </item>
-  <item>
-    <title>DriftAD：视觉引导的文本漂移用于少样本工业异常检测</title>
-    <link>https://arxiv.org/abs/2608.23723</link>
-    <description>提出DriftAD框架，通过视觉引导文本漂移动态调整CLIP文本嵌入，实现层内空间自适应的异常描述，提升少样本工业缺陷检测性能。</description>
-    <pubDate>Tue, 25 Aug 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2608.23723</guid>
   </item>
 </channel>
 </rss>
