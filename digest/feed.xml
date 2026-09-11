@@ -4,7 +4,28 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Thu, 10 Sep 2026 13:25:01 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 13:22:55 +0800</lastBuildDate>
+  <item>
+    <title>AnomalyCraft-700K：面向细粒度视频异常理解的组件级可控可验证合成异常数据集</title>
+    <link>https://arxiv.org/abs/2609.06978</link>
+    <description>构建了包含4万余视频、70万余标注的组件级可控合成异常数据集，通过三阶段流水线生成细粒度异常事件并做跨模态一致性校验，支撑从检测到推理的六项视频异常理解任务。</description>
+    <pubDate>Mon, 07 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.06978</guid>
+  </item>
+  <item>
+    <title>NOVA：面向免训练零样本视频异常检测的正常侧建模</title>
+    <link>https://arxiv.org/abs/2609.06360</link>
+    <description>提出免训练零样本视频异常检测框架NOVA，通过语言和视觉两个层面强化正常侧建模，在UCF-Crime和XD-Violence上达到免训练零样本方法的最优性能。</description>
+    <pubDate>Sun, 06 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.06360</guid>
+  </item>
+  <item>
+    <title>面向多光照/多焦距显示图像异常检测的对比知识蒸馏</title>
+    <link>https://arxiv.org/abs/2609.05520</link>
+    <description>提出多分辨率对比蒸馏与多通道融合模块，在多光照多焦距显示屏图像异常检测数据集上显著超越现有方法。</description>
+    <pubDate>Tue, 01 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.05520</guid>
+  </item>
   <item>
     <title>卷积神经网络的分层可调提升方案</title>
     <link>https://arxiv.org/abs/2609.09827</link>
@@ -123,27 +144,6 @@
     <description>提出InspectorGPT，通过对比推理（将查询图像与无缺陷参考比较）结合CoT微调和GRPO强化学习，实现零样本工业异常检测、定位与分割，并采用任务向量融合解决分割与推理的冲突。</description>
     <pubDate>Sun, 30 Aug 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2608.29783</guid>
-  </item>
-  <item>
-    <title>GeoMAD：基于可变形融合与分布对齐的几何感知多视角异常检测</title>
-    <link>https://arxiv.org/abs/2608.26724</link>
-    <description>提出统一的多视角多类别异常检测框架GeoMAD，通过跨视角可变形融合模块学习连续几何对应，并引入分布对齐正则化，无需相机标定或3D监督即可实现高效且几何感知的融合。</description>
-    <pubDate>Thu, 27 Aug 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2608.26724</guid>
-  </item>
-  <item>
-    <title>CoRE：驾驶视频中弱监督的由粗到细风险证据学习</title>
-    <link>https://arxiv.org/abs/2608.25344</link>
-    <description>提出CoRE框架，仅用视频级粗标签，通过冻结粗预测器并干预候选时空区域生成细粒度监督信号，蒸馏学生模型直接预测风险的时间与实体证据。</description>
-    <pubDate>Wed, 26 Aug 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2608.25344</guid>
-  </item>
-  <item>
-    <title>看得更多，检测更少？多视角异常检测中的信息泄漏控制</title>
-    <link>https://arxiv.org/abs/2608.25168</link>
-    <description>提出GLAD框架，通过限制跨视角信息流入解码器，解决多视角异常检测中重建间隙崩溃问题，提升检测性能。</description>
-    <pubDate>Wed, 26 Aug 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2608.25168</guid>
   </item>
 </channel>
 </rss>
