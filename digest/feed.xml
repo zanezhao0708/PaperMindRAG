@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Mon, 14 Sep 2026 14:29:37 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 13:25:52 +0800</lastBuildDate>
+  <item>
+    <title>Probe-VAD：面向免训练视频异常检测的序数似然探测</title>
+    <link>https://arxiv.org/abs/2609.17211</link>
+    <description>提出Probe-VAD，通过向冻结视觉语言模型查询有序严重度阈值的YES/NO似然，构建累积严重度画像并聚合为连续异常分数，实现免训练视频异常检测。</description>
+    <pubDate>Tue, 15 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.17211</guid>
+  </item>
+  <item>
+    <title>PSMP-CLIP：面向CLIP零样本异常检测的补丁提示SAM与多语义提示</title>
+    <link>https://arxiv.org/abs/2609.16785</link>
+    <description>提出PSMP-CLIP，用补丁提示SAM2分割和多语义提示正则化提升CLIP零样本异常检测的定位精度与泛化性。</description>
+    <pubDate>Tue, 15 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.16785</guid>
+  </item>
   <item>
     <title>AnomalyCraft-700K：面向细粒度视频异常理解的组件级可控可验证合成异常数据集</title>
     <link>https://arxiv.org/abs/2609.06978</link>
@@ -130,20 +144,6 @@
     <description>提出一种利用预训练视觉模型和少量人工标注数据，对卫星降水产品中的伪影进行检测的增量学习框架，并在SSMI和SSMIS数据上验证了有效性。</description>
     <pubDate>Wed, 02 Sep 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2609.01514</guid>
-  </item>
-  <item>
-    <title>基于YOLO姿态估计与CLIP语义评分的实时视频异常检测</title>
-    <link>https://arxiv.org/abs/2608.31074</link>
-    <description>提出一个轻量级两阶段框架，利用YOLO姿态估计和CLIP语义评分实现实时视频异常检测，无需光流和密度评分模块。</description>
-    <pubDate>Tue, 01 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2608.31074</guid>
-  </item>
-  <item>
-    <title>InspectorGPT：面向全面工业异常检测的对比推理增强视觉语言模型</title>
-    <link>https://arxiv.org/abs/2608.29783</link>
-    <description>提出InspectorGPT，通过对比推理（将查询图像与无缺陷参考比较）结合CoT微调和GRPO强化学习，实现零样本工业异常检测、定位与分割，并采用任务向量融合解决分割与推理的冲突。</description>
-    <pubDate>Sun, 30 Aug 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2608.29783</guid>
   </item>
 </channel>
 </rss>
