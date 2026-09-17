@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Wed, 16 Sep 2026 13:25:52 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 13:34:15 +0800</lastBuildDate>
+  <item>
+    <title>RoboVAD：机械臂操作视频异常检测的大规模跨域评估基准</title>
+    <link>https://arxiv.org/abs/2609.17843</link>
+    <description>提出RoboVAD大规模基准，用于机械臂操作视频的跨域异常检测，涵盖未见任务与异常类型，并评测多种最先进方法。</description>
+    <pubDate>Wed, 16 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.17843</guid>
+  </item>
+  <item>
+    <title>基于对比敏感感受野的非线性神经元检测二值与灰度图像中的孤立像素</title>
+    <link>https://arxiv.org/abs/2609.18399</link>
+    <description>提出一种改进非线性神经元模型的方法，利用含兴奋与抑制区域的有限感受野，无需阈值即可检测二值和灰度图像中的孤立像素。</description>
+    <pubDate>Wed, 16 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.18399</guid>
+  </item>
   <item>
     <title>Probe-VAD：面向免训练视频异常检测的序数似然探测</title>
     <link>https://arxiv.org/abs/2609.17211</link>
@@ -130,20 +144,6 @@
     <description>提出一种基于异常迁移的零样本异常生成方法，通过扩散模型解耦产品无关的异常表征，并利用自适应掩码生成逼真异常，提升下游检测性能。</description>
     <pubDate>Wed, 02 Sep 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2609.02075</guid>
-  </item>
-  <item>
-    <title>什么、在哪里以及如何：探究视频基础模型中的时空表征</title>
-    <link>https://arxiv.org/abs/2609.01551</link>
-    <description>本文系统分析了视频基础模型V-JEPA 2和VideoMAE-v2的逐层表征，发现相机运动在60-70%深度处可线性解码且几何有序，但物理推理能力有限，并利用样条插值实现相机运动操控。</description>
-    <pubDate>Wed, 02 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.01551</guid>
-  </item>
-  <item>
-    <title>面向卫星降水数据伪影检测的传感器自适应增量学习框架</title>
-    <link>https://arxiv.org/abs/2609.01514</link>
-    <description>提出一种利用预训练视觉模型和少量人工标注数据，对卫星降水产品中的伪影进行检测的增量学习框架，并在SSMI和SSMIS数据上验证了有效性。</description>
-    <pubDate>Wed, 02 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.01514</guid>
   </item>
 </channel>
 </rss>
