@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Thu, 17 Sep 2026 13:34:15 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 13:22:02 +0800</lastBuildDate>
+  <item>
+    <title>从正常中看见异常：正常肾形态表征中的肾小球异常</title>
+    <link>https://arxiv.org/abs/2609.19444</link>
+    <description>提出NoRDeC框架，利用冻结的Omni-Seg肾分割骨干网络，仅用正常肾小球拟合马氏距离正常参考评分，实现无需异常样本训练的肾小球异常检测与表征分析。</description>
+    <pubDate>Thu, 17 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.19444</guid>
+  </item>
   <item>
     <title>RoboVAD：机械臂操作视频异常检测的大规模跨域评估基准</title>
     <link>https://arxiv.org/abs/2609.17843</link>
@@ -137,13 +144,6 @@
     <description>提出NC-TFAD框架，利用神经坍缩原理和几何驱动方法，在无任务边界的数据流上实现持续工业异常检测与定位。</description>
     <pubDate>Thu, 03 Sep 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2609.03406</guid>
-  </item>
-  <item>
-    <title>DPA：解耦产品无关的异常表征用于零样本异常生成</title>
-    <link>https://arxiv.org/abs/2609.02075</link>
-    <description>提出一种基于异常迁移的零样本异常生成方法，通过扩散模型解耦产品无关的异常表征，并利用自适应掩码生成逼真异常，提升下游检测性能。</description>
-    <pubDate>Wed, 02 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.02075</guid>
   </item>
 </channel>
 </rss>
