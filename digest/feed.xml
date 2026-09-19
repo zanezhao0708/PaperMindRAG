@@ -4,7 +4,28 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Fri, 18 Sep 2026 13:22:02 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 19 Sep 2026 13:14:19 +0800</lastBuildDate>
+  <item>
+    <title>融合视觉基础模型先验与CLIP的医学图像空间感知少样本异常检测</title>
+    <link>https://arxiv.org/abs/2609.12454</link>
+    <description>提出Spatial-FAD框架，将DINO的空间结构先验注入CLIP特征，结合滑窗聚合与原型增强支持记忆，实现医学图像少样本异常检测与病灶定位。</description>
+    <pubDate>Fri, 11 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.12454</guid>
+  </item>
+  <item>
+    <title>PC²-AD：面向分辨率受限边缘设备的点云上采样以保障3D异常检测</title>
+    <link>https://arxiv.org/abs/2609.14722</link>
+    <description>提出PC²-AD点云上采样框架，在检测前对稀疏测试点云进行补偿，以弥合边缘设备低分辨率传感带来的训练-测试采样分辨率差距。</description>
+    <pubDate>Mon, 14 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.14722</guid>
+  </item>
+  <item>
+    <title>变分模板匹配与统计融合的图案化结构异常检测</title>
+    <link>https://arxiv.org/abs/2609.13298</link>
+    <description>提出变分模板匹配框架，将异常模板表示为变换族并用归一化互相关检测，再融合基于KDE的统计异常分数，实现免训练的结构图像异常检测。</description>
+    <pubDate>Thu, 10 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.13298</guid>
+  </item>
   <item>
     <title>从正常中看见异常：正常肾形态表征中的肾小球异常</title>
     <link>https://arxiv.org/abs/2609.19444</link>
@@ -123,27 +144,6 @@
     <description>提出CoEvoAD框架，利用进化算法在离散自然语言空间搜索提示，并引入跨类别迁移目标提升零样本异常检测的跨类别泛化能力。</description>
     <pubDate>Sun, 30 Aug 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2608.29467</guid>
-  </item>
-  <item>
-    <title>NFAD：分布偏移下的干扰过滤异常检测</title>
-    <link>https://arxiv.org/abs/2608.29112</link>
-    <description>提出NFAD框架，通过估计并抑制成像条件变化引起的干扰子空间，在无目标域数据下提升分布偏移场景的异常检测与定位性能。</description>
-    <pubDate>Sat, 29 Aug 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2608.29112</guid>
-  </item>
-  <item>
-    <title>PL-SCEA：重新配置预训练注意力用于少样本工业异常检测</title>
-    <link>https://arxiv.org/abs/2609.03655</link>
-    <description>提出PL-SCEA方法，通过幂律自相关增强注意力重新配置冻结视觉基础模型的注意力计算，提升少样本工业异常检测的定位能力。</description>
-    <pubDate>Thu, 03 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.03655</guid>
-  </item>
-  <item>
-    <title>神经坍缩引导的无任务持续异常检测</title>
-    <link>https://arxiv.org/abs/2609.03406</link>
-    <description>提出NC-TFAD框架，利用神经坍缩原理和几何驱动方法，在无任务边界的数据流上实现持续工业异常检测与定位。</description>
-    <pubDate>Thu, 03 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.03406</guid>
   </item>
 </channel>
 </rss>
