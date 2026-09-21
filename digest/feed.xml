@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Sun, 20 Sep 2026 13:30:56 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 13:36:18 +0800</lastBuildDate>
+  <item>
+    <title>无监督异常检测的原则性方法</title>
+    <link>https://arxiv.org/abs/2609.21800</link>
+    <description>将无监督异常检测重构为贝叶斯逆问题，推断导致观测的最可能损坏参数，并以其能量作为概率异常分数。</description>
+    <pubDate>Fri, 18 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.21800</guid>
+  </item>
+  <item>
+    <title>面向双手程序性异常检测的手部感知转移建模</title>
+    <link>https://arxiv.org/abs/2609.21207</link>
+    <description>提出HACT，用双手角色保持历史与标记时序点过程建模手部事件转移，实现双手装配程序性异常检测。</description>
+    <pubDate>Fri, 18 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.21207</guid>
+  </item>
   <item>
     <title>融合视觉基础模型先验与CLIP的医学图像空间感知少样本异常检测</title>
     <link>https://arxiv.org/abs/2609.12454</link>
@@ -130,20 +144,6 @@
     <description>提出自适应多粒度时序建模框架，通过时序细化模块和事件分割模块捕捉不同时长异常，并用相似度融合替代固定top-k聚合，提升弱监督视频异常检测性能。</description>
     <pubDate>Fri, 04 Sep 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2609.05066</guid>
-  </item>
-  <item>
-    <title>LUMIN：用于异常检测的轻量级通用制造检测网络</title>
-    <link>https://arxiv.org/abs/2609.04775</link>
-    <description>提出一种零骨干前向传播的PSP采样流程和并行推理优化，实现快速构建记忆库与毫秒级实时异常检测。</description>
-    <pubDate>Fri, 04 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.04775</guid>
-  </item>
-  <item>
-    <title>基于跨类别迁移的协同进化提示优化用于零样本异常检测</title>
-    <link>https://arxiv.org/abs/2608.29467</link>
-    <description>提出CoEvoAD框架，利用进化算法在离散自然语言空间搜索提示，并引入跨类别迁移目标提升零样本异常检测的跨类别泛化能力。</description>
-    <pubDate>Sun, 30 Aug 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2608.29467</guid>
   </item>
 </channel>
 </rss>
