@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Mon, 21 Sep 2026 14:34:43 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 13:33:34 +0800</lastBuildDate>
+  <item>
+    <title>基于扩散先验的无监督脑异常检测：贝叶斯逆问题视角</title>
+    <link>https://arxiv.org/abs/2609.24265</link>
+    <description>将无监督脑异常检测建模为扩散先验下的贝叶斯逆问题，通过退火后验采样联合推断伪健康图像与异常掩码。</description>
+    <pubDate>Mon, 21 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.24265</guid>
+  </item>
+  <item>
+    <title>SAFe：面向异常感知分割的特征密度分割引导聚合</title>
+    <link>https://arxiv.org/abs/2609.24204</link>
+    <description>SAFe用轻量归一化流在冻结DINOv3特征上做类条件密度估计，并结合多尺度卷积特征与SAM3后处理，实现空间一致的异常分割与实例级检测。</description>
+    <pubDate>Mon, 21 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.24204</guid>
+  </item>
   <item>
     <title>无监督异常检测的原则性方法</title>
     <link>https://arxiv.org/abs/2609.21800</link>
@@ -130,20 +144,6 @@
     <description>提出Proximity-CLIP框架，通过视觉校准语义间隔并利用异常查询模块从局部视觉块中检索缺陷线索，解决零样本异常检测中正常与异常文本原型语义重叠问题。</description>
     <pubDate>Mon, 07 Sep 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2609.07229</guid>
-  </item>
-  <item>
-    <title>基于校准融合的无训练逻辑与结构异常检测</title>
-    <link>https://arxiv.org/abs/2609.05091</link>
-    <description>提出一种无需训练和部件标注的异常检测方法，通过正常集校准融合冻结特征，同时处理逻辑和结构异常，在MVTec-LOCO上达到92.5平均AUROC。</description>
-    <pubDate>Fri, 04 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.05091</guid>
-  </item>
-  <item>
-    <title>自适应多粒度时序建模用于弱监督视频异常检测</title>
-    <link>https://arxiv.org/abs/2609.05066</link>
-    <description>提出自适应多粒度时序建模框架，通过时序细化模块和事件分割模块捕捉不同时长异常，并用相似度融合替代固定top-k聚合，提升弱监督视频异常检测性能。</description>
-    <pubDate>Fri, 04 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.05066</guid>
   </item>
 </channel>
 </rss>
