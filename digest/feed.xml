@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Tue, 22 Sep 2026 13:33:34 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 13:21:13 +0800</lastBuildDate>
+  <item>
+    <title>AT3D-AD：基于层次化点-语言对齐的异常类型感知3D异常检测</title>
+    <link>https://arxiv.org/abs/2609.25930</link>
+    <description>提出统一框架AT3D-AD，通过物理驱动异常合成、层次化全局-局部对齐和语义-几何分类，实现3D点云异常的联合检测、定位与类型识别。</description>
+    <pubDate>Tue, 22 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.25930</guid>
+  </item>
+  <item>
+    <title>当点云超越像素：重新思考零样本多模态异常检测</title>
+    <link>https://arxiv.org/abs/2609.25793</link>
+    <description>挑战RGB与点云同等可靠的假设，发现零样本类别偏移下点云更可靠，提出可靠性感知的WOOPS框架实现多模态异常检测。</description>
+    <pubDate>Tue, 22 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.25793</guid>
+  </item>
   <item>
     <title>基于扩散先验的无监督脑异常检测：贝叶斯逆问题视角</title>
     <link>https://arxiv.org/abs/2609.24265</link>
@@ -130,20 +144,6 @@
     <description>提出ReactVAU，一种慢-快解耦框架，用于实时流式视频异常理解，通过轻量检测模块持续过滤异常、异常感知持久记忆保护关键线索，并仅在可疑事件时唤醒重型推理模块，兼顾效率与性能。</description>
     <pubDate>Tue, 08 Sep 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2609.07941</guid>
-  </item>
-  <item>
-    <title>无解析器VLM验证用于联邦弱监督视频异常检测</title>
-    <link>https://arxiv.org/abs/2609.07455</link>
-    <description>提出一种轻量级联邦MIL-VLM级联方法，仅训练紧凑MIL评分器，用冻结VLM事后验证高分可疑片段，并对比文本生成与logit两种反馈接口。</description>
-    <pubDate>Mon, 07 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.07455</guid>
-  </item>
-  <item>
-    <title>Proximity-CLIP：面向零样本异常检测的文本引导语义邻近学习</title>
-    <link>https://arxiv.org/abs/2609.07229</link>
-    <description>提出Proximity-CLIP框架，通过视觉校准语义间隔并利用异常查询模块从局部视觉块中检索缺陷线索，解决零样本异常检测中正常与异常文本原型语义重叠问题。</description>
-    <pubDate>Mon, 07 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.07229</guid>
   </item>
 </channel>
 </rss>
