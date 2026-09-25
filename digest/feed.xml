@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Thu, 24 Sep 2026 13:37:26 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 13:33:21 +0800</lastBuildDate>
+  <item>
+    <title>基于视觉潜空间缺陷锚定推理的工业异常检测</title>
+    <link>https://arxiv.org/abs/2609.29457</link>
+    <description>提出Anomaly-LR框架，先在视觉潜空间中形成全局理解再逐步细化异常相关表征，并构建首个面向潜空间推理的工业异常检测指令数据集IAD-LR-22K。</description>
+    <pubDate>Thu, 24 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.29457</guid>
+  </item>
   <item>
     <title>面向异常视频理解的测试时强化学习</title>
     <link>https://arxiv.org/abs/2609.26099</link>
@@ -137,13 +144,6 @@
     <description>提出三种基于格结构的可调提升小波滤波器组策略，嵌入ResNet-18后在纹理分类和工业异常检测任务上取得稳定提升。</description>
     <pubDate>Wed, 09 Sep 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2609.09827</guid>
-  </item>
-  <item>
-    <title>基于自动异常分组的群稀疏低秩张量分解高光谱异常检测</title>
-    <link>https://arxiv.org/abs/2609.08121</link>
-    <description>提出一种基于群稀疏低秩张量分解的高光谱异常检测方法，通过自动异常分组和谱-空融合提升检测性能与效率。</description>
-    <pubDate>Tue, 08 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.08121</guid>
   </item>
 </channel>
 </rss>
