@@ -4,7 +4,28 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Mon, 28 Sep 2026 15:05:23 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 14:22:28 +0800</lastBuildDate>
+  <item>
+    <title>面向可泛化3D异常检测的关系不一致性建模</title>
+    <link>https://arxiv.org/abs/2609.35059</link>
+    <description>提出关系不一致性建模框架，将缺陷定义为邻域几何一致性违背，通过伪异常学习类别无关缺陷线索，实现可泛化的3D异常检测。</description>
+    <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.35059</guid>
+  </item>
+  <item>
+    <title>超越几何：面向3D逻辑异常检测的基准与一致性推理</title>
+    <link>https://arxiv.org/abs/2609.34143</link>
+    <description>提出首个面向工业点云逻辑异常的可扩展基准ILGAD，并设计一致性推理框架检测存在性、规格、位姿和装配状态等逻辑异常。</description>
+    <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.34143</guid>
+  </item>
+  <item>
+    <title>魔鬼藏在频谱偏差中：面向鲁棒表征蒸馏的频谱平衡特征匹配</title>
+    <link>https://arxiv.org/abs/2609.34106</link>
+    <description>揭示L2特征匹配蒸馏存在频谱偏差，提出自适应平衡各频谱方向权重的SpecMatch目标，在42组师生配置中40组超越传统方法。</description>
+    <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.34106</guid>
+  </item>
   <item>
     <title>基于视觉潜空间缺陷锚定推理的工业异常检测</title>
     <link>https://arxiv.org/abs/2609.29457</link>
@@ -123,27 +144,6 @@
     <description>构建了包含4万余视频、70万余标注的组件级可控合成异常数据集，通过三阶段流水线生成细粒度异常事件并做跨模态一致性校验，支撑从检测到推理的六项视频异常理解任务。</description>
     <pubDate>Mon, 07 Sep 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2609.06978</guid>
-  </item>
-  <item>
-    <title>NOVA：面向免训练零样本视频异常检测的正常侧建模</title>
-    <link>https://arxiv.org/abs/2609.06360</link>
-    <description>提出免训练零样本视频异常检测框架NOVA，通过语言和视觉两个层面强化正常侧建模，在UCF-Crime和XD-Violence上达到免训练零样本方法的最优性能。</description>
-    <pubDate>Sun, 06 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.06360</guid>
-  </item>
-  <item>
-    <title>面向多光照/多焦距显示图像异常检测的对比知识蒸馏</title>
-    <link>https://arxiv.org/abs/2609.05520</link>
-    <description>提出多分辨率对比蒸馏与多通道融合模块，在多光照多焦距显示屏图像异常检测数据集上显著超越现有方法。</description>
-    <pubDate>Tue, 01 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.05520</guid>
-  </item>
-  <item>
-    <title>卷积神经网络的分层可调提升方案</title>
-    <link>https://arxiv.org/abs/2609.09827</link>
-    <description>提出三种基于格结构的可调提升小波滤波器组策略，嵌入ResNet-18后在纹理分类和工业异常检测任务上取得稳定提升。</description>
-    <pubDate>Wed, 09 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.09827</guid>
   </item>
 </channel>
 </rss>
