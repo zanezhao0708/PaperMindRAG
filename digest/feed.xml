@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Tue, 29 Sep 2026 14:22:28 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 14:06:12 +0800</lastBuildDate>
+  <item>
+    <title>面向数据稀缺下模型选择的视觉异常合成</title>
+    <link>https://arxiv.org/abs/2609.37360</link>
+    <description>提出无需目标资产缺陷参考的框架，在真实无缺陷图像上合成分级缺陷，用于工业缺陷检测的模型选择与验证。</description>
+    <pubDate>Tue, 29 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.37360</guid>
+  </item>
+  <item>
+    <title>HyperSAM：面向高光谱遥感的可提示基础模型</title>
+    <link>https://arxiv.org/abs/2609.37340</link>
+    <description>提出HyperSAM，用物理感知合成高光谱数据并基于SAM3适配，构建可提示高光谱遥感基础模型，在分类、异常/变化/目标检测等任务上泛化良好。</description>
+    <pubDate>Tue, 29 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.37340</guid>
+  </item>
   <item>
     <title>面向可泛化3D异常检测的关系不一致性建模</title>
     <link>https://arxiv.org/abs/2609.35059</link>
@@ -130,20 +144,6 @@
     <description>提出Probe-VAD，通过向冻结视觉语言模型查询有序严重度阈值的YES/NO似然，构建累积严重度画像并聚合为连续异常分数，实现免训练视频异常检测。</description>
     <pubDate>Tue, 15 Sep 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2609.17211</guid>
-  </item>
-  <item>
-    <title>PSMP-CLIP：面向CLIP零样本异常检测的补丁提示SAM与多语义提示</title>
-    <link>https://arxiv.org/abs/2609.16785</link>
-    <description>提出PSMP-CLIP，用补丁提示SAM2分割和多语义提示正则化提升CLIP零样本异常检测的定位精度与泛化性。</description>
-    <pubDate>Tue, 15 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.16785</guid>
-  </item>
-  <item>
-    <title>AnomalyCraft-700K：面向细粒度视频异常理解的组件级可控可验证合成异常数据集</title>
-    <link>https://arxiv.org/abs/2609.06978</link>
-    <description>构建了包含4万余视频、70万余标注的组件级可控合成异常数据集，通过三阶段流水线生成细粒度异常事件并做跨模态一致性校验，支撑从检测到推理的六项视频异常理解任务。</description>
-    <pubDate>Mon, 07 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.06978</guid>
   </item>
 </channel>
 </rss>
