@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Wed, 30 Sep 2026 14:06:12 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 14:39:32 +0800</lastBuildDate>
+  <item>
+    <title>PCB-MC：印刷电路板缺失元件分析</title>
+    <link>https://arxiv.org/abs/2609.39427</link>
+    <description>提出PCB-MC数据集，用于检测印刷电路板上缺失的元件，并提供基准测试揭示现有监督与无监督方法在此任务上的严重不足。</description>
+    <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2609.39427</guid>
+  </item>
   <item>
     <title>面向数据稀缺下模型选择的视觉异常合成</title>
     <link>https://arxiv.org/abs/2609.37360</link>
@@ -137,13 +144,6 @@
     <description>提出一种改进非线性神经元模型的方法，利用含兴奋与抑制区域的有限感受野，无需阈值即可检测二值和灰度图像中的孤立像素。</description>
     <pubDate>Wed, 16 Sep 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2609.18399</guid>
-  </item>
-  <item>
-    <title>Probe-VAD：面向免训练视频异常检测的序数似然探测</title>
-    <link>https://arxiv.org/abs/2609.17211</link>
-    <description>提出Probe-VAD，通过向冻结视觉语言模型查询有序严重度阈值的YES/NO似然，构建累积严重度画像并聚合为连续异常分数，实现免训练视频异常检测。</description>
-    <pubDate>Tue, 15 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.17211</guid>
   </item>
 </channel>
 </rss>
