@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Thu, 01 Oct 2026 14:39:32 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 14:23:17 +0800</lastBuildDate>
+  <item>
+    <title>MIRTO：一种配准门控、多元宇宙检验的脑MRI无监督异常分割评估协议</title>
+    <link>https://arxiv.org/abs/2610.02136</link>
+    <description>提出MIRTO评估协议，将脑MRI无监督异常分割中常被忽略的配准、阈值、假阳性预算等选择显式化，并在15552种评估流程上检验其影响。</description>
+    <pubDate>Fri, 02 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.02136</guid>
+  </item>
+  <item>
+    <title>Cog-VADU：面向视频异常检测与理解的免训练认知推理框架</title>
+    <link>https://arxiv.org/abs/2610.01754</link>
+    <description>提出免训练框架Cog-VADU，将视频异常检测重构为序列认知推理任务，通过链式思维提示与跨模态重排序实现零样本异常定位与理解。</description>
+    <pubDate>Thu, 01 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.01754</guid>
+  </item>
   <item>
     <title>PCB-MC：印刷电路板缺失元件分析</title>
     <link>https://arxiv.org/abs/2609.39427</link>
@@ -130,20 +144,6 @@
     <description>提出NoRDeC框架，利用冻结的Omni-Seg肾分割骨干网络，仅用正常肾小球拟合马氏距离正常参考评分，实现无需异常样本训练的肾小球异常检测与表征分析。</description>
     <pubDate>Thu, 17 Sep 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2609.19444</guid>
-  </item>
-  <item>
-    <title>RoboVAD：机械臂操作视频异常检测的大规模跨域评估基准</title>
-    <link>https://arxiv.org/abs/2609.17843</link>
-    <description>提出RoboVAD大规模基准，用于机械臂操作视频的跨域异常检测，涵盖未见任务与异常类型，并评测多种最先进方法。</description>
-    <pubDate>Wed, 16 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.17843</guid>
-  </item>
-  <item>
-    <title>基于对比敏感感受野的非线性神经元检测二值与灰度图像中的孤立像素</title>
-    <link>https://arxiv.org/abs/2609.18399</link>
-    <description>提出一种改进非线性神经元模型的方法，利用含兴奋与抑制区域的有限感受野，无需阈值即可检测二值和灰度图像中的孤立像素。</description>
-    <pubDate>Wed, 16 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.18399</guid>
   </item>
 </channel>
 </rss>
