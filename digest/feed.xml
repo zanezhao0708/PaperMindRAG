@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Sun, 04 Oct 2026 14:29:49 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 14:23:03 +0800</lastBuildDate>
+  <item>
+    <title>面向高效海洋环境监测的星载异常检测</title>
+    <link>https://arxiv.org/abs/2610.03649</link>
+    <description>提出一种面向多/高光谱地球观测卫星的海洋事件检测流水线，用自监督编码器压缩图像并在星上完成异常检测，以节省带宽并提升响应速度。</description>
+    <pubDate>Sat, 03 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.03649</guid>
+  </item>
   <item>
     <title>PARSEE-VAD：基于命题感知推理与流式证据升级的高效免训练在线视频异常检测</title>
     <link>https://arxiv.org/abs/2609.33236</link>
@@ -137,13 +144,6 @@
     <description>提出HACT，用双手角色保持历史与标记时序点过程建模手部事件转移，实现双手装配程序性异常检测。</description>
     <pubDate>Fri, 18 Sep 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2609.21207</guid>
-  </item>
-  <item>
-    <title>融合视觉基础模型先验与CLIP的医学图像空间感知少样本异常检测</title>
-    <link>https://arxiv.org/abs/2609.12454</link>
-    <description>提出Spatial-FAD框架，将DINO的空间结构先验注入CLIP特征，结合滑窗聚合与原型增强支持记忆，实现医学图像少样本异常检测与病灶定位。</description>
-    <pubDate>Fri, 11 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.12454</guid>
   </item>
 </channel>
 </rss>
