@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Mon, 05 Oct 2026 15:13:47 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 14:58:58 +0800</lastBuildDate>
+  <item>
+    <title>RoMod：基于混合专家时序路由调制的视频异常检测</title>
+    <link>https://arxiv.org/abs/2610.05131</link>
+    <description>发现冻结MoE大模型中异常证据集中于少数专家并可作内部线索，据此提出仅用5%弱标签训练的RoMod框架实现高效视频异常检测。</description>
+    <pubDate>Sun, 04 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.05131</guid>
+  </item>
+  <item>
+    <title>面向可解释弱监督视频异常检测的表征-行为对齐</title>
+    <link>https://arxiv.org/abs/2610.05129</link>
+    <description>发现MLLM视频异常检测中决策方向与隐状态判别信息错位，提出仅调0.012%参数的对齐方法RBA。</description>
+    <pubDate>Sun, 04 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.05129</guid>
+  </item>
   <item>
     <title>面向高效海洋环境监测的星载异常检测</title>
     <link>https://arxiv.org/abs/2610.03649</link>
@@ -130,20 +144,6 @@
     <description>SAFe用轻量归一化流在冻结DINOv3特征上做类条件密度估计，并结合多尺度卷积特征与SAM3后处理，实现空间一致的异常分割与实例级检测。</description>
     <pubDate>Mon, 21 Sep 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2609.24204</guid>
-  </item>
-  <item>
-    <title>无监督异常检测的原则性方法</title>
-    <link>https://arxiv.org/abs/2609.21800</link>
-    <description>将无监督异常检测重构为贝叶斯逆问题，推断导致观测的最可能损坏参数，并以其能量作为概率异常分数。</description>
-    <pubDate>Fri, 18 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.21800</guid>
-  </item>
-  <item>
-    <title>面向双手程序性异常检测的手部感知转移建模</title>
-    <link>https://arxiv.org/abs/2609.21207</link>
-    <description>提出HACT，用双手角色保持历史与标记时序点过程建模手部事件转移，实现双手装配程序性异常检测。</description>
-    <pubDate>Fri, 18 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.21207</guid>
   </item>
 </channel>
 </rss>
