@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Tue, 06 Oct 2026 14:58:58 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 14:39:40 +0800</lastBuildDate>
+  <item>
+    <title>锚定与适配：面向少样本工业异常检测的非对称提示适配</title>
+    <link>https://arxiv.org/abs/2610.07016</link>
+    <description>提出两阶段提示学习框架，先从辅助数据学习可迁移的正常/异常锚点，再用少量目标正常样本非对称适配正常分支，实现少样本工业异常检测。</description>
+    <pubDate>Sun, 04 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.07016</guid>
+  </item>
+  <item>
+    <title>检测真正重要的缺陷：面向制造与零售物流的异常检测应用驱动基准（VAND 4.0 挑战赛）</title>
+    <link>https://arxiv.org/abs/2610.04392</link>
+    <description>VAND 4.0挑战赛提出覆盖工业制造与零售物流的隐藏测试应用驱动基准，揭示无监督分割仍难、零样本落后、VLM不及专用模型、稀有缺陷性能崩塌且效率被忽视。</description>
+    <pubDate>Sat, 03 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.04392</guid>
+  </item>
   <item>
     <title>RoMod：基于混合专家时序路由调制的视频异常检测</title>
     <link>https://arxiv.org/abs/2610.05131</link>
@@ -130,20 +144,6 @@
     <description>挑战RGB与点云同等可靠的假设，发现零样本类别偏移下点云更可靠，提出可靠性感知的WOOPS框架实现多模态异常检测。</description>
     <pubDate>Tue, 22 Sep 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2609.25793</guid>
-  </item>
-  <item>
-    <title>基于扩散先验的无监督脑异常检测：贝叶斯逆问题视角</title>
-    <link>https://arxiv.org/abs/2609.24265</link>
-    <description>将无监督脑异常检测建模为扩散先验下的贝叶斯逆问题，通过退火后验采样联合推断伪健康图像与异常掩码。</description>
-    <pubDate>Mon, 21 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.24265</guid>
-  </item>
-  <item>
-    <title>SAFe：面向异常感知分割的特征密度分割引导聚合</title>
-    <link>https://arxiv.org/abs/2609.24204</link>
-    <description>SAFe用轻量归一化流在冻结DINOv3特征上做类条件密度估计，并结合多尺度卷积特征与SAM3后处理，实现空间一致的异常分割与实例级检测。</description>
-    <pubDate>Mon, 21 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.24204</guid>
   </item>
 </channel>
 </rss>
