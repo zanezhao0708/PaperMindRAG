@@ -4,7 +4,35 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Wed, 07 Oct 2026 14:39:40 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 14:46:06 +0800</lastBuildDate>
+  <item>
+    <title>多源超声基准揭示当代自监督异常检测方法的局限</title>
+    <link>https://arxiv.org/abs/2610.09677</link>
+    <description>提出多源超声异常检测基准SADUSI，覆盖多解剖区域与采集协议，评测发现现有自监督方法在该设定下表现不佳。</description>
+    <pubDate>Wed, 07 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.09677</guid>
+  </item>
+  <item>
+    <title>准二值化自编码器：一种用于医学图像异常检测的架构无关信息瓶颈</title>
+    <link>https://arxiv.org/abs/2610.09670</link>
+    <description>提出准二值化层将潜变量压缩到[0,1]并加Laplace噪声，使图像与重建的互信息仅由epsilon和层数决定，从而在单一架构下实现医学图像异常检测的SOTA。</description>
+    <pubDate>Wed, 07 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.09670</guid>
+  </item>
+  <item>
+    <title>trACT：时间揭示机载相机陷阱</title>
+    <link>https://arxiv.org/abs/2610.09417</link>
+    <description>提出轻量实时无人机框架trACT，通过时间最大池化与自监督运动异常检测，在复杂环境中实现自主目标验证。</description>
+    <pubDate>Wed, 07 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.09417</guid>
+  </item>
+  <item>
+    <title>LeCuration：作为数据策展多工具的微型世界模型</title>
+    <link>https://arxiv.org/abs/2610.09285</link>
+    <description>训练一个小型世界模型LeCuration，用其嵌入做异常检测、内容聚类和动作-状态一致性检查，为下游大模型策展数据。</description>
+    <pubDate>Wed, 07 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.09285</guid>
+  </item>
   <item>
     <title>锚定与适配：面向少样本工业异常检测的非对称提示适配</title>
     <link>https://arxiv.org/abs/2610.07016</link>
@@ -116,34 +144,6 @@
     <description>揭示L2特征匹配蒸馏存在频谱偏差，提出自适应平衡各频谱方向权重的SpecMatch目标，在42组师生配置中40组超越传统方法。</description>
     <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2609.34106</guid>
-  </item>
-  <item>
-    <title>基于视觉潜空间缺陷锚定推理的工业异常检测</title>
-    <link>https://arxiv.org/abs/2609.29457</link>
-    <description>提出Anomaly-LR框架，先在视觉潜空间中形成全局理解再逐步细化异常相关表征，并构建首个面向潜空间推理的工业异常检测指令数据集IAD-LR-22K。</description>
-    <pubDate>Thu, 24 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.29457</guid>
-  </item>
-  <item>
-    <title>面向异常视频理解的测试时强化学习</title>
-    <link>https://arxiv.org/abs/2609.26099</link>
-    <description>提出一种测试时强化学习框架，通过双查询一致性过滤、熵感知共识奖励和虚拟负锚机制，让Video-LLM在无标注情况下自适应提升异常视频理解能力。</description>
-    <pubDate>Tue, 18 Aug 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.26099</guid>
-  </item>
-  <item>
-    <title>AT3D-AD：基于层次化点-语言对齐的异常类型感知3D异常检测</title>
-    <link>https://arxiv.org/abs/2609.25930</link>
-    <description>提出统一框架AT3D-AD，通过物理驱动异常合成、层次化全局-局部对齐和语义-几何分类，实现3D点云异常的联合检测、定位与类型识别。</description>
-    <pubDate>Tue, 22 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.25930</guid>
-  </item>
-  <item>
-    <title>当点云超越像素：重新思考零样本多模态异常检测</title>
-    <link>https://arxiv.org/abs/2609.25793</link>
-    <description>挑战RGB与点云同等可靠的假设，发现零样本类别偏移下点云更可靠，提出可靠性感知的WOOPS框架实现多模态异常检测。</description>
-    <pubDate>Tue, 22 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.25793</guid>
   </item>
 </channel>
 </rss>
