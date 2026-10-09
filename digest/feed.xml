@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Thu, 08 Oct 2026 14:46:06 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 14:54:20 +0800</lastBuildDate>
+  <item>
+    <title>Φsat-2星上海洋异常检测：从仿真开发到在轨验证</title>
+    <link>https://arxiv.org/abs/2610.11735</link>
+    <description>在ESA Φsat-2卫星上部署轻量级海洋异常检测流水线，经历仿真训练、星上集成与真实在轨数据重训练，实现在轨演示。</description>
+    <pubDate>Thu, 08 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.11735</guid>
+  </item>
+  <item>
+    <title>面向视频异常检测与预测的统一分数匹配范式</title>
+    <link>https://arxiv.org/abs/2610.11149</link>
+    <description>提出基于去噪分数匹配的统一框架Uni-DSM，用同一分数驱动架构分别实现视频异常检测与异常预测。</description>
+    <pubDate>Thu, 08 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.11149</guid>
+  </item>
   <item>
     <title>多源超声基准揭示当代自监督异常检测方法的局限</title>
     <link>https://arxiv.org/abs/2610.09677</link>
@@ -130,20 +144,6 @@
     <description>提出关系不一致性建模框架，将缺陷定义为邻域几何一致性违背，通过伪异常学习类别无关缺陷线索，实现可泛化的3D异常检测。</description>
     <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2609.35059</guid>
-  </item>
-  <item>
-    <title>超越几何：面向3D逻辑异常检测的基准与一致性推理</title>
-    <link>https://arxiv.org/abs/2609.34143</link>
-    <description>提出首个面向工业点云逻辑异常的可扩展基准ILGAD，并设计一致性推理框架检测存在性、规格、位姿和装配状态等逻辑异常。</description>
-    <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.34143</guid>
-  </item>
-  <item>
-    <title>魔鬼藏在频谱偏差中：面向鲁棒表征蒸馏的频谱平衡特征匹配</title>
-    <link>https://arxiv.org/abs/2609.34106</link>
-    <description>揭示L2特征匹配蒸馏存在频谱偏差，提出自适应平衡各频谱方向权重的SpecMatch目标，在42组师生配置中40组超越传统方法。</description>
-    <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.34106</guid>
   </item>
 </channel>
 </rss>
