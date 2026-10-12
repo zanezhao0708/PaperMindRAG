@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Sun, 11 Oct 2026 14:35:47 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 14:42:00 +0800</lastBuildDate>
+  <item>
+    <title>荧光显微镜图像中极稀有死细胞的检测</title>
+    <link>https://arxiv.org/abs/2610.13780</link>
+    <description>系统比较启发式、分类与异常检测方法在荧光显微图像中检测极稀有凋亡细胞，发现ResNet-18和XGBoost表现最佳但仍具挑战。</description>
+    <pubDate>Sat, 10 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.13780</guid>
+  </item>
   <item>
     <title>Φsat-2星上海洋异常检测：从仿真开发到在轨验证</title>
     <link>https://arxiv.org/abs/2610.11735</link>
@@ -137,13 +144,6 @@
     <description>提出HyperSAM，用物理感知合成高光谱数据并基于SAM3适配，构建可提示高光谱遥感基础模型，在分类、异常/变化/目标检测等任务上泛化良好。</description>
     <pubDate>Tue, 29 Sep 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2609.37340</guid>
-  </item>
-  <item>
-    <title>面向可泛化3D异常检测的关系不一致性建模</title>
-    <link>https://arxiv.org/abs/2609.35059</link>
-    <description>提出关系不一致性建模框架，将缺陷定义为邻域几何一致性违背，通过伪异常学习类别无关缺陷线索，实现可泛化的3D异常检测。</description>
-    <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.35059</guid>
   </item>
 </channel>
 </rss>
