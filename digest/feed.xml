@@ -4,7 +4,42 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Tue, 13 Oct 2026 15:11:42 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 13:35:22 +0800</lastBuildDate>
+  <item>
+    <title>通过合成异常实现拍摄条件变化下的鲁棒逻辑异常检测</title>
+    <link>https://arxiv.org/abs/2610.18295</link>
+    <description>提出用语言模型生成合成逻辑异常训练分类器，在拍摄条件扰动下比依赖正常参考图的方法更鲁棒。</description>
+    <pubDate>Tue, 13 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.18295</guid>
+  </item>
+  <item>
+    <title>审计视频异常检测中以人为中心运动评估中的观测质量捷径</title>
+    <link>https://arxiv.org/abs/2610.16471</link>
+    <description>提出观测质量感知评估框架，揭示视频异常检测中运动判别可能源于检测/姿态/跟踪的观测质量差异而非真实异常运动。</description>
+    <pubDate>Mon, 12 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.16471</guid>
+  </item>
+  <item>
+    <title>异常引导观察与两级语义反馈的无训练视频异常分析</title>
+    <link>https://arxiv.org/abs/2610.16324</link>
+    <description>提出无训练语义反馈框架，用异常分数引导主动观察生成异常描述，再通过视频级和局部两级反馈精修时序检测。</description>
+    <pubDate>Mon, 12 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.16324</guid>
+  </item>
+  <item>
+    <title>面向视频异常理解的时间证据选择学习</title>
+    <link>https://arxiv.org/abs/2610.16299</link>
+    <description>提出语义条件化的Temporal Sampling Q-Former，通过VAU生成目标学习选择时间视觉证据，并用CLIP嵌入的物体标签作为采样器条件，在HIVAU-70K上取得最优性能。</description>
+    <pubDate>Mon, 12 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.16299</guid>
+  </item>
+  <item>
+    <title>面向分布式记忆库的联邦核心集子采样</title>
+    <link>https://arxiv.org/abs/2610.16425</link>
+    <description>提出两种联邦子采样方法（双重重采样与联邦子采样），将基于记忆库的PatchCore异常检测适配到联邦场景，提升冷启动性能与鲁棒性。</description>
+    <pubDate>Mon, 12 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.16425</guid>
+  </item>
   <item>
     <title>荧光显微镜图像中极稀有死细胞的检测</title>
     <link>https://arxiv.org/abs/2610.13780</link>
@@ -109,41 +144,6 @@
     <description>这篇PRISMA综述系统梳理了2017至2026年单像素攻击研究，提出多轴分类体系，并总结防御机制、应用场景与监管框架。</description>
     <pubDate>Thu, 10 Sep 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2610.00125</guid>
-  </item>
-  <item>
-    <title>MIRTO：一种配准门控、多元宇宙检验的脑MRI无监督异常分割评估协议</title>
-    <link>https://arxiv.org/abs/2610.02136</link>
-    <description>提出MIRTO评估协议，将脑MRI无监督异常分割中常被忽略的配准、阈值、假阳性预算等选择显式化，并在15552种评估流程上检验其影响。</description>
-    <pubDate>Fri, 02 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.02136</guid>
-  </item>
-  <item>
-    <title>Cog-VADU：面向视频异常检测与理解的免训练认知推理框架</title>
-    <link>https://arxiv.org/abs/2610.01754</link>
-    <description>提出免训练框架Cog-VADU，将视频异常检测重构为序列认知推理任务，通过链式思维提示与跨模态重排序实现零样本异常定位与理解。</description>
-    <pubDate>Thu, 01 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.01754</guid>
-  </item>
-  <item>
-    <title>PCB-MC：印刷电路板缺失元件分析</title>
-    <link>https://arxiv.org/abs/2609.39427</link>
-    <description>提出PCB-MC数据集，用于检测印刷电路板上缺失的元件，并提供基准测试揭示现有监督与无监督方法在此任务上的严重不足。</description>
-    <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.39427</guid>
-  </item>
-  <item>
-    <title>面向数据稀缺下模型选择的视觉异常合成</title>
-    <link>https://arxiv.org/abs/2609.37360</link>
-    <description>提出无需目标资产缺陷参考的框架，在真实无缺陷图像上合成分级缺陷，用于工业缺陷检测的模型选择与验证。</description>
-    <pubDate>Tue, 29 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.37360</guid>
-  </item>
-  <item>
-    <title>HyperSAM：面向高光谱遥感的可提示基础模型</title>
-    <link>https://arxiv.org/abs/2609.37340</link>
-    <description>提出HyperSAM，用物理感知合成高光谱数据并基于SAM3适配，构建可提示高光谱遥感基础模型，在分类、异常/变化/目标检测等任务上泛化良好。</description>
-    <pubDate>Tue, 29 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.37340</guid>
   </item>
 </channel>
 </rss>
