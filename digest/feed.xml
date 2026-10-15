@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Wed, 14 Oct 2026 13:35:22 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 13:22:47 +0800</lastBuildDate>
+  <item>
+    <title>CORE：面向异常合成的自监督提示优化对比与反思框架</title>
+    <link>https://arxiv.org/abs/2610.19610</link>
+    <description>提出免训练的大多模态模型提示优化框架CORE，通过异常上下文接地与自监督对比反思机制，统一零样本和单样本工业异常合成。</description>
+    <pubDate>Wed, 14 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.19610</guid>
+  </item>
+  <item>
+    <title>集成新颖性检测系统：从传感器网络到多新颖性计算机视觉</title>
+    <link>https://arxiv.org/abs/2610.19347</link>
+    <description>本文针对气象传感器网络中的雨量计堵塞检测和计算机视觉中的多类型新颖性检测，分别提出三种新型质量控制技术和NOVEL-SS数据集及DCA基线系统。</description>
+    <pubDate>Wed, 14 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.19347</guid>
+  </item>
   <item>
     <title>通过合成异常实现拍摄条件变化下的鲁棒逻辑异常检测</title>
     <link>https://arxiv.org/abs/2610.18295</link>
@@ -130,20 +144,6 @@
     <description>提出免训练双模块框架PARSEE-VAD，通过命题感知推理提取当前窗口结构化证据并用流式证据升级维护紧凑历史状态，实现高效在线视频异常检测。</description>
     <pubDate>Sun, 27 Sep 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2609.33236</guid>
-  </item>
-  <item>
-    <title>超越孤立实体：面向无监督视频异常检测的关系感知多实体建模</title>
-    <link>https://arxiv.org/abs/2609.31753</link>
-    <description>提出INTERACT框架，通过联合建模人与物体的外观、运动和空间关系，实现无监督视频异常检测并达到SOTA。</description>
-    <pubDate>Wed, 23 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.31753</guid>
-  </item>
-  <item>
-    <title>单像素攻击综合综述：研究现状、分类体系、应用、监管政策与未来方向</title>
-    <link>https://arxiv.org/abs/2610.00125</link>
-    <description>这篇PRISMA综述系统梳理了2017至2026年单像素攻击研究，提出多轴分类体系，并总结防御机制、应用场景与监管框架。</description>
-    <pubDate>Thu, 10 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.00125</guid>
   </item>
 </channel>
 </rss>
