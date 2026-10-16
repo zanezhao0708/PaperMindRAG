@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Thu, 15 Oct 2026 13:22:47 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 13:14:45 +0800</lastBuildDate>
+  <item>
+    <title>用于多模态异常检测的双向自适应Transformer</title>
+    <link>https://arxiv.org/abs/2610.14598</link>
+    <description>提出双向自适应Transformer框架，通过双向特征对齐与轻量适配器微调预训练编码器，实现RGB与3D点云语义对齐的多模态异常检测。</description>
+    <pubDate>Sat, 10 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.14598</guid>
+  </item>
+  <item>
+    <title>基于高斯与均匀分布概率混合的人体姿态估计</title>
+    <link>https://arxiv.org/abs/2610.14093</link>
+    <description>提出一种无需重训练的后处理连续概率框架，将热图建模为高斯混合加均匀分布，提升姿态估计的精度、不确定性与多视图3D扩展能力。</description>
+    <pubDate>Fri, 09 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.14093</guid>
+  </item>
   <item>
     <title>CORE：面向异常合成的自监督提示优化对比与反思框架</title>
     <link>https://arxiv.org/abs/2610.19610</link>
@@ -130,20 +144,6 @@
     <description>发现MLLM视频异常检测中决策方向与隐状态判别信息错位，提出仅调0.012%参数的对齐方法RBA。</description>
     <pubDate>Sun, 04 Oct 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2610.05129</guid>
-  </item>
-  <item>
-    <title>面向高效海洋环境监测的星载异常检测</title>
-    <link>https://arxiv.org/abs/2610.03649</link>
-    <description>提出一种面向多/高光谱地球观测卫星的海洋事件检测流水线，用自监督编码器压缩图像并在星上完成异常检测，以节省带宽并提升响应速度。</description>
-    <pubDate>Sat, 03 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.03649</guid>
-  </item>
-  <item>
-    <title>PARSEE-VAD：基于命题感知推理与流式证据升级的高效免训练在线视频异常检测</title>
-    <link>https://arxiv.org/abs/2609.33236</link>
-    <description>提出免训练双模块框架PARSEE-VAD，通过命题感知推理提取当前窗口结构化证据并用流式证据升级维护紧凑历史状态，实现高效在线视频异常检测。</description>
-    <pubDate>Sun, 27 Sep 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2609.33236</guid>
   </item>
 </channel>
 </rss>
