@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Tue, 20 Oct 2026 13:29:12 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 13:29:44 +0800</lastBuildDate>
+  <item>
+    <title>AnomalyJev：通过声明级验证评估图像异常解释</title>
+    <link>https://arxiv.org/abs/2610.27565</link>
+    <description>提出AnomalyJev轻量框架，从多模态大模型生成的异常检测解释中提取可验证声明并与真值标注比对，实现高效忠实的解释评估。</description>
+    <pubDate>Tue, 20 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.27565</guid>
+  </item>
   <item>
     <title>YUTELA：面向多站点视频异常检测的可扩展边缘云AIoT系统</title>
     <link>https://arxiv.org/abs/2610.26468</link>
@@ -137,13 +144,6 @@
     <description>提出两阶段提示学习框架，先从辅助数据学习可迁移的正常/异常锚点，再用少量目标正常样本非对称适配正常分支，实现少样本工业异常检测。</description>
     <pubDate>Sun, 04 Oct 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2610.07016</guid>
-  </item>
-  <item>
-    <title>检测真正重要的缺陷：面向制造与零售物流的异常检测应用驱动基准（VAND 4.0 挑战赛）</title>
-    <link>https://arxiv.org/abs/2610.04392</link>
-    <description>VAND 4.0挑战赛提出覆盖工业制造与零售物流的隐藏测试应用驱动基准，揭示无监督分割仍难、零样本落后、VLM不及专用模型、稀有缺陷性能崩塌且效率被忽视。</description>
-    <pubDate>Sat, 03 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.04392</guid>
   </item>
 </channel>
 </rss>
