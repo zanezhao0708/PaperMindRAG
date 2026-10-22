@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Wed, 21 Oct 2026 13:29:44 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 13:33:51 +0800</lastBuildDate>
+  <item>
+    <title>通过频域分析揭示胸片分类中的隐藏失效模式</title>
+    <link>https://arxiv.org/abs/2610.29830</link>
+    <description>提出一种基于频谱分析的数据中心框架，通过聚类图像频域能量分布来自动发现胸片分类模型集中失效的数据切片。</description>
+    <pubDate>Wed, 21 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.29830</guid>
+  </item>
+  <item>
+    <title>MS2CAST：基于多尺度空间交叉注意力和高效时空网络的视频异常检测框架</title>
+    <link>https://arxiv.org/abs/2610.29649</link>
+    <description>提出端到端半监督预测式视频异常检测框架MS2CAST，用多尺度交叉注意力融合ViT与CNN特征，并以SwinLSTM或VMRNN在潜空间建模时空动态，无需光流。</description>
+    <pubDate>Wed, 21 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.29649</guid>
+  </item>
   <item>
     <title>AnomalyJev：通过声明级验证评估图像异常解释</title>
     <link>https://arxiv.org/abs/2610.27565</link>
@@ -130,20 +144,6 @@
     <description>提出轻量实时无人机框架trACT，通过时间最大池化与自监督运动异常检测，在复杂环境中实现自主目标验证。</description>
     <pubDate>Wed, 07 Oct 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2610.09417</guid>
-  </item>
-  <item>
-    <title>LeCuration：作为数据策展多工具的微型世界模型</title>
-    <link>https://arxiv.org/abs/2610.09285</link>
-    <description>训练一个小型世界模型LeCuration，用其嵌入做异常检测、内容聚类和动作-状态一致性检查，为下游大模型策展数据。</description>
-    <pubDate>Wed, 07 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.09285</guid>
-  </item>
-  <item>
-    <title>锚定与适配：面向少样本工业异常检测的非对称提示适配</title>
-    <link>https://arxiv.org/abs/2610.07016</link>
-    <description>提出两阶段提示学习框架，先从辅助数据学习可迁移的正常/异常锚点，再用少量目标正常样本非对称适配正常分支，实现少样本工业异常检测。</description>
-    <pubDate>Sun, 04 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.07016</guid>
   </item>
 </channel>
 </rss>
