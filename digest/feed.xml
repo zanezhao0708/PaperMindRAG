@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Thu, 22 Oct 2026 13:33:51 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 13:31:56 +0800</lastBuildDate>
+  <item>
+    <title>LACToS：基于超像素条件典型性的局部异常检测</title>
+    <link>https://arxiv.org/abs/2610.31538</link>
+    <description>提出LACToS，利用超像素分组和高效典型性代理估计，实现多模态内点分布下更鲁棒的局部异常检测。</description>
+    <pubDate>Fri, 23 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.31538</guid>
+  </item>
+  <item>
+    <title>MoG-VLM：运动引导视觉语言模型的高效视频异常检测</title>
+    <link>https://arxiv.org/abs/2610.31478</link>
+    <description>提出运动自适应框架MoG-VLM，用运动作为轻量控制信号决定何时调用VLM推理，在多个基准上实现零样本训练免费的SOTA并加速推理。</description>
+    <pubDate>Fri, 23 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.31478</guid>
+  </item>
   <item>
     <title>通过频域分析揭示胸片分类中的隐藏失效模式</title>
     <link>https://arxiv.org/abs/2610.29830</link>
@@ -130,20 +144,6 @@
     <description>提出多源超声异常检测基准SADUSI，覆盖多解剖区域与采集协议，评测发现现有自监督方法在该设定下表现不佳。</description>
     <pubDate>Wed, 07 Oct 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2610.09677</guid>
-  </item>
-  <item>
-    <title>准二值化自编码器：一种用于医学图像异常检测的架构无关信息瓶颈</title>
-    <link>https://arxiv.org/abs/2610.09670</link>
-    <description>提出准二值化层将潜变量压缩到[0,1]并加Laplace噪声，使图像与重建的互信息仅由epsilon和层数决定，从而在单一架构下实现医学图像异常检测的SOTA。</description>
-    <pubDate>Wed, 07 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.09670</guid>
-  </item>
-  <item>
-    <title>trACT：时间揭示机载相机陷阱</title>
-    <link>https://arxiv.org/abs/2610.09417</link>
-    <description>提出轻量实时无人机框架trACT，通过时间最大池化与自监督运动异常检测，在复杂环境中实现自主目标验证。</description>
-    <pubDate>Wed, 07 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.09417</guid>
   </item>
 </channel>
 </rss>
