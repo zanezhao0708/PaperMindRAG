@@ -4,7 +4,28 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Sun, 25 Oct 2026 13:27:33 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 13:32:35 +0800</lastBuildDate>
+  <item>
+    <title>Flownomaly：面向少样本异常检测的单步条件均值恢复</title>
+    <link>https://arxiv.org/abs/2610.32964</link>
+    <description>将少样本工业异常检测转化为冻结DINOv2特征空间中的正常对应恢复问题，用条件流匹配学习速度场并单步恢复后验均值。</description>
+    <pubDate>Sat, 24 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.32964</guid>
+  </item>
+  <item>
+    <title>基于信号感知自适应融合的高效零样本视频异常检测</title>
+    <link>https://arxiv.org/abs/2610.32486</link>
+    <description>提出SAAF框架，通过双信号自适应采样、阈值门控级联架构和信号感知加权融合，实现高效零样本视频异常检测。</description>
+    <pubDate>Fri, 23 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.32486</guid>
+  </item>
+  <item>
+    <title>面向匿名人群视频监控的引导式零样本异常解释：上下文、分类与空间定位</title>
+    <link>https://arxiv.org/abs/2610.32073</link>
+    <description>提出XAVAD统一可解释框架，在匿名化视频异常检测中集成零样本匿名化、异常类型分类、空间定位与场景上下文描述。</description>
+    <pubDate>Fri, 23 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.32073</guid>
+  </item>
   <item>
     <title>LACToS：基于超像素条件典型性的局部异常检测</title>
     <link>https://arxiv.org/abs/2610.31538</link>
@@ -123,27 +144,6 @@
     <description>系统比较启发式、分类与异常检测方法在荧光显微图像中检测极稀有凋亡细胞，发现ResNet-18和XGBoost表现最佳但仍具挑战。</description>
     <pubDate>Sat, 10 Oct 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2610.13780</guid>
-  </item>
-  <item>
-    <title>Φsat-2星上海洋异常检测：从仿真开发到在轨验证</title>
-    <link>https://arxiv.org/abs/2610.11735</link>
-    <description>在ESA Φsat-2卫星上部署轻量级海洋异常检测流水线，经历仿真训练、星上集成与真实在轨数据重训练，实现在轨演示。</description>
-    <pubDate>Thu, 08 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.11735</guid>
-  </item>
-  <item>
-    <title>面向视频异常检测与预测的统一分数匹配范式</title>
-    <link>https://arxiv.org/abs/2610.11149</link>
-    <description>提出基于去噪分数匹配的统一框架Uni-DSM，用同一分数驱动架构分别实现视频异常检测与异常预测。</description>
-    <pubDate>Thu, 08 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.11149</guid>
-  </item>
-  <item>
-    <title>多源超声基准揭示当代自监督异常检测方法的局限</title>
-    <link>https://arxiv.org/abs/2610.09677</link>
-    <description>提出多源超声异常检测基准SADUSI，覆盖多解剖区域与采集协议，评测发现现有自监督方法在该设定下表现不佳。</description>
-    <pubDate>Wed, 07 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.09677</guid>
   </item>
 </channel>
 </rss>
