@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Mon, 26 Oct 2026 14:28:45 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 13:47:00 +0800</lastBuildDate>
+  <item>
+    <title>SGDB：面向逻辑异常检测的语义-几何解耦与证据绑定</title>
+    <link>https://arxiv.org/abs/2610.34897</link>
+    <description>提出语义-几何解耦与证据绑定框架SGDB，通过分离物体身份识别与几何测量并绑定证据，实现可解释的逻辑异常检测。</description>
+    <pubDate>Mon, 26 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.34897</guid>
+  </item>
   <item>
     <title>Flownomaly：面向少样本异常检测的单步条件均值恢复</title>
     <link>https://arxiv.org/abs/2610.32964</link>
@@ -137,13 +144,6 @@
     <description>提出两种联邦子采样方法（双重重采样与联邦子采样），将基于记忆库的PatchCore异常检测适配到联邦场景，提升冷启动性能与鲁棒性。</description>
     <pubDate>Mon, 12 Oct 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2610.16425</guid>
-  </item>
-  <item>
-    <title>荧光显微镜图像中极稀有死细胞的检测</title>
-    <link>https://arxiv.org/abs/2610.13780</link>
-    <description>系统比较启发式、分类与异常检测方法在荧光显微图像中检测极稀有凋亡细胞，发现ResNet-18和XGBoost表现最佳但仍具挑战。</description>
-    <pubDate>Sat, 10 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.13780</guid>
   </item>
 </channel>
 </rss>
