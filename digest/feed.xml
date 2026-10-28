@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Tue, 27 Oct 2026 13:47:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 14:25:16 +0800</lastBuildDate>
+  <item>
+    <title>面向无监督视网膜OCT异常检测的病理敏感表征学习</title>
+    <link>https://arxiv.org/abs/2610.33143</link>
+    <description>提出无监督框架，通过解剖感知重建与合成扰动引导的对比三元组学习，将预训练视觉表征适配正常视网膜解剖结构，实现无需疾病标注的OCT异常检测与定位。</description>
+    <pubDate>Sat, 24 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.33143</guid>
+  </item>
   <item>
     <title>SGDB：面向逻辑异常检测的语义-几何解耦与证据绑定</title>
     <link>https://arxiv.org/abs/2610.34897</link>
@@ -137,13 +144,6 @@
     <description>提出语义条件化的Temporal Sampling Q-Former，通过VAU生成目标学习选择时间视觉证据，并用CLIP嵌入的物体标签作为采样器条件，在HIVAU-70K上取得最优性能。</description>
     <pubDate>Mon, 12 Oct 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2610.16299</guid>
-  </item>
-  <item>
-    <title>面向分布式记忆库的联邦核心集子采样</title>
-    <link>https://arxiv.org/abs/2610.16425</link>
-    <description>提出两种联邦子采样方法（双重重采样与联邦子采样），将基于记忆库的PatchCore异常检测适配到联邦场景，提升冷启动性能与鲁棒性。</description>
-    <pubDate>Mon, 12 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.16425</guid>
   </item>
 </channel>
 </rss>
