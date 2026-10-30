@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Thu, 29 Oct 2026 14:36:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 14:35:31 +0800</lastBuildDate>
+  <item>
+    <title>RADIOlogy：单次前向的无训练零样本异常检测方法</title>
+    <link>https://arxiv.org/abs/2610.40580</link>
+    <description>发现视觉语言模型多头注意力池化天然具备零样本异常定位能力，据此提出单次前向、无需训练的异常检测与分割方法。</description>
+    <pubDate>Fri, 30 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.40580</guid>
+  </item>
+  <item>
+    <title>跨编码器锚点精炼的零样本异常检测</title>
+    <link>https://arxiv.org/abs/2610.39727</link>
+    <description>提出CEAR，在锚点阶段连接ViT与独立卷积编码器，通过跨注意力精炼空间锚点以构建正常/异常原型，实现零样本异常检测与定位。</description>
+    <pubDate>Thu, 29 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.39727</guid>
+  </item>
   <item>
     <title>面向无监督视网膜OCT异常检测的病理敏感表征学习</title>
     <link>https://arxiv.org/abs/2610.33143</link>
@@ -130,20 +144,6 @@
     <description>提出观测质量感知评估框架，揭示视频异常检测中运动判别可能源于检测/姿态/跟踪的观测质量差异而非真实异常运动。</description>
     <pubDate>Mon, 12 Oct 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2610.16471</guid>
-  </item>
-  <item>
-    <title>异常引导观察与两级语义反馈的无训练视频异常分析</title>
-    <link>https://arxiv.org/abs/2610.16324</link>
-    <description>提出无训练语义反馈框架，用异常分数引导主动观察生成异常描述，再通过视频级和局部两级反馈精修时序检测。</description>
-    <pubDate>Mon, 12 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.16324</guid>
-  </item>
-  <item>
-    <title>面向视频异常理解的时间证据选择学习</title>
-    <link>https://arxiv.org/abs/2610.16299</link>
-    <description>提出语义条件化的Temporal Sampling Q-Former，通过VAU生成目标学习选择时间视觉证据，并用CLIP嵌入的物体标签作为采样器条件，在HIVAU-70K上取得最优性能。</description>
-    <pubDate>Mon, 12 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.16299</guid>
   </item>
 </channel>
 </rss>
