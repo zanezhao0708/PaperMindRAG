@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Sun, 01 Nov 2026 14:58:28 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 14:57:22 +0800</lastBuildDate>
+  <item>
+    <title>VariaFlow：面向无监督异常检测的不确定性感知流匹配</title>
+    <link>https://arxiv.org/abs/2610.41494</link>
+    <description>提出VariaFlow，用流匹配模型集成估计健康重建的预测方差并归一化残差，实现跨数据集脑MRI无监督异常检测。</description>
+    <pubDate>Fri, 30 Oct 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2610.41494</guid>
+  </item>
   <item>
     <title>RADIOlogy：单次前向的无训练零样本异常检测方法</title>
     <link>https://arxiv.org/abs/2610.40580</link>
@@ -137,13 +144,6 @@
     <description>提出用语言模型生成合成逻辑异常训练分类器，在拍摄条件扰动下比依赖正常参考图的方法更鲁棒。</description>
     <pubDate>Tue, 13 Oct 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2610.18295</guid>
-  </item>
-  <item>
-    <title>审计视频异常检测中以人为中心运动评估中的观测质量捷径</title>
-    <link>https://arxiv.org/abs/2610.16471</link>
-    <description>提出观测质量感知评估框架，揭示视频异常检测中运动判别可能源于检测/姿态/跟踪的观测质量差异而非真实异常运动。</description>
-    <pubDate>Mon, 12 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.16471</guid>
   </item>
 </channel>
 </rss>
