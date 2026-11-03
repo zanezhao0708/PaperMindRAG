@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Mon, 02 Nov 2026 15:48:02 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 15:21:19 +0800</lastBuildDate>
+  <item>
+    <title>VerdictAD：决策引导细化的少样本异常检测</title>
+    <link>https://arxiv.org/abs/2611.02654</link>
+    <description>提出免训练框架VerdictAD，用类型化决策模型对查询图像及局部区域给出结构化决策概率，从全局和局部两个尺度细化现有异常检测器的异常分数。</description>
+    <pubDate>Mon, 02 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.02654</guid>
+  </item>
   <item>
     <title>VariaFlow：面向无监督异常检测的不确定性感知流匹配</title>
     <link>https://arxiv.org/abs/2610.41494</link>
@@ -137,13 +144,6 @@
     <description>本文针对气象传感器网络中的雨量计堵塞检测和计算机视觉中的多类型新颖性检测，分别提出三种新型质量控制技术和NOVEL-SS数据集及DCA基线系统。</description>
     <pubDate>Wed, 14 Oct 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2610.19347</guid>
-  </item>
-  <item>
-    <title>通过合成异常实现拍摄条件变化下的鲁棒逻辑异常检测</title>
-    <link>https://arxiv.org/abs/2610.18295</link>
-    <description>提出用语言模型生成合成逻辑异常训练分类器，在拍摄条件扰动下比依赖正常参考图的方法更鲁棒。</description>
-    <pubDate>Tue, 13 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.18295</guid>
   </item>
 </channel>
 </rss>
