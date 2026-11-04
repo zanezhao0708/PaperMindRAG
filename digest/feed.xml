@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Tue, 03 Nov 2026 15:21:19 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 15:03:40 +0800</lastBuildDate>
+  <item>
+    <title>有界AUKS：一种基于有界Kolmogorov-Smirnov曲线下面积的异常检测新评价指标</title>
+    <link>https://arxiv.org/abs/2611.04754</link>
+    <description>提出Bounded AUKS指标，通过数据驱动的有界区间积分TPR与FPR之差，量化正常与异常样本异常分数分布的可分性，弥补AUROC/AUPRO忽略阈值选择的缺陷。</description>
+    <pubDate>Tue, 03 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.04754</guid>
+  </item>
   <item>
     <title>VerdictAD：决策引导细化的少样本异常检测</title>
     <link>https://arxiv.org/abs/2611.02654</link>
@@ -137,13 +144,6 @@
     <description>提出免训练的大多模态模型提示优化框架CORE，通过异常上下文接地与自监督对比反思机制，统一零样本和单样本工业异常合成。</description>
     <pubDate>Wed, 14 Oct 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2610.19610</guid>
-  </item>
-  <item>
-    <title>集成新颖性检测系统：从传感器网络到多新颖性计算机视觉</title>
-    <link>https://arxiv.org/abs/2610.19347</link>
-    <description>本文针对气象传感器网络中的雨量计堵塞检测和计算机视觉中的多类型新颖性检测，分别提出三种新型质量控制技术和NOVEL-SS数据集及DCA基线系统。</description>
-    <pubDate>Wed, 14 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.19347</guid>
   </item>
 </channel>
 </rss>
