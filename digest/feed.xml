@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Wed, 04 Nov 2026 15:03:40 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 15:29:40 +0800</lastBuildDate>
+  <item>
+    <title>复现INP-Former：重建内在正常原型用于工业异常检测</title>
+    <link>https://arxiv.org/abs/2611.01230</link>
+    <description>复现INP-Former并扩展评估到MVTec AD 2，发现多数性能来自INP机制，但默认原型数等结论在更难数据上不成立。</description>
+    <pubDate>Sun, 01 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.01230</guid>
+  </item>
   <item>
     <title>有界AUKS：一种基于有界Kolmogorov-Smirnov曲线下面积的异常检测新评价指标</title>
     <link>https://arxiv.org/abs/2611.04754</link>
@@ -137,13 +144,6 @@
     <description>提出一种无需重训练的后处理连续概率框架，将热图建模为高斯混合加均匀分布，提升姿态估计的精度、不确定性与多视图3D扩展能力。</description>
     <pubDate>Fri, 09 Oct 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2610.14093</guid>
-  </item>
-  <item>
-    <title>CORE：面向异常合成的自监督提示优化对比与反思框架</title>
-    <link>https://arxiv.org/abs/2610.19610</link>
-    <description>提出免训练的大多模态模型提示优化框架CORE，通过异常上下文接地与自监督对比反思机制，统一零样本和单样本工业异常合成。</description>
-    <pubDate>Wed, 14 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.19610</guid>
   </item>
 </channel>
 </rss>
