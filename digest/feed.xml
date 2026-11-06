@@ -4,7 +4,42 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Thu, 05 Nov 2026 15:29:40 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 15:28:59 +0800</lastBuildDate>
+  <item>
+    <title>DART：面向通用异常检测的领域无关残差迁移</title>
+    <link>https://arxiv.org/abs/2611.08271</link>
+    <description>提出即插即用框架DART，将正常-异常引导的残差解耦为异常相关与领域特定成分，提升跨域通用异常检测性能。</description>
+    <pubDate>Fri, 06 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.08271</guid>
+  </item>
+  <item>
+    <title>故障引导的跨层预测用于无监督异常检测</title>
+    <link>https://arxiv.org/abs/2611.08140</link>
+    <description>将冻结ViT深度视为离散状态序列，用有向逐token预测器学习块间隐状态转移，以无法传递的信息作为异常信号。</description>
+    <pubDate>Thu, 05 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.08140</guid>
+  </item>
+  <item>
+    <title>未训练神经网络在异常检测中能走多远？从表格到像素</title>
+    <link>https://arxiv.org/abs/2611.08136</link>
+    <description>提出PRISM框架，用固定随机非线性特征加正态参考马氏评分做异常检测，无需训练即在表格和图像任务上达到竞争性性能。</description>
+    <pubDate>Thu, 05 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.08136</guid>
+  </item>
+  <item>
+    <title>时空动态感知的工业异常检测与推理</title>
+    <link>https://arxiv.org/abs/2611.08080</link>
+    <description>提出MUSTARD框架，为多模态大模型赋予细粒度时空动态感知能力，用于检测和推理工业制造中基于运动的动态异常。</description>
+    <pubDate>Thu, 05 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.08080</guid>
+  </item>
+  <item>
+    <title>面向道路异常检测的自适应低光照增强：多架构基准与边缘部署研究</title>
+    <link>https://arxiv.org/abs/2611.08393</link>
+    <description>论文基准测试四种检测架构在光照与天气退化下的表现，发现统一低光增强在黄昏光照下反而有害，提出免训练亮度自适应路由器按帧选择增强策略并在Jetson Nano上验证。</description>
+    <pubDate>Fri, 06 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.08393</guid>
+  </item>
   <item>
     <title>复现INP-Former：重建内在正常原型用于工业异常检测</title>
     <link>https://arxiv.org/abs/2611.01230</link>
@@ -109,41 +144,6 @@
     <description>提出端到端半监督预测式视频异常检测框架MS2CAST，用多尺度交叉注意力融合ViT与CNN特征，并以SwinLSTM或VMRNN在潜空间建模时空动态，无需光流。</description>
     <pubDate>Wed, 21 Oct 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2610.29649</guid>
-  </item>
-  <item>
-    <title>AnomalyJev：通过声明级验证评估图像异常解释</title>
-    <link>https://arxiv.org/abs/2610.27565</link>
-    <description>提出AnomalyJev轻量框架，从多模态大模型生成的异常检测解释中提取可验证声明并与真值标注比对，实现高效忠实的解释评估。</description>
-    <pubDate>Tue, 20 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.27565</guid>
-  </item>
-  <item>
-    <title>YUTELA：面向多站点视频异常检测的可扩展边缘云AIoT系统</title>
-    <link>https://arxiv.org/abs/2610.26468</link>
-    <description>提出YUTELA边缘-服务器-云AIoT系统，用Jetson Thor边缘设备替代工作站，实现多站点长期视频异常检测与场景自适应重训练。</description>
-    <pubDate>Mon, 19 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.26468</guid>
-  </item>
-  <item>
-    <title>知识引导的层次化分布提示学习用于零样本异常检测</title>
-    <link>https://arxiv.org/abs/2610.23172</link>
-    <description>提出HiDist框架，用正态参考的层次化分布提示建模，将异常提示参数化为对正常参考的偏离，实现零样本异常检测与定位。</description>
-    <pubDate>Fri, 16 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.23172</guid>
-  </item>
-  <item>
-    <title>用于多模态异常检测的双向自适应Transformer</title>
-    <link>https://arxiv.org/abs/2610.14598</link>
-    <description>提出双向自适应Transformer框架，通过双向特征对齐与轻量适配器微调预训练编码器，实现RGB与3D点云语义对齐的多模态异常检测。</description>
-    <pubDate>Sat, 10 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.14598</guid>
-  </item>
-  <item>
-    <title>基于高斯与均匀分布概率混合的人体姿态估计</title>
-    <link>https://arxiv.org/abs/2610.14093</link>
-    <description>提出一种无需重训练的后处理连续概率框架，将热图建模为高斯混合加均匀分布，提升姿态估计的精度、不确定性与多视图3D扩展能力。</description>
-    <pubDate>Fri, 09 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.14093</guid>
   </item>
 </channel>
 </rss>
