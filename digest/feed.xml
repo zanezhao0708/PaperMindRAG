@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Sun, 08 Nov 2026 14:47:49 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 15:21:47 +0800</lastBuildDate>
+  <item>
+    <title>面向多模态工业异常检测的嵌入预测自适应与细化</title>
+    <link>https://arxiv.org/abs/2611.09521</link>
+    <description>提出EPAR方法，通过掩码嵌入预测自适应编码器并结合噪声抑制网络细化粗粒度异常图，提升多模态工业异常检测性能。</description>
+    <pubDate>Fri, 06 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.09521</guid>
+  </item>
+  <item>
+    <title>基于知识牵引的多模态训练用于视频异常检测</title>
+    <link>https://arxiv.org/abs/2611.09536</link>
+    <description>提出一种引入外部知识的多模态训练方法，利用LLM构建任务先验并用字典学习压缩，结合跨模态注意力提升弱监督视频异常检测性能。</description>
+    <pubDate>Fri, 06 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.09536</guid>
+  </item>
   <item>
     <title>DART：面向通用异常检测的领域无关残差迁移</title>
     <link>https://arxiv.org/abs/2611.08271</link>
@@ -130,20 +144,6 @@
     <description>提出运动自适应框架MoG-VLM，用运动作为轻量控制信号决定何时调用VLM推理，在多个基准上实现零样本训练免费的SOTA并加速推理。</description>
     <pubDate>Fri, 23 Oct 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2610.31478</guid>
-  </item>
-  <item>
-    <title>通过频域分析揭示胸片分类中的隐藏失效模式</title>
-    <link>https://arxiv.org/abs/2610.29830</link>
-    <description>提出一种基于频谱分析的数据中心框架，通过聚类图像频域能量分布来自动发现胸片分类模型集中失效的数据切片。</description>
-    <pubDate>Wed, 21 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.29830</guid>
-  </item>
-  <item>
-    <title>MS2CAST：基于多尺度空间交叉注意力和高效时空网络的视频异常检测框架</title>
-    <link>https://arxiv.org/abs/2610.29649</link>
-    <description>提出端到端半监督预测式视频异常检测框架MS2CAST，用多尺度交叉注意力融合ViT与CNN特征，并以SwinLSTM或VMRNN在潜空间建模时空动态，无需光流。</description>
-    <pubDate>Wed, 21 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.29649</guid>
   </item>
 </channel>
 </rss>
