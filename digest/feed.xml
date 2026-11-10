@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Mon, 09 Nov 2026 16:10:19 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 15:51:37 +0800</lastBuildDate>
+  <item>
+    <title>扰动、聚合再重建：面向重建式多视图异常检测的共识聚合与傅里叶注意力多解码器</title>
+    <link>https://arxiv.org/abs/2611.12477</link>
+    <description>提出PAR框架，通过特征扰动与共识聚合生成视图一致的伪异常，并用视图专属多解码器结合傅里叶注意力提升多视图工业异常检测性能。</description>
+    <pubDate>Mon, 09 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.12477</guid>
+  </item>
+  <item>
+    <title>TIRAD：文本引导的图像残差学习用于通用异常检测</title>
+    <link>https://arxiv.org/abs/2611.12023</link>
+    <description>提出多模态残差学习框架TIRAD，用正常与异常状态文本表示的差异构成文本残差特征，引导图像残差特征实现通用异常检测。</description>
+    <pubDate>Mon, 09 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.12023</guid>
+  </item>
   <item>
     <title>面向多模态工业异常检测的嵌入预测自适应与细化</title>
     <link>https://arxiv.org/abs/2611.09521</link>
@@ -130,20 +144,6 @@
     <description>提出XAVAD统一可解释框架，在匿名化视频异常检测中集成零样本匿名化、异常类型分类、空间定位与场景上下文描述。</description>
     <pubDate>Fri, 23 Oct 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2610.32073</guid>
-  </item>
-  <item>
-    <title>LACToS：基于超像素条件典型性的局部异常检测</title>
-    <link>https://arxiv.org/abs/2610.31538</link>
-    <description>提出LACToS，利用超像素分组和高效典型性代理估计，实现多模态内点分布下更鲁棒的局部异常检测。</description>
-    <pubDate>Fri, 23 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.31538</guid>
-  </item>
-  <item>
-    <title>MoG-VLM：运动引导视觉语言模型的高效视频异常检测</title>
-    <link>https://arxiv.org/abs/2610.31478</link>
-    <description>提出运动自适应框架MoG-VLM，用运动作为轻量控制信号决定何时调用VLM推理，在多个基准上实现零样本训练免费的SOTA并加速推理。</description>
-    <pubDate>Fri, 23 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.31478</guid>
   </item>
 </channel>
 </rss>
