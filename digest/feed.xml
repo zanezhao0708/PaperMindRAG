@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Tue, 10 Nov 2026 15:51:37 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 15:19:28 +0800</lastBuildDate>
+  <item>
+    <title>CASCADE：面向逻辑异常检测的约束感知脚手架分解</title>
+    <link>https://arxiv.org/abs/2611.13820</link>
+    <description>提出免训练框架CASCADE，用约束特定的视觉脚手架扩展清单式分解，让LVLM针对每条约束适配视觉输入以检测逻辑异常。</description>
+    <pubDate>Tue, 10 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.13820</guid>
+  </item>
   <item>
     <title>扰动、聚合再重建：面向重建式多视图异常检测的共识聚合与傅里叶注意力多解码器</title>
     <link>https://arxiv.org/abs/2611.12477</link>
@@ -137,13 +144,6 @@
     <description>提出SAAF框架，通过双信号自适应采样、阈值门控级联架构和信号感知加权融合，实现高效零样本视频异常检测。</description>
     <pubDate>Fri, 23 Oct 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2610.32486</guid>
-  </item>
-  <item>
-    <title>面向匿名人群视频监控的引导式零样本异常解释：上下文、分类与空间定位</title>
-    <link>https://arxiv.org/abs/2610.32073</link>
-    <description>提出XAVAD统一可解释框架，在匿名化视频异常检测中集成零样本匿名化、异常类型分类、空间定位与场景上下文描述。</description>
-    <pubDate>Fri, 23 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.32073</guid>
   </item>
 </channel>
 </rss>
