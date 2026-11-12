@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Wed, 11 Nov 2026 15:19:28 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 15:50:31 +0800</lastBuildDate>
+  <item>
+    <title>REDiff-AD：无需训练与目标掩码的多样性驱动上下文MMDiT工业异常图像生成</title>
+    <link>https://arxiv.org/abs/2611.10875</link>
+    <description>提出REDiff-AD框架，仅需一张正常产品图和单个带掩码参考异常，无需训练和目标掩码即可生成真实多样的工业异常图像并自动定位伪掩码。</description>
+    <pubDate>Sun, 08 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.10875</guid>
+  </item>
   <item>
     <title>CASCADE：面向逻辑异常检测的约束感知脚手架分解</title>
     <link>https://arxiv.org/abs/2611.13820</link>
@@ -137,13 +144,6 @@
     <description>将少样本工业异常检测转化为冻结DINOv2特征空间中的正常对应恢复问题，用条件流匹配学习速度场并单步恢复后验均值。</description>
     <pubDate>Sat, 24 Oct 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2610.32964</guid>
-  </item>
-  <item>
-    <title>基于信号感知自适应融合的高效零样本视频异常检测</title>
-    <link>https://arxiv.org/abs/2610.32486</link>
-    <description>提出SAAF框架，通过双信号自适应采样、阈值门控级联架构和信号感知加权融合，实现高效零样本视频异常检测。</description>
-    <pubDate>Fri, 23 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.32486</guid>
   </item>
 </channel>
 </rss>
