@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Mon, 16 Nov 2026 16:05:44 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 16:38:38 +0800</lastBuildDate>
+  <item>
+    <title>Region-VAD：基于区域选择的视频异常定位与检测</title>
+    <link>https://arxiv.org/abs/2611.21132</link>
+    <description>提出Region-VAD，先在冻结基础模型token网格上选出变化最大的矩形区域，再仅用区域内token做异常打分，实现弱监督视频异常定位与检测。</description>
+    <pubDate>Mon, 16 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.21132</guid>
+  </item>
+  <item>
+    <title>如何解释你无法解释的视频异常检测器</title>
+    <link>https://arxiv.org/abs/2611.21131</link>
+    <description>提出ETU框架，通过在特征空间做反事实干预来审计冻结的弱监督视频异常检测模型，揭示其依赖的语义结构。</description>
+    <pubDate>Mon, 16 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.21131</guid>
+  </item>
   <item>
     <title>REDiff-AD：无需训练与目标掩码的多样性驱动上下文MMDiT工业异常图像生成</title>
     <link>https://arxiv.org/abs/2611.10875</link>
@@ -130,20 +144,6 @@
     <description>提出无监督框架，通过解剖感知重建与合成扰动引导的对比三元组学习，将预训练视觉表征适配正常视网膜解剖结构，实现无需疾病标注的OCT异常检测与定位。</description>
     <pubDate>Sat, 24 Oct 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2610.33143</guid>
-  </item>
-  <item>
-    <title>SGDB：面向逻辑异常检测的语义-几何解耦与证据绑定</title>
-    <link>https://arxiv.org/abs/2610.34897</link>
-    <description>提出语义-几何解耦与证据绑定框架SGDB，通过分离物体身份识别与几何测量并绑定证据，实现可解释的逻辑异常检测。</description>
-    <pubDate>Mon, 26 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.34897</guid>
-  </item>
-  <item>
-    <title>Flownomaly：面向少样本异常检测的单步条件均值恢复</title>
-    <link>https://arxiv.org/abs/2610.32964</link>
-    <description>将少样本工业异常检测转化为冻结DINOv2特征空间中的正常对应恢复问题，用条件流匹配学习速度场并单步恢复后验均值。</description>
-    <pubDate>Sat, 24 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.32964</guid>
   </item>
 </channel>
 </rss>
