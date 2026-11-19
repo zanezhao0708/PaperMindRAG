@@ -4,7 +4,28 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Wed, 18 Nov 2026 16:01:50 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 16:11:55 +0800</lastBuildDate>
+  <item>
+    <title>AggCLIP：聚合CLIP实现零样本多模态异常检测</title>
+    <link>https://arxiv.org/abs/2611.24643</link>
+    <description>提出AggCLIP框架，通过几何感知与上下文感知的空间聚合模块及双流提示对比损失，适配冻结CLIP实现零样本多模态异常检测。</description>
+    <pubDate>Wed, 18 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.24643</guid>
+  </item>
+  <item>
+    <title>先融合再重建：面向多模态工业异常检测的新型重建范式</title>
+    <link>https://arxiv.org/abs/2611.24541</link>
+    <description>提出先融合多模态特征再重建的FBR范式，通过双向跨模态注意力与门控融合消除投影偏差和映射歧义，实现工业异常检测新SOTA。</description>
+    <pubDate>Wed, 18 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.24541</guid>
+  </item>
+  <item>
+    <title>ROBIN++：通过双域协同水印实现扩散模型的统一版权保护与篡改定位</title>
+    <link>https://arxiv.org/abs/2611.23793</link>
+    <description>提出双域协同水印框架ROBIN++，将鲁棒版权水印注入频域、脆弱定位水印注入空域，并通过双分支协同检测器实现版权验证与篡改定位的相互增强。</description>
+    <pubDate>Wed, 18 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.23793</guid>
+  </item>
   <item>
     <title>病理随机化用于合成先验与零样本检测</title>
     <link>https://arxiv.org/abs/2611.21975</link>
@@ -123,27 +144,6 @@
     <description>提出免训练框架VerdictAD，用类型化决策模型对查询图像及局部区域给出结构化决策概率，从全局和局部两个尺度细化现有异常检测器的异常分数。</description>
     <pubDate>Mon, 02 Nov 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2611.02654</guid>
-  </item>
-  <item>
-    <title>VariaFlow：面向无监督异常检测的不确定性感知流匹配</title>
-    <link>https://arxiv.org/abs/2610.41494</link>
-    <description>提出VariaFlow，用流匹配模型集成估计健康重建的预测方差并归一化残差，实现跨数据集脑MRI无监督异常检测。</description>
-    <pubDate>Fri, 30 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.41494</guid>
-  </item>
-  <item>
-    <title>RADIOlogy：单次前向的无训练零样本异常检测方法</title>
-    <link>https://arxiv.org/abs/2610.40580</link>
-    <description>发现视觉语言模型多头注意力池化天然具备零样本异常定位能力，据此提出单次前向、无需训练的异常检测与分割方法。</description>
-    <pubDate>Fri, 30 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.40580</guid>
-  </item>
-  <item>
-    <title>跨编码器锚点精炼的零样本异常检测</title>
-    <link>https://arxiv.org/abs/2610.39727</link>
-    <description>提出CEAR，在锚点阶段连接ViT与独立卷积编码器，通过跨注意力精炼空间锚点以构建正常/异常原型，实现零样本异常检测与定位。</description>
-    <pubDate>Thu, 29 Oct 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2610.39727</guid>
   </item>
 </channel>
 </rss>
