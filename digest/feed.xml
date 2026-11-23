@@ -4,7 +4,28 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Sun, 22 Nov 2026 15:36:54 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 16:23:35 +0800</lastBuildDate>
+  <item>
+    <title>面向荒野搜救的无人机实时高光谱异常检测</title>
+    <link>https://arxiv.org/abs/2611.27017</link>
+    <description>提出SABL边缘计算流水线，在无人机上实时处理高光谱流，用ERX异常检测加DBSCAN空间滤波定位荒野搜救目标。</description>
+    <pubDate>Fri, 20 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.27017</guid>
+  </item>
+  <item>
+    <title>分析大型视觉语言模型的多层视觉表示用于异常检测</title>
+    <link>https://arxiv.org/abs/2611.27128</link>
+    <description>系统分析大型视觉语言模型各层视觉特征及多层融合在异常检测中的效果，并给出面向视觉中心任务的表示选择经验。</description>
+    <pubDate>Fri, 20 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.27128</guid>
+  </item>
+  <item>
+    <title>合成缺陷在工业小型载具异常检测中的有效性</title>
+    <link>https://arxiv.org/abs/2611.26868</link>
+    <description>系统评估合成缺陷训练在真实工业小型载具数据集上对监督与无监督异常检测方法的有效性及不同噪声生成方式的影响。</description>
+    <pubDate>Fri, 20 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.26868</guid>
+  </item>
   <item>
     <title>AggCLIP：聚合CLIP实现零样本多模态异常检测</title>
     <link>https://arxiv.org/abs/2611.24643</link>
@@ -123,27 +144,6 @@
     <description>论文基准测试四种检测架构在光照与天气退化下的表现，发现统一低光增强在黄昏光照下反而有害，提出免训练亮度自适应路由器按帧选择增强策略并在Jetson Nano上验证。</description>
     <pubDate>Fri, 06 Nov 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2611.08393</guid>
-  </item>
-  <item>
-    <title>复现INP-Former：重建内在正常原型用于工业异常检测</title>
-    <link>https://arxiv.org/abs/2611.01230</link>
-    <description>复现INP-Former并扩展评估到MVTec AD 2，发现多数性能来自INP机制，但默认原型数等结论在更难数据上不成立。</description>
-    <pubDate>Sun, 01 Nov 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2611.01230</guid>
-  </item>
-  <item>
-    <title>有界AUKS：一种基于有界Kolmogorov-Smirnov曲线下面积的异常检测新评价指标</title>
-    <link>https://arxiv.org/abs/2611.04754</link>
-    <description>提出Bounded AUKS指标，通过数据驱动的有界区间积分TPR与FPR之差，量化正常与异常样本异常分数分布的可分性，弥补AUROC/AUPRO忽略阈值选择的缺陷。</description>
-    <pubDate>Tue, 03 Nov 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2611.04754</guid>
-  </item>
-  <item>
-    <title>VerdictAD：决策引导细化的少样本异常检测</title>
-    <link>https://arxiv.org/abs/2611.02654</link>
-    <description>提出免训练框架VerdictAD，用类型化决策模型对查询图像及局部区域给出结构化决策概率，从全局和局部两个尺度细化现有异常检测器的异常分数。</description>
-    <pubDate>Mon, 02 Nov 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2611.02654</guid>
   </item>
 </channel>
 </rss>
