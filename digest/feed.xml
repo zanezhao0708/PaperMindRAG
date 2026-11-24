@@ -4,7 +4,35 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Mon, 23 Nov 2026 17:16:09 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 18:31:36 +0800</lastBuildDate>
+  <item>
+    <title>医学影像中归因驱动数据策展的防泄漏审计</title>
+    <link>https://arxiv.org/abs/2611.31096</link>
+    <description>提出将归因驱动数据策展拆分为异常检测、危害估计与干预效用三项可检验主张，并通过患者隔离审计发现删除170个零值损坏样本并未提升3D CT血管造影分类器泛化性能。</description>
+    <pubDate>Tue, 24 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.31096</guid>
+  </item>
+  <item>
+    <title>面向抽象视觉推理的以对象为中心的可微逻辑网络</title>
+    <link>https://arxiv.org/abs/2611.30736</link>
+    <description>提出Slot-Dwn神经符号架构，将无监督对象中心感知与基于查找表的布尔逻辑推理统一，实现抽象视觉推理。</description>
+    <pubDate>Mon, 23 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.30736</guid>
+  </item>
+  <item>
+    <title>先检查再决策：证据引导的工业异常检测视觉搜索</title>
+    <link>https://arxiv.org/abs/2611.29551</link>
+    <description>提出EVAD框架，让多模态大模型通过MCTS引导的主动视觉搜索获取细粒度证据，实现可靠的工业异常检测与推理。</description>
+    <pubDate>Sun, 22 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.29551</guid>
+  </item>
+  <item>
+    <title>SCRA-CLIP：面向零样本异常检测的球面上下文表征适配</title>
+    <link>https://arxiv.org/abs/2611.29545</link>
+    <description>提出SCRA-CLIP框架，通过球面原型条件提示和上下文偏差引导视觉适配，联合增强文本语义与视觉表征，实现零样本细粒度异常检测与定位。</description>
+    <pubDate>Sun, 22 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.29545</guid>
+  </item>
   <item>
     <title>面向荒野搜救的无人机实时高光谱异常检测</title>
     <link>https://arxiv.org/abs/2611.27017</link>
@@ -116,34 +144,6 @@
     <description>提出即插即用框架DART，将正常-异常引导的残差解耦为异常相关与领域特定成分，提升跨域通用异常检测性能。</description>
     <pubDate>Fri, 06 Nov 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2611.08271</guid>
-  </item>
-  <item>
-    <title>故障引导的跨层预测用于无监督异常检测</title>
-    <link>https://arxiv.org/abs/2611.08140</link>
-    <description>将冻结ViT深度视为离散状态序列，用有向逐token预测器学习块间隐状态转移，以无法传递的信息作为异常信号。</description>
-    <pubDate>Thu, 05 Nov 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2611.08140</guid>
-  </item>
-  <item>
-    <title>未训练神经网络在异常检测中能走多远？从表格到像素</title>
-    <link>https://arxiv.org/abs/2611.08136</link>
-    <description>提出PRISM框架，用固定随机非线性特征加正态参考马氏评分做异常检测，无需训练即在表格和图像任务上达到竞争性性能。</description>
-    <pubDate>Thu, 05 Nov 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2611.08136</guid>
-  </item>
-  <item>
-    <title>时空动态感知的工业异常检测与推理</title>
-    <link>https://arxiv.org/abs/2611.08080</link>
-    <description>提出MUSTARD框架，为多模态大模型赋予细粒度时空动态感知能力，用于检测和推理工业制造中基于运动的动态异常。</description>
-    <pubDate>Thu, 05 Nov 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2611.08080</guid>
-  </item>
-  <item>
-    <title>面向道路异常检测的自适应低光照增强：多架构基准与边缘部署研究</title>
-    <link>https://arxiv.org/abs/2611.08393</link>
-    <description>论文基准测试四种检测架构在光照与天气退化下的表现，发现统一低光增强在黄昏光照下反而有害，提出免训练亮度自适应路由器按帧选择增强策略并在Jetson Nano上验证。</description>
-    <pubDate>Fri, 06 Nov 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2611.08393</guid>
   </item>
 </channel>
 </rss>
