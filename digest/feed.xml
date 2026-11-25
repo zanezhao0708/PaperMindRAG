@@ -4,7 +4,35 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Tue, 24 Nov 2026 18:31:36 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 17:20:43 +0800</lastBuildDate>
+  <item>
+    <title>ProX-MAD：聚合空间上下文为代表性代理用于少样本医学异常检测</title>
+    <link>https://arxiv.org/abs/2611.32941</link>
+    <description>提出基于代理的ProX-MAD框架，通过聚合空间上下文为可学习的状态特定代理，实现统一的少样本医学异常检测。</description>
+    <pubDate>Wed, 25 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.32941</guid>
+  </item>
+  <item>
+    <title>UnifiedAD：通过证据校准实现跨模态单样本异常检测</title>
+    <link>https://arxiv.org/abs/2611.32551</link>
+    <description>提出UnifiedAD，仅需每个类别一个正常参考且无需梯度更新，通过异常证据校准统一单模态与多模态异常检测。</description>
+    <pubDate>Tue, 24 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.32551</guid>
+  </item>
+  <item>
+    <title>单一子空间不够：面向免训练少样本异常检测的局部子空间方法</title>
+    <link>https://arxiv.org/abs/2611.32424</link>
+    <description>提出LocalSubspaceAD，用k-means将patch特征聚类并为每簇拟合独立子空间，以最小重投影残差评分，实现免训练少样本工业异常检测。</description>
+    <pubDate>Tue, 24 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.32424</guid>
+  </item>
+  <item>
+    <title>VIDE：基于视觉内在分布估计的免训练视频异常检测</title>
+    <link>https://arxiv.org/abs/2611.32138</link>
+    <description>提出免训练框架VIDE，利用冻结CLIP嵌入为每个测试视频自适应估计正常场景分布并校正文本参考，从而降低异常偏置与提示敏感性。</description>
+    <pubDate>Tue, 24 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.32138</guid>
+  </item>
   <item>
     <title>医学影像中归因驱动数据策展的防泄漏审计</title>
     <link>https://arxiv.org/abs/2611.31096</link>
@@ -116,34 +144,6 @@
     <description>提出PAR框架，通过特征扰动与共识聚合生成视图一致的伪异常，并用视图专属多解码器结合傅里叶注意力提升多视图工业异常检测性能。</description>
     <pubDate>Mon, 09 Nov 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2611.12477</guid>
-  </item>
-  <item>
-    <title>TIRAD：文本引导的图像残差学习用于通用异常检测</title>
-    <link>https://arxiv.org/abs/2611.12023</link>
-    <description>提出多模态残差学习框架TIRAD，用正常与异常状态文本表示的差异构成文本残差特征，引导图像残差特征实现通用异常检测。</description>
-    <pubDate>Mon, 09 Nov 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2611.12023</guid>
-  </item>
-  <item>
-    <title>面向多模态工业异常检测的嵌入预测自适应与细化</title>
-    <link>https://arxiv.org/abs/2611.09521</link>
-    <description>提出EPAR方法，通过掩码嵌入预测自适应编码器并结合噪声抑制网络细化粗粒度异常图，提升多模态工业异常检测性能。</description>
-    <pubDate>Fri, 06 Nov 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2611.09521</guid>
-  </item>
-  <item>
-    <title>基于知识牵引的多模态训练用于视频异常检测</title>
-    <link>https://arxiv.org/abs/2611.09536</link>
-    <description>提出一种引入外部知识的多模态训练方法，利用LLM构建任务先验并用字典学习压缩，结合跨模态注意力提升弱监督视频异常检测性能。</description>
-    <pubDate>Fri, 06 Nov 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2611.09536</guid>
-  </item>
-  <item>
-    <title>DART：面向通用异常检测的领域无关残差迁移</title>
-    <link>https://arxiv.org/abs/2611.08271</link>
-    <description>提出即插即用框架DART，将正常-异常引导的残差解耦为异常相关与领域特定成分，提升跨域通用异常检测性能。</description>
-    <pubDate>Fri, 06 Nov 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2611.08271</guid>
   </item>
 </channel>
 </rss>
