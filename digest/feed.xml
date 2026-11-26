@@ -4,7 +4,14 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Wed, 25 Nov 2026 17:20:43 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 16:59:14 +0800</lastBuildDate>
+  <item>
+    <title>ADClaw：面向工业异常检测与理解的可编程视觉智能体</title>
+    <link>https://arxiv.org/abs/2611.34591</link>
+    <description>提出无需任务微调的可编程视觉智能体ADClaw，通过编写并执行代码反复检验异常假设，实现工业异常检测、定位与理解。</description>
+    <pubDate>Wed, 25 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.34591</guid>
+  </item>
   <item>
     <title>ProX-MAD：聚合空间上下文为代表性代理用于少样本医学异常检测</title>
     <link>https://arxiv.org/abs/2611.32941</link>
@@ -137,13 +144,6 @@
     <description>提出免训练框架CASCADE，用约束特定的视觉脚手架扩展清单式分解，让LVLM针对每条约束适配视觉输入以检测逻辑异常。</description>
     <pubDate>Tue, 10 Nov 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2611.13820</guid>
-  </item>
-  <item>
-    <title>扰动、聚合再重建：面向重建式多视图异常检测的共识聚合与傅里叶注意力多解码器</title>
-    <link>https://arxiv.org/abs/2611.12477</link>
-    <description>提出PAR框架，通过特征扰动与共识聚合生成视图一致的伪异常，并用视图专属多解码器结合傅里叶注意力提升多视图工业异常检测性能。</description>
-    <pubDate>Mon, 09 Nov 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2611.12477</guid>
   </item>
 </channel>
 </rss>
