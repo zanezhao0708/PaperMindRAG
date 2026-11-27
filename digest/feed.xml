@@ -4,7 +4,21 @@
     <title>PaperMind · CV 异常检测论文日报</title>
     <link>https://github.com/zanezhao0708/PaperMindRAG/blob/main/digest/README.md</link>
     <description>每日 arXiv CV 异常检测论文中文解读</description>
-    <lastBuildDate>Thu, 26 Nov 2026 16:59:14 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 17:13:23 +0800</lastBuildDate>
+  <item>
+    <title>HighwayVerse：面向公路基础设施异常理解的链式巡检基准</title>
+    <link>https://arxiv.org/abs/2611.28800</link>
+    <description>提出公路基础设施巡检递进链HIIP-Chain及包含14143条真实巡检记录、84858个专家问答的HighwayVerse基准，并设计免训练检索增强框架LaneRAG。</description>
+    <pubDate>Sat, 21 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.28800</guid>
+  </item>
+  <item>
+    <title>胎儿大脑无监督异常检测的简单基线</title>
+    <link>https://arxiv.org/abs/2611.28505</link>
+    <description>提出FetalBUAD框架，通过体素级脑龄估计建立内部生物学参考，实现胎儿脑MRI无监督异常检测与病灶定位。</description>
+    <pubDate>Sat, 21 Nov 2026 08:00:00 +0800</pubDate>
+    <guid>https://arxiv.org/abs/2611.28505</guid>
+  </item>
   <item>
     <title>ADClaw：面向工业异常检测与理解的可编程视觉智能体</title>
     <link>https://arxiv.org/abs/2611.34591</link>
@@ -130,20 +144,6 @@
     <description>提出ETU框架，通过在特征空间做反事实干预来审计冻结的弱监督视频异常检测模型，揭示其依赖的语义结构。</description>
     <pubDate>Mon, 16 Nov 2026 08:00:00 +0800</pubDate>
     <guid>https://arxiv.org/abs/2611.21131</guid>
-  </item>
-  <item>
-    <title>REDiff-AD：无需训练与目标掩码的多样性驱动上下文MMDiT工业异常图像生成</title>
-    <link>https://arxiv.org/abs/2611.10875</link>
-    <description>提出REDiff-AD框架，仅需一张正常产品图和单个带掩码参考异常，无需训练和目标掩码即可生成真实多样的工业异常图像并自动定位伪掩码。</description>
-    <pubDate>Sun, 08 Nov 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2611.10875</guid>
-  </item>
-  <item>
-    <title>CASCADE：面向逻辑异常检测的约束感知脚手架分解</title>
-    <link>https://arxiv.org/abs/2611.13820</link>
-    <description>提出免训练框架CASCADE，用约束特定的视觉脚手架扩展清单式分解，让LVLM针对每条约束适配视觉输入以检测逻辑异常。</description>
-    <pubDate>Tue, 10 Nov 2026 08:00:00 +0800</pubDate>
-    <guid>https://arxiv.org/abs/2611.13820</guid>
   </item>
 </channel>
 </rss>
